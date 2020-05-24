@@ -2,6 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="302a7f79-2769-459d-a98c-65ead7c8c06d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/hw3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment page.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Board/ActiveCharacter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Board/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Board/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Emenys/Enemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Emenys/Monster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ObserverPattern/Observable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ObserverPattern/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Players/Mage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Players/Rogue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Players/Warrior.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tiles/Empty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tiles/Tile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tiles/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VisitorPattern/Visited.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VisitorPattern/Visitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
