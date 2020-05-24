@@ -38,6 +38,11 @@ public class Warrior extends Player{
         return false;
     }
 
+    @Override
+    public void castSpacialAbillity() {
+
+    }
+
     private class SpecialAbility{
         private final String NAME = "Avenger’s Shield";
         private final String DESCRIPTION ="randomly hits one enemy withing range < 3 for an amount\n" +

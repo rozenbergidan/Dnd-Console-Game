@@ -11,4 +11,8 @@ public abstract class Tile implements Visited {
     public Point getLocation() {
         return location;
     }
+
+    protected void switchLocation(Tile t){
+        location.substitute(t.location);
+    }
 }

@@ -40,7 +40,7 @@ public class Rogue extends Player{
     }
 
     private class Energy{
-        private final int MAX_ENERGY=100;
+        private final int MAX_ENERGY=100;git add
 
         private int totalEnergy;
         private int currentEnergy;

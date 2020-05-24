@@ -16,4 +16,11 @@ public abstract class Player extends Unit implements Observer{
         level=START_LEVEL;
         exp=START_EXP;
     }
+
+    public abstract void castSpacialAbillity();
+
+    public void act(char action) {// get the action char from the gameController
+        //if (action == 'e')
+
+    }
 }
