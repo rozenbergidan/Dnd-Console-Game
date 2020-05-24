@@ -4,16 +4,17 @@ import Board.*;
 import Players.Player;
 import VisitorPattern.*;
 
-public class Monster extends Enemy implements ActiveCharacter, Visitor {
+public class Monster extends Enemy implements Visitor {
 
     private int vision;
+
+
     @Override
-    public void onTickAct(Board board) {
+    public void act(Board b) {
 
     }
 
-    @Override
-    public void act() {
+    public void randomWalk(Board b){
 
     }
 
