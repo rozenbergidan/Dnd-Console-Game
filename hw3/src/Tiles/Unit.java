@@ -26,8 +26,8 @@ public abstract class Unit  extends Tile implements Visitor {
         return health.healthDecrease(attackDamage- defence);
     }
 
-    public void attack(Unit unit){
-        unit.attackMe((int)(Math.random()*(attackPoint + 1)));
+    public boolean attack(Unit unit){
+        return unit.attackMe((int)(Math.random()*(attackPoint + 1)));
     }
 
 

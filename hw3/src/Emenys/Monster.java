@@ -14,26 +14,58 @@ public class Monster extends Enemy implements Visitor {
 
 
     @Override
-    public void act(Board b) {
-
-    }
-
-    public void randomWalk(Board b){
+    public void act(Board b){
+        Player player = b.getPlayer();
+        if(location.range(player.getLocation())< vision){
+            //algorithm to go the best path to player / go to player way
+        }
+        else{
+            int direction = (int) Math.random()*5;
+            Point toGo;
+            if(direction == 0){
+                toGo  = new Point(location.getX() + 1, location.getY());
+                if(visit(b.getTile(toGo))){
+                    // go right
+                    Board.getBoard().switchTile(location, toGo);
+                }
+            }
+            if(direction == 1){
+                toGo  = new Point(location.getX(), location.getY() + 1);
+                if(visit(b.getTile(toGo))){
+                    // go up
+                    Board.getBoard().switchTile(location, toGo);
+                }
+            }
+            if(direction == 2){
+                toGo  = new Point(location.getX() - 1, location.getY());
+                if(visit(b.getTile(toGo))){
+                    // go left
+                    Board.getBoard().switchTile(location, toGo);
+                }
+            }
+            if(direction == 3){
+                toGo  = new Point(location.getX(), location.getY() - 1);
+                if(visit(b.getTile(toGo))){
+                    // go down
+                    Board.getBoard().switchTile(location, toGo);
+                }
+            }
+        }
 
     }
 
     @Override
-    public void accept(Player p) {
+    public boolean accept(Player p) {
+        p.attack(this);
+    }
+
+    @Override
+    public boolean accept(Monster m) {
 
     }
 
     @Override
-    public void accept(Monster m) {
-
-    }
-
-    @Override
-    public void visit(Visited V) {
-
+    public boolean visit(Visited V) {
+        return false;
     }
 }

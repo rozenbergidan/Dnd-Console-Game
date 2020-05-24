@@ -9,6 +9,13 @@ public class Point {
         this.y = y;
     }
 
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return y;
+    }
+
     public void substitute(Point p){
         int tempX = x;
         int tempY = y;
