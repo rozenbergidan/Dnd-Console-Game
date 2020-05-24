@@ -8,6 +8,10 @@ public class Monster extends Enemy implements Visitor {
 
     private int vision;
 
+    public Monster(Point point, char character, String name, int attack, int defence, int health) {
+        super(point, character, name, attack, defence, health);
+    }
+
 
     @Override
     public void act(Board b) {
@@ -19,13 +23,13 @@ public class Monster extends Enemy implements Visitor {
     }
 
     @Override
-    public boolean accept(Player p) {
-        return false;
+    public void accept(Player p) {
+
     }
 
     @Override
-    public boolean accept(Monster m) {
-        return false;
+    public void accept(Monster m) {
+
     }
 
     @Override

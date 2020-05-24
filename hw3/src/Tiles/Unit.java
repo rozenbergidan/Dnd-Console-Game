@@ -5,13 +5,20 @@ import ObserverPattern.*;
 import VisitorPattern.*;
 
 public abstract class Unit  extends Tile implements Visitor {
-
     // FILDES
     private String name;
     private Health health;
     private int attackPoint;
     private int defencePoint;
 
+    public Unit(Point point,char character, String name, int attack, int defence, int health) {
+        this.location = point;
+        this.character = character;
+        this.name = name;
+        this.attackPoint = attack;
+        this.defencePoint = defence;
+        this.health = new Health(health);
+    }
     public abstract void act(Board b);
 
     public boolean attackMe(int attackDamage){// return true is died

@@ -5,7 +5,7 @@ import Players.Player;
 
 public interface Visited {
 
-    boolean accept (Player p);
-    boolean accept (Monster m);
+    void accept (Player p);
+    void accept (Monster m);
 
 }
