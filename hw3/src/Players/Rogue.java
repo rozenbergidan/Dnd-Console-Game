@@ -5,9 +5,13 @@ import Emenys.Monster;
 import VisitorPattern.Visited;
 
 public class Rogue extends Player{
+    private Energy energy;
+    private SpecialAbility specialAbility;
 
-    public Rogue(String name, int attack, int defence, int health, Point point) {
+    public Rogue(String name, int attack, int defence, int health,int energyCost, Point point) {
         super(name, attack, defence, health, point);
+        energy=new Energy();
+        specialAbility=new SpecialAbility(energyCost);
     }
 
     @Override
@@ -34,8 +38,33 @@ public class Rogue extends Player{
     public void act(Board b) {
 
     }
+    private class Energy{
+        private final int MAX_ENERGY=100;
 
+        private int totalEnergy;
+        private int currentEnergy;
+
+        public Energy(){
+            this.totalEnergy=MAX_ENERGY;
+            this.currentEnergy=MAX_ENERGY;
+        }
+    }
     private class SpecialAbility{
+        private final String NAME="Fan of Knives";
+        private final String DESCRIPTION="hits everyone around the rogue for an amount equals to the\n" +
+                "rogue’s attack points at the cost of energy.";
+        private final int MAX_RANGE=2;
+
         private String name;
+        private String desc;
+        private int energyCost;
+        private int range;
+
+        public SpecialAbility(int energyCost){
+            this.name=NAME;
+            this.desc=DESCRIPTION;
+            this.energyCost=energyCost;
+            range=MAX_RANGE;
+        }
     }
 }
