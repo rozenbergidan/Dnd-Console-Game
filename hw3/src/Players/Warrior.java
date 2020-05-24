@@ -21,12 +21,13 @@ public class Warrior extends Player {
     }
 
     @Override
+    public void castSpacialAbillity() {
+
+    }
+
+    @Override
     public void onTickAct(Board board) {
         if (specialAbility.coolDown > 0) specialAbility.coolDown--;
-    }
-    @Override
-    public void act(Board b) {
-
     }
 
     @Override
@@ -44,7 +45,7 @@ public class Warrior extends Player {
         return false;
     }
 
-    private class SpecialAbility {
+    private class SpecialAbility{
         private final String NAME = "Avenger’s Shield";
         private final String DESCRIPTION = "randomly hits one enemy withing range < 3 for an amount\n" +
                 "equals to 10% of the warrior’s max health and heals the warrior for amount equals to (10\u0002defense)\n" +

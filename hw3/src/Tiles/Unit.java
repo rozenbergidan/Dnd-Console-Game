@@ -19,7 +19,9 @@ public abstract class Unit  extends Tile implements Visitor {
         this.defencePoint = defence;
         this.health = new Health(health);
     }
-    public abstract void act(Board b);
+
+
+
 
     public boolean attackMe(int attackDamage){// return true is died
         int defence = (int)(Math.random()*(defencePoint + 1));

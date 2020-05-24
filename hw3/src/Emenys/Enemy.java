@@ -11,4 +11,6 @@ public abstract class Enemy extends Unit {
         super(point, character, name, attack, defence, health);
         this.expValue=expValue;
     }
+
+    public abstract void act(Board b);
 }

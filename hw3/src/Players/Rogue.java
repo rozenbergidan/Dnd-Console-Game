@@ -21,14 +21,15 @@ public class Rogue extends Player{
     }
 
     @Override
+    public void castSpacialAbillity() {
+
+    }
+
+    @Override
     public void onTickAct(Board board) {
         energy.currentEnergy=Math.min(energy.currentEnergy+10,100);
     }
 
-    @Override
-    public void act(Board b) {
-
-    }
     @Override
     public boolean accept(Player p) {
         return false;

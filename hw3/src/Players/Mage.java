@@ -23,13 +23,13 @@ public class Mage extends Player{
     }
 
     @Override
-    public void onTickAct(Board board) {
-        mana.currentMana=(Math.min(mana.manaPool,mana.currentMana+level));
+    public void castSpacialAbillity() {
+
     }
 
     @Override
-    public void act(Board b) {
-
+    public void onTickAct(Board board) {
+        mana.currentMana=(Math.min(mana.manaPool,mana.currentMana+level));
     }
 
     @Override

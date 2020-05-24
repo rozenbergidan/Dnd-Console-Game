@@ -16,11 +16,19 @@ public abstract class Player extends Unit implements Observer{
         level=START_LEVEL;
         exp=START_EXP;
     }
-    public void levelUP(){
-        exp=exp-(50*level);
+
+    public void levelUP() {
+        exp = exp - (50 * level);
         level++;
         health.levelUP(level);
-        attackPoint=attackPoint+4*level;
-        defencePoint=defencePoint+level;
+        attackPoint = attackPoint + 4 * level;
+        defencePoint = defencePoint + level;
+    }
+
+    public abstract void castSpacialAbillity();
+
+    public void act(char action) {// get the action char from the gameController
+        //if (action == 'e')
+
     }
 }

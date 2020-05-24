@@ -2,6 +2,7 @@ package Emenys;
 
 import Board.*;
 import Players.Player;
+import Tiles.Tile;
 import VisitorPattern.*;
 
 public class Monster extends Enemy implements Visitor {
@@ -24,9 +25,11 @@ public class Monster extends Enemy implements Visitor {
             int direction = (int) Math.random()*5;
             Point toGo;
             if(direction == 0){
-                toGo  = new Point(location.getX() + 1, location.getY());
+                toGo = new Point(location.getX() + 1, location.getY());
                 if(visit(b.getTile(toGo))){
                     // go right
+                    Tile toSwitch = Board.getBoard().getTile(toGo);
+                    switchLocation(toSwitch);
                     Board.getBoard().switchTile(location, toGo);
                 }
             }
@@ -34,6 +37,8 @@ public class Monster extends Enemy implements Visitor {
                 toGo  = new Point(location.getX(), location.getY() + 1);
                 if(visit(b.getTile(toGo))){
                     // go up
+                    Tile toSwitch = Board.getBoard().getTile(toGo);
+                    switchLocation(toSwitch);
                     Board.getBoard().switchTile(location, toGo);
                 }
             }
@@ -41,6 +46,8 @@ public class Monster extends Enemy implements Visitor {
                 toGo  = new Point(location.getX() - 1, location.getY());
                 if(visit(b.getTile(toGo))){
                     // go left
+                    Tile toSwitch = Board.getBoard().getTile(toGo);
+                    switchLocation(toSwitch);
                     Board.getBoard().switchTile(location, toGo);
                 }
             }
@@ -48,6 +55,8 @@ public class Monster extends Enemy implements Visitor {
                 toGo  = new Point(location.getX(), location.getY() - 1);
                 if(visit(b.getTile(toGo))){
                     // go down
+                    Tile toSwitch = Board.getBoard().getTile(toGo);
+                    switchLocation(toSwitch);
                     Board.getBoard().switchTile(location, toGo);
                 }
             }
@@ -56,7 +65,7 @@ public class Monster extends Enemy implements Visitor {
     }
 
     @Override
-    public boolean accept(Player p) {
+    public boolean accept(Player p) {// if dead change all neccesery in board
         return p.attack(this);
 
     }
@@ -67,7 +76,7 @@ public class Monster extends Enemy implements Visitor {
     }
 
     @Override
-    public boolean visit(Visited V) {
-        return false;
+    public boolean visit(Visited v) {
+        return v.accept(this);
     }
 }
