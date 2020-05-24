@@ -57,12 +57,13 @@ public class Monster extends Enemy implements Visitor {
 
     @Override
     public boolean accept(Player p) {
-        p.attack(this);
+        return p.attack(this);
+
     }
 
     @Override
     public boolean accept(Monster m) {
-
+        return false;
     }
 
     @Override

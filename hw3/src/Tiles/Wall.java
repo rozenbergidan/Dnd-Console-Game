@@ -19,12 +19,12 @@ public class Wall extends Tile {
     }
 
     @Override
-    public void accept(Player p) {
-        //DO NOTHING
+    public boolean accept(Player p) {
+        return false;
     }
 
     @Override
-    public void accept(Monster m) {
-        //DO NOTHING
+    public boolean accept(Monster m) {
+        return false;
     }
 }

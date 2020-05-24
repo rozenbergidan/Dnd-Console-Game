@@ -18,12 +18,12 @@ public class Empty extends Tile {
     }
 
     @Override
-    public void accept(Player p) {
-        //DO NOTHING
+    public boolean accept(Player p) {
+        return true;
     }
 
     @Override
-    public void accept(Monster m) {
-        //DO NOTHING
+    public boolean accept(Monster m) {
+        return true;
     }
 }

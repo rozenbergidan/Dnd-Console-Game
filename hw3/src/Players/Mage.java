@@ -20,24 +20,25 @@ public class Mage extends Player{
     }
 
     @Override
-    public void accept(Player p){
-
-    }
-
-    @Override
-    public void accept(Monster m) {
-
-    }
-
-    @Override
-    public void visit(Visited V) {
-
-    }
-
-    @Override
     public void act(Board b) {
 
     }
+
+    @Override
+    public boolean accept(Player p) {
+        return false;
+    }
+
+    @Override
+    public boolean accept(Monster m) {
+        return false;
+    }
+
+    @Override
+    public boolean visit(Visited V) {
+        return false;
+    }
+
 
     private class Mana{// nested class
         private int manaPool;

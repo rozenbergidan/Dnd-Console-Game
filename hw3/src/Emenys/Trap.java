@@ -8,6 +8,9 @@ import VisitorPattern.Visited;
 public class Trap extends Enemy implements Observer {
     private int visibilityTime;
     private int invisibilityTime;
+    int count;
+    boolean visible;
+
     public Trap(Point point, char character, String name, int attack, int defence, int health, int visibilityTime, int invisibilityTime, int expValue ) {
         super(expValue,point, character, name, attack, defence, health);
         this.visibilityTime=visibilityTime;
@@ -16,7 +19,8 @@ public class Trap extends Enemy implements Observer {
 
     @Override
     public void onTickAct(Board board) {
-
+        if(visibilityTime>0) visibilityTime--;
+        if(invisibilityTime>0) invisibilityTime--;
     }
 
     @Override
@@ -25,17 +29,17 @@ public class Trap extends Enemy implements Observer {
     }
 
     @Override
-    public void accept(Player p) {
-
+    public boolean accept(Player p) {
+        return false;
     }
 
     @Override
-    public void accept(Monster m) {
-
+    public boolean accept(Monster m) {
+        return false;
     }
 
     @Override
-    public void visit(Visited V) {
-
+    public boolean visit(Visited V) {
+        return false;
     }
 }

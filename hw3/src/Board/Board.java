@@ -5,6 +5,7 @@ import ObserverPattern.*;
 import Players.*;
 import Tiles.*;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Board implements Observable {
@@ -12,6 +13,7 @@ public class Board implements Observable {
     private static Board instance = null;
     private Tile[][] tiles;
     String[] levels;
+    int level;
     //private int gameTickCount;
 
     Player player;
@@ -19,11 +21,12 @@ public class Board implements Observable {
     List<Observer> tickObserver;
 
 
-    private Board(String board, String character) {
+    private Board(String board, String character,int level) {
+        enemiesList=new LinkedList<>();
+        this.level=level;
         int i = 0;
         int j = 0;
         char tile;
-        Player player = null;
         Enemy tl;
 
         while (!board.equals("")) {
@@ -117,7 +120,7 @@ public class Board implements Observable {
     }
 
     public static void initBoard(String[] levels, String player,int level) {
-        if (instance == null) instance = new Board(levels[level], player);
+        if (instance == null) instance = new Board(levels[level],player,level);
     }
 
     public Player getPlayer() {
@@ -147,4 +150,6 @@ public class Board implements Observable {
     public void callObservers() {
 
     }
+
+
 }
