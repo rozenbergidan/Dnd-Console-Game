@@ -1,9 +1,13 @@
+package Board;
+
+import ObserverPattern.*;
+import Tiles.*;
 import java.util.List;
 
 public class Board implements Observable {
     private Tile[][] tiles;
     //private int gameTickCount;
-    List<Unit> units;
+    List<ActiveCharacter> ActiveList;
     List<Observer> TickObserver;
 
 
