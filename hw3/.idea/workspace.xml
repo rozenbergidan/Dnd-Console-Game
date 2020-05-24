@@ -3,32 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="302a7f79-2769-459d-a98c-65ead7c8c06d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Board/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Board/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Emenys/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Emenys/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Mage$Mana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Mage$Mana.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Mage$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Mage$SpecialAbility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Mage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Mage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$SpecialAbility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility$CoolDown.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility$CoolDown.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Warrior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Warrior.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Empty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Empty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Wall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/VisitorPattern/Visited.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/VisitorPattern/Visited.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/VisitorPattern/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/VisitorPattern/Visitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Emenys/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Emenys/Trap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Trap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Rogue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Empty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tiles/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

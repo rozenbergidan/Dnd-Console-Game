@@ -7,9 +7,9 @@ import VisitorPattern.*;
 public abstract class Unit  extends Tile implements Visitor {
     // FILDES
     private String name;
-    private Health health;
-    private int attackPoint;
-    private int defencePoint;
+    protected Health health;
+    protected int attackPoint;
+    protected int defencePoint;
 
     public Unit(Point point,char character, String name, int attack, int defence, int health) {
         this.location = point;
@@ -31,7 +31,7 @@ public abstract class Unit  extends Tile implements Visitor {
     }
 
 
-    private class  Health{// nested class
+    protected class  Health{// nested class
         private int healthPool;
         private int healthAmount;
 
@@ -39,11 +39,10 @@ public abstract class Unit  extends Tile implements Visitor {
             this.healthPool = initHealthPool;
         }
 
-
-//        public void levelUp(int multiplyHP){
-//            healthPool = healthPool * multiplyHP;
-//            healthAmount = healthPool;
-//        }
+        public void levelUP(int level){
+            healthPool = healthPool + 10*level;
+            healthAmount = healthPool;
+        }
 
         //return true if the Unit died
         public boolean healthDecrease(int x){
@@ -53,5 +52,7 @@ public abstract class Unit  extends Tile implements Visitor {
             }
             return false;
         }
+        public int getHealthPool(){return healthPool;}
+        public void setHealthPool(int newHealthPool){this.healthPool=newHealthPool;}
     }
 }

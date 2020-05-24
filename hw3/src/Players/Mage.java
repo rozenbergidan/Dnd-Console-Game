@@ -14,9 +14,17 @@ public class Mage extends Player{
         specialAbility=new SpecialAbility(manaCost,spellPower,hitsCount,range);
     }
 
+    public void levelUP(){
+        super.levelUP();
+        mana.currentMana=Math.min(mana.currentMana+mana.manaPool/4,mana.manaPool);
+        mana.manaPool=mana.manaPool+25*level;
+        specialAbility.spellPower=specialAbility.spellPower+10*level;
+
+    }
+
     @Override
     public void onTickAct(Board board) {
-
+        mana.currentMana=(Math.min(mana.manaPool,mana.currentMana+level));
     }
 
     @Override
