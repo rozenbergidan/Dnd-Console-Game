@@ -1,13 +1,13 @@
 package Players;
 
 import Board.*;
+import ObserverPattern.Observer;
 import Tiles.*;
 
-public abstract class Player extends Unit implements ActiveCharacter {
-//    public final char ON_MAP='@';
+public abstract class Player extends Unit implements Observer{
+    //    public final char ON_MAP='@';
     private final int START_LEVEL=1;
     private final int START_EXP=0;
-
     int level;
     int exp;
 

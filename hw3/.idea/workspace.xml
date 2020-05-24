@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="302a7f79-2769-459d-a98c-65ead7c8c06d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw3/Board/Point.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/hw3/VisitorPattern/Visited.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board/ActiveCharacter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Emenys/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Emenys/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Rogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tiles/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1c8aHzAGVlbrzejNVKBGLr0qFca" />
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="302a7f79-2769-459d-a98c-65ead7c8c06d" name="Default Changelist" comment="" />
+      <created>1589912591447</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589912591447</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1590321360927">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1590321360927" />
+  </component>
+</project>

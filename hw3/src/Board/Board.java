@@ -9,6 +9,7 @@ import java.util.List;
 public class Board implements Observable {
     private Tile[][] tiles;
     //private int gameTickCount;
+
     List<Player> PlayersList;
     List<Enemy> EnemeiesList;
     List<Observer> TickObserver;

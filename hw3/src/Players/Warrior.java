@@ -18,10 +18,6 @@ public class Warrior extends Player{
 
     }
 
-    @Override
-    public void act() {
-
-    }
 
     @Override
     public void accept(Player p) {
@@ -35,6 +31,11 @@ public class Warrior extends Player{
 
     @Override
     public void visit(Visited V) {
+
+    }
+
+    @Override
+    public void act(Board b) {
 
     }
 

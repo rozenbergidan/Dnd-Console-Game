@@ -15,11 +15,6 @@ public class Mage extends Player{
     }
 
     @Override
-    public void act() {
-
-    }
-
-    @Override
     public void onTickAct(Board board) {
 
     }
@@ -36,6 +31,11 @@ public class Mage extends Player{
 
     @Override
     public void visit(Visited V) {
+
+    }
+
+    @Override
+    public void act(Board b) {
 
     }
 
