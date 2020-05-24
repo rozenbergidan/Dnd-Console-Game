@@ -41,8 +41,10 @@ public class Warrior extends Player{
 
     private class SpecialAbility{
         private final String NAME = "Avenger’s Shield";
-        private final String DESCRIPTION = "randomly hits one enemy withing range < 3 for an amount equals to 10% of the warrior’s max health and heals the warrior for amount equals to (10% defense) *will not exceed the total amount of health pool).";
-        private final int RANGE = 3;
+        private final String DESCRIPTION ="randomly hits one enemy withing range < 3 for an amount\n" +
+                "equals to 10% of the warrior’s max health and heals the warrior for amount equals to (10\u0002defense)\n" +
+                "(but will not exceed the total amount of health pool).";
+        private final int MAX_RANGE = 3;
 
         private String name;
         private String description;
@@ -53,7 +55,7 @@ public class Warrior extends Player{
             this.name = NAME;
             this.description=DESCRIPTION;
             coolDown=new CoolDown(cd);
-            range = RANGE;
+            range = MAX_RANGE;
         }
 
         private class CoolDown{

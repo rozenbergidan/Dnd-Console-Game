@@ -2,26 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="302a7f79-2769-459d-a98c-65ead7c8c06d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/hw3/Board/Point.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/hw3/VisitorPattern/Visited.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board/ActiveCharacter.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Emenys/Trap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Emenys/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Emenys/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Rogue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +58,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1590321360927">
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1590324525918">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1590321360927" />
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1590324525918" />
+    <state x="375" y="216" width="531" height="260" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590324905560">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="375" y="216" width="531" height="260" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1590324905560" />
   </component>
 </project>
