@@ -1,10 +1,19 @@
 package Players;
 
-import Board.Board;
+import Board.*;
 import Emenys.Monster;
 import VisitorPattern.Visited;
 
 public class Mage extends Player{
+    private Mana mana;
+    private int manaCost;
+    private int spellPower;
+    private int hitsCount;
+
+    public Mage(String name, int attack, int defence, int health, Point point) {
+        super(name, attack, defence, health, point);
+    }
+
     @Override
     public void act() {
 
@@ -16,13 +25,13 @@ public class Mage extends Player{
     }
 
     @Override
-    public boolean accept(Player p) {
-        return false;
+    public void accept(Player p){
+
     }
 
     @Override
-    public boolean accept(Monster m) {
-        return false;
+    public void accept(Monster m) {
+
     }
 
     @Override
@@ -31,6 +40,20 @@ public class Mage extends Player{
     }
 
     private class Mana{// nested class
+        private int manaPool;
+        private int currentMana;
+
+        public Mana(int manaPool){
+            this.manaPool=manaPool;
+            this.currentMana=manaPool;
+        }
+    }
+
+    private class SpecialAbility{
+
+        private String name;
+        private String desc;
+        private int range;
 
     }
 }

@@ -10,13 +10,21 @@ public abstract class Unit  extends Tile implements Observer, Visitor {
     private String name;
     private Health health;
     private int attackPoint;
-    private int deffencePoint;
+    private int defencePoint;
 
+    public Unit(Point point,char character, String name, int attack, int defence, int health){
+        this.location=point;
+        this.character=character;
+        this.name=name;
+        this.attackPoint=attack;
+        this.defencePoint=defence;
+        this.health=new Health(health);
+    }
 
     public abstract void onTickAct(Board board);
 
     private class  Health{// nested class
         int healthPool;
-        int HealthAmount;
+        int healthAmount;
     }
 }
