@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Emenys/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Emenys/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Emenys/Trap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Emenys/Trap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Emenys/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Emenys/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Rogue.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +44,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="302a7f79-2769-459d-a98c-65ead7c8c06d" name="Default Changelist" comment="" />
+      <changelist id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="" />
       <created>1589912591447</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
