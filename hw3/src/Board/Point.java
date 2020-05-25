@@ -28,4 +28,11 @@ public class Point {
     public double range(Point p){
         return Math.sqrt((this.x-p.x)*(this.x-p.x) + (this.y-p.y)*(this.y-p.y));
     }
+
+    public void setX(int i) {
+        x=i;
+    }
+    public void setY(int j){
+        y=j;
+    }
 }

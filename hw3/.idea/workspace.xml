@@ -3,6 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tiles/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
+>>>>>>> 777a5a841847fdce5fb0c7990a8e51968f0f5fbe
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,11 +26,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="ProjectId" id="1c8aHzAGVlbrzejNVKBGLr0qFca" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+>>>>>>> 777a5a841847fdce5fb0c7990a8e51968f0f5fbe
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
+<<<<<<< HEAD
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -28,11 +55,110 @@
         </RuleState>
       </list>
     </option>
+=======
+  <component name="RunManager">
+    <configuration name="Tests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tests" />
+      <module name="hw3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Tests" />
+      </list>
+    </recent_temporary>
+>>>>>>> 777a5a841847fdce5fb0c7990a8e51968f0f5fbe
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
+<<<<<<< HEAD
     <servers />
   </component>
+=======
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="" />
+      <created>1589912591447</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589912591447</updated>
+      <workItem from="1590425540581" duration="3493000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1590336960514">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1590336960514" />
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1590336940639" />
+    <state x="375" y="216" width="531" height="260" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590336940639" />
+    <state x="375" y="216" width="531" height="260" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1590336940639" />
+    <state width="1225" height="169" key="GridCell.Tab.0.bottom" timestamp="1590428965928">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="169" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590428965928" />
+    <state width="1225" height="169" key="GridCell.Tab.0.center" timestamp="1590428965928">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="169" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590428965928" />
+    <state width="1225" height="169" key="GridCell.Tab.0.left" timestamp="1590428965928">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="169" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590428965928" />
+    <state width="1225" height="169" key="GridCell.Tab.0.right" timestamp="1590428965928">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="169" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590428965928" />
+    <state width="1225" height="205" key="GridCell.Tab.1.bottom" timestamp="1590428634840">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="205" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590428634840" />
+    <state width="1225" height="205" key="GridCell.Tab.1.center" timestamp="1590428634840">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="205" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1590428634840" />
+    <state width="1225" height="205" key="GridCell.Tab.1.left" timestamp="1590428634840">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="205" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1590428634840" />
+    <state width="1225" height="205" key="GridCell.Tab.1.right" timestamp="1590428634840">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="205" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1590428634840" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1590425746107">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590425746107" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Board/Board.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+>>>>>>> 777a5a841847fdce5fb0c7990a8e51968f0f5fbe
 </project>

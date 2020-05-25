@@ -31,4 +31,10 @@ public abstract class Player extends Unit implements Observer{
         //if (action == 'e')
 
     }
+
+    public void setLocation(int i, int j) {
+        location.setX(i);
+        location.setY(j);
+    }
+
 }
