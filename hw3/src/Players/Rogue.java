@@ -14,14 +14,20 @@ public class Rogue extends Player{
         specialAbility=new SpecialAbility(energyCost);
     }
 
+    public void levelUP(){
+        super.levelUP();
+        energy.currentEnergy=100;
+        attackPoint=attackPoint+3*level;
+    }
+
     @Override
-    public void onTickAct(Board board) {
+    public void castSpacialAbillity() {
 
     }
 
     @Override
-    public void act(Board b) {
-
+    public void onTickAct(Board board) {
+        energy.currentEnergy=Math.min(energy.currentEnergy+10,100);
     }
 
     @Override

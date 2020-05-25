@@ -15,12 +15,22 @@ public class Trap extends Enemy implements Observer {
         super(expValue,point, character, name, attack, defence, health);
         this.visibilityTime=visibilityTime;
         this.invisibilityTime=invisibilityTime;
+        count=0;
+        visible=true;
     }
 
     @Override
     public void onTickAct(Board board) {
-        if(visibilityTime>0) visibilityTime--;
-        if(invisibilityTime>0) invisibilityTime--;
+        count++;
+        if(count>visibilityTime && visible) {
+            visible = false;
+            count=0;
+        }
+        else if(!visible && count>invisibilityTime){
+            visible=true;
+            count=0;
+        }
+
     }
 
     @Override
