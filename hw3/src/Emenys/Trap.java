@@ -47,5 +47,12 @@ public class Trap extends Enemy implements Observer {
     public boolean accept(Monster m) {
         return false;
     }
-    
+
+
+    @Override
+    public char getCharacter(){
+        if (visible) return character;
+        else return '.';
+    }
+
 }

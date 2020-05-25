@@ -21,19 +21,21 @@ public class Board implements Observable {
     List<Enemy> enemiesList;
     List<Observer> tickObserver;
 
-    private Board() {
+    private Board() { // for singleton use
     }
 
     public void initBoard(String[] levels) { //will be called once in game controller
         this.levels = levels;
         level = -1;
     }
+
     public int[] getBoardSize(){
         int[]arr=new int[2];
         arr[0]=levels[level].split("\n").length;
         arr[1]=levels[level].indexOf('\n');
         return arr;
     }
+
     public void selectCharacter(int index) {
         if (player == null) {
             if (index == 1) {
@@ -51,18 +53,21 @@ public class Board implements Observable {
             } else {
                 System.out.println("NOT SUPPOSED TO HAPPEN");
             }
+            addObserver(player);
             System.out.println("You have selected: " + player.getName());
         }
     } //will be called once in game controller
 
     public void buildBoard() {
         enemiesList = new LinkedList<>();
+        tickObserver=new LinkedList<>();
         level++;
         tiles=new Tile[getBoardSize()[0]][getBoardSize()[1]];
         int i = 0;
         int j = 0;
         char tile;
         Enemy tl;
+        Trap tp;
         String board = levels[level];
 
         while (!board.equals("")) {
@@ -82,53 +87,56 @@ public class Board implements Observable {
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'k') {
-                tl = new Monster(new Point(i, j), 'l', "Lannister Knight", 14, 8, 200, 4, 50);//monster --Lannister Knight;
-                tiles[i][j] = tl;
+                tl = new Monster(new Point(i, j), 'l', "Lannister Knight", 14, 8, 200, 4, 50);
+                tiles[i][j]=tl;
                 enemiesList.add(tl);
             } else if (tile == 'q') {
-                tl = new Monster(new Point(i, j), 'q', "Queen’s Guard", 20, 15, 400, 5, 100);//monster --Queen’s Guard;
+                tl = new Monster(new Point(i, j), 'q', "Queen’s Guard", 20, 15, 400, 5, 100);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'z') {
-                tl = new Monster(new Point(i, j), 'z', "Wright", 30, 15, 600, 3, 100);//monster --Wright;
+                tl = new Monster(new Point(i, j), 'z', "Wright", 30, 15, 600, 3, 100);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'b') {
-                tl = new Monster(new Point(i, j), 'b', "Bear-Wright", 75, 30, 1000, 4, 250);//monster --Bear-Wright;
+                tl = new Monster(new Point(i, j), 'b', "Bear-Wright", 75, 30, 1000, 4, 250);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'g') {
-                tl = new Monster(new Point(i, j), 'g', "Giant-Wright", 100, 40, 1500, 5, 500);//monster --Giant-Wright;
+                tl = new Monster(new Point(i, j), 'g', "Giant-Wright", 100, 40, 1500, 5, 500);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'w') {
-                tl = new Monster(new Point(i, j), 'w', "White Walker", 150, 50, 2000, 6, 1000);//monster --White Walker;
+                tl = new Monster(new Point(i, j), 'w', "White Walker", 150, 50, 2000, 6, 1000);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'M') {
-                tl = new Monster(new Point(i, j), 'M', "The Mountain", 60, 25, 1000, 6, 500);//monster --The Mountain;
+                tl = new Monster(new Point(i, j), 'M', "The Mountain", 60, 25, 1000, 6, 500);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'C') {
-                tl = new Monster(new Point(i, j), 'C', "Queen Cersei", 10, 10, 100, 1, 1000);//monster --Queen Cersei;
+                tl = new Monster(new Point(i, j), 'C', "Queen Cersei", 10, 10, 100, 1, 1000);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'K') {
-                tl = new Monster(new Point(i, j), 'K', "Night’s King", 300, 150, 5000, 8, 5000);//monster --Night’s King;
+                tl = new Monster(new Point(i, j), 'K', "Night’s King", 300, 150, 5000, 8, 5000);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'B') {
-                tl = new Trap(new Point(i, j), 'B', "Bonus Trap", 1, 1, 1, 1, 5, 250);//Trap --Bonus Trap;
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
+                tp = new Trap(new Point(i, j), 'B', "Bonus Trap", 1, 1, 1, 1, 5, 250);
+                tiles[i][j] = tp;
+                enemiesList.add(tp);
+                addObserver(tp);
             } else if (tile == 'Q') {
-                tl = new Trap(new Point(i, j), 'Q', "Queen’s Trap", 20, 10, 250, 3, 7, 100);//Trap --Queen’s Trap;
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
+                tp = new Trap(new Point(i, j), 'Q', "Queen’s Trap", 20, 10, 250, 3, 7, 100);
+                tiles[i][j] = tp;
+                enemiesList.add(tp);
+                addObserver((Trap)tp);
             } else if (tile == 'D') {
-                tl = new Trap(new Point(i, j), 'D', "Death Trap", 100, 20, 500, 1, 10, 250);//Trap -- Death Trap;
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
+                tp = new Trap(new Point(i, j), 'D', "Death Trap", 100, 20, 500, 1, 10, 250);
+                tiles[i][j] = tp;
+                enemiesList.add(tp);
+                addObserver((Trap)tp);
             } else {
                 System.out.println("NOT SUPPOSED TO HAPPEN");
                 System.out.println(tile);
@@ -163,13 +171,34 @@ public class Board implements Observable {
 
     @Override
     public void addObserver(Observer O) {
-
+        tickObserver.add(O);
     }
 
     @Override
     public void callObservers() {
-
+        for (Observer o :tickObserver) {
+            o.onTickAct(this);
+        }
     }
 
+    public String toString(){
+        char[][]arr=new char[tiles.length][tiles[0].length+1];
+        String map="";
+        for(int i=0;i<tiles.length;i++){
+            int j=0;
+            for(;j<tiles[0].length;j++){
+                arr[tiles[i][j].getLocation().getX()][tiles[i][j].getLocation().getY()]=tiles[i][j].getCharacter();
+                //map=map+""+tiles[i][j].getCharacter();
+            }
+            arr[i][j]='\n';
+            //map=map+""+'\n';
+        }
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr[0].length;j++){
+                map=map+""+arr[i][j];
+            }
+        }
+        return map;
+    }
 
 }
