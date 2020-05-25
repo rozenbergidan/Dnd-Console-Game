@@ -6,7 +6,7 @@ import VisitorPattern.*;
 
 public abstract class Tile implements Visited {
     protected Point location;
-    char character;
+    protected char character;
 
     public Point getLocation() {
         return location;
@@ -14,5 +14,9 @@ public abstract class Tile implements Visited {
 
     protected void switchLocation(Tile t){
         location.substitute(t.location);
+    }
+
+    public char getCharacter(){
+        return character;
     }
 }
