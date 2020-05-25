@@ -1,7 +1,9 @@
 import Board.*;
 public class GameController {
-    public void Start(){
-        //Board.initBoard();       give input to the board and init it.
+    public void Start(String[]levels,int i){
+        Board.getBoard().initBoard(levels);
+        Board.getBoard().selectCharacter(i);
+        Board.getBoard().buildBoard();
         boolean gameOver = false;
         while (!gameOver){
             //get the char to the player

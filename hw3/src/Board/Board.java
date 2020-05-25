@@ -5,13 +5,14 @@ import ObserverPattern.*;
 import Players.*;
 import Tiles.*;
 
+import java.sql.SQLOutput;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Board implements Observable {
 
     private static Board instance = null;
-    private Tile[][] tiles;
+    public Tile[][] tiles;////////////////////////////we have to change back to private
     String[] levels;
     int level;
     //private int gameTickCount;
@@ -20,14 +21,49 @@ public class Board implements Observable {
     List<Enemy> enemiesList;
     List<Observer> tickObserver;
 
+    private Board() {
+    }
 
-    private Board(String board, String character,int level) {
-        enemiesList=new LinkedList<>();
-        this.level=level;
+    public void initBoard(String[] levels) { //will be called once in game controller
+        this.levels = levels;
+        level = -1;
+    }
+    public int[] getBoardSize(){
+        int[]arr=new int[2];
+        arr[0]=levels[level].split("\n").length;
+        arr[1]=levels[level].indexOf('\n');
+        return arr;
+    }
+    public void selectCharacter(int index) {
+        if (player == null) {
+            if (index == 1) {
+                this.player = new Warrior("Jon Snow", 30, 4, 3, 300, new Point(0, 0));
+            } else if (index == 2) {
+                this.player = new Warrior("The Hound", 20, 6, 5, 400, new Point(0, 0));
+            } else if (index == 3) {
+                this.player = new Mage("Melisandre", 5, 1, 100, 300, 30, 15, 5, 6, new Point(0, 0));
+            } else if (index == 4) {
+                this.player = new Mage("Thoros of Myr", 25, 4, 250, 150, 20, 20, 3, 4, new Point(0, 0));
+            } else if (index == 5) {
+                this.player = new Rogue("Arya Stark", 40, 2, 150, 20, new Point(0, 0));
+            } else if (index == 6) {
+                this.player = new Rogue("Bronn", 35, 3, 250, 50, new Point(0, 0));
+            } else {
+                System.out.println("NOT SUPPOSED TO HAPPEN");
+            }
+            System.out.println("You have selected: " + player.getName());
+        }
+    } //will be called once in game controller
+
+    public void buildBoard() {
+        enemiesList = new LinkedList<>();
+        level++;
+        tiles=new Tile[getBoardSize()[0]][getBoardSize()[1]];
         int i = 0;
         int j = 0;
         char tile;
         Enemy tl;
+        String board = levels[level];
 
         while (!board.equals("")) {
             tile = board.charAt(0);
@@ -35,22 +71,8 @@ public class Board implements Observable {
                 i++;
                 j = -1;
             } else if (tile == '@') {
-                if (character.equals("Jon Snow")) {
-                    this.player = new Warrior("Jon Snow", 30, 4, 3, 300, new Point(i, j));
-                } else if (character.equals("The Hound")) {
-                    this.player = new Warrior("The Hound", 20, 6, 5, 400, new Point(i, j));
-                } else if (character.equals("Melisandre")) {
-                    this.player = new Mage("Melisandre", 5, 1, 100, 300, 30, 15, 5, 6, new Point(i, j));
-                } else if (character.equals("Thoros of Myr")) {
-                    this.player = new Mage("Thoros of Myr", 25, 4, 250, 150, 20, 20, 3, 4, new Point(i, j));
-                } else if (character.equals("Arya Stark")) {
-                    this.player = new Rogue("Arya Stark", 40, 2, 150, 20, new Point(i, j));
-                } else if (character.equals("Bronn")) {
-                    this.player = new Rogue("Bronn", 35, 3, 250, 50, new Point(i, j));
-                } else {
-                    System.out.println("NOT SUPPOSED TO HAPPEN");
-                }
-                tiles[i][j] = this.player;
+                player.setLocation(i, j);
+                tiles[i][j] = player;
             } else if (tile == '.') {
                 tiles[i][j] = new Empty(new Point(i, j));
             } else if (tile == '#') {
@@ -59,7 +81,7 @@ public class Board implements Observable {
                 tl = new Monster(new Point(i, j), 's', "Lannister Solider", 8, 3, 80, 3, 25);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
-            } else if (tile == 'l') {
+            } else if (tile == 'k') {
                 tl = new Monster(new Point(i, j), 'l', "Lannister Knight", 14, 8, 200, 4, 50);//monster --Lannister Knight;
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
@@ -109,18 +131,16 @@ public class Board implements Observable {
                 enemiesList.add(tl);
             } else {
                 System.out.println("NOT SUPPOSED TO HAPPEN");
+                System.out.println(tile);
             }
             j++;
             board = board.substring(1);
         }
-    }
+    } //will be called for each level in game controller
 
     public static Board getBoard() {
+        if(instance==null) instance=new Board();
         return instance;
-    }
-
-    public static void initBoard(String[] levels, String player,int level) {
-        if (instance == null) instance = new Board(levels[level],player,level);
     }
 
     public Player getPlayer() {
