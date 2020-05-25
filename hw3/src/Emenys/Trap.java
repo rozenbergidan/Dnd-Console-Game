@@ -52,4 +52,10 @@ public class Trap extends Enemy implements Observer {
     public boolean visit(Visited V) {
         return false;
     }
+
+    @Override
+    public char getCharacter(){
+        if (visible) return character;
+        else return '.';
+    }
 }
