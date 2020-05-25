@@ -7,7 +7,7 @@ import Tiles.*;
 import VisitorPattern.Visited;
 import VisitorPattern.Visitor;
 
-public abstract class Player extends Unit implements Observer{
+public abstract class Player extends Unit implements Observer, Visitor{
     //    public final char ON_MAP='@';
     private final int START_LEVEL=1;
     private final int START_EXP=0;

@@ -4,7 +4,7 @@ import Board.*;
 import ObserverPattern.*;
 import VisitorPattern.*;
 
-public abstract class Unit  extends Tile implements Visitor {
+public abstract class Unit  extends Tile implements Visited {
     // FILDES
     private String name;
     protected Health health;

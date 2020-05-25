@@ -34,7 +34,7 @@ public class Trap extends Enemy implements Observer {
     }
 
     @Override
-    public void act(Board b) {
+    public void act() {
 
     }
 
@@ -47,9 +47,5 @@ public class Trap extends Enemy implements Observer {
     public boolean accept(Monster m) {
         return false;
     }
-
-    @Override
-    public boolean visit(Visited V) {
-        return false;
-    }
+    
 }
