@@ -34,25 +34,25 @@ public abstract class Player extends Unit implements Observer, Visitor{
         if(visit(Board.getBoard().getTile(goTo))){
             Tile toSwitch = Board.getBoard().getTile(goTo);
             switchLocation(toSwitch);
-            Board.getBoard().switchTile(location, goTo);
+            Board.getBoard().switchTile(location, toSwitch.getLocation());
         }
     }
     private void moveRight(){
-        Point goTo = new Point(location.getX() + 1, location.getY());
+        Point goTo = new Point(location.getX(), location.getY() + 1);
         moveTo(goTo);
     }
 
     private void moveLeft(){
-        Point goTo  = new Point(location.getX() - 1, location.getY());
+        Point goTo  = new Point(location.getX() , location.getY()- 1);
         moveTo(goTo);
     }
     private void moveUp(){
-        Point goTo  = new Point(location.getX(), location.getY() + 1);
+        Point goTo  = new Point(location.getX() - 1, location.getY() );
         moveTo(goTo);
     }
 
     private void moveDown(){
-        Point goTo  = new Point(location.getX(), location.getY() - 1);
+        Point goTo  = new Point(location.getX() + 1, location.getY() );
         moveTo(goTo);
     }
 

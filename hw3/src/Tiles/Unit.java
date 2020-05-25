@@ -41,6 +41,7 @@ public abstract class Unit  extends Tile implements Visited {
 
         public Health(int initHealthPool){
             this.healthPool = initHealthPool;
+            this.healthAmount = healthPool;
         }
 
         public void levelUP(int level){

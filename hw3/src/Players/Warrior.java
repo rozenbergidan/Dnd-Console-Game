@@ -30,20 +30,7 @@ public class Warrior extends Player {
         if (specialAbility.coolDown > 0) specialAbility.coolDown--;
     }
 
-    @Override
-    public boolean accept(Player p) {
-        return false;
-    }
 
-    @Override
-    public boolean accept(Monster m) {
-        return false;
-    }
-
-    @Override
-    public boolean visit(Visited V) {
-        return false;
-    }
 
     private class SpecialAbility{
         private final String NAME = "Avenger’s Shield";

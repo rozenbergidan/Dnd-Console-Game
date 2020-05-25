@@ -15,18 +15,20 @@ public class Board implements Observable {
     public Tile[][] tiles;////////////////////////////we have to change back to private
     String[] levels;
     int level;
-    //private int gameTickCount;
+
 
     Player player;
     List<Enemy> enemiesList;
     List<Observer> tickObserver;
 
     private Board() { // for singleton use
+        enemiesList = new LinkedList<>();
+        tickObserver = new LinkedList<>();
+        level = -1;
     }
 
     public void initBoard(String[] levels) { //will be called once in game controller
         this.levels = levels;
-        level = -1;
     }
 
     public int[] getBoardSize(){
@@ -87,7 +89,7 @@ public class Board implements Observable {
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'k') {
-                tl = new Monster(new Point(i, j), 'l', "Lannister Knight", 14, 8, 200, 4, 50);
+                tl = new Monster(new Point(i, j), 'k', "Lannister Knight", 14, 8, 200, 4, 50);
                 tiles[i][j]=tl;
                 enemiesList.add(tl);
             } else if (tile == 'q') {

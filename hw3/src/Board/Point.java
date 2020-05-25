@@ -19,10 +19,10 @@ public class Point {
     public void substitute(Point p){
         int tempX = x;
         int tempY = y;
-        x = p.x;
-        y = p.y;
-        p.x = tempX;
-        p.y = tempY;
+        setX(p.x);
+        setY(p.y);
+        p.setX(tempX) ;
+        p.setY(tempY);
     }
 
     public double range(Point p){

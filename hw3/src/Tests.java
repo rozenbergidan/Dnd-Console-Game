@@ -84,6 +84,68 @@ public class Tests {
         Board.getBoard().selectCharacter(1);
         Board.getBoard().buildBoard();
         System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+        Board.getBoard().getPlayer().act('d');
+        System.out.println(Board.getBoard().toString());
+
+
+
+
+
+        System.out.println(Board.getBoard().toString());
 //        System.out.println(Arrays.deepToString(Board.getBoard().tiles));
 //        Board.getBoard().buildBoard();
 //        System.out.println(Arrays.deepToString(Board.getBoard().tiles));

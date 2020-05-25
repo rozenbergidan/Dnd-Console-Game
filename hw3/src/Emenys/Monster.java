@@ -21,25 +21,24 @@ public class Monster extends Enemy implements Visitor {
             Board.getBoard().switchTile(location, goTo);
         }
     }
-    private void moveRight(){
-        Point goTo = new Point(location.getX() + 1, location.getY());
+    public void moveRight(){ ///////////// change back to private
+        Point goTo = new Point(location.getX(), location.getY() + 1);
         moveTo(goTo);
     }
 
     private void moveLeft(){
-        Point goTo  = new Point(location.getX() - 1, location.getY());
+        Point goTo  = new Point(location.getX() , location.getY()- 1);
         moveTo(goTo);
     }
     private void moveUp(){
-        Point goTo  = new Point(location.getX(), location.getY() + 1);
+        Point goTo  = new Point(location.getX() - 1, location.getY() );
         moveTo(goTo);
     }
 
     private void moveDown(){
-        Point goTo  = new Point(location.getX(), location.getY() - 1);
+        Point goTo  = new Point(location.getX() + 1, location.getY() );
         moveTo(goTo);
     }
-
     @Override
     public void act(){
         Player player = Board.getBoard().getPlayer();
