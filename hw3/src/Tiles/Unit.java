@@ -21,7 +21,7 @@ public abstract class Unit  extends Tile implements Visitor {
     }
 
 
-    public boolean attackMe(int attackDamage){// return true is died
+    public boolean attackMe(int attackDamage){// return true is died TODO: add die scenario, and send player/ player detiels
         int defence = (int)(Math.random()*(defencePoint + 1));
         return health.healthDecrease(attackDamage- defence);
     }

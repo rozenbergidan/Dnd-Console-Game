@@ -12,5 +12,5 @@ public abstract class Enemy extends Unit {
         this.expValue=expValue;
     }
 
-    public abstract void act(Board b);
+    public abstract void act();
 }

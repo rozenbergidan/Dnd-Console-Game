@@ -14,51 +14,51 @@ public class Monster extends Enemy implements Visitor {
         this.vision=vision;
     }
 
+    private void moveTo(Point goTo){
+        if(visit(Board.getBoard().getTile(goTo))){
+            Tile toSwitch = Board.getBoard().getTile(goTo);
+            switchLocation(toSwitch);
+            Board.getBoard().switchTile(location, goTo);
+        }
+    }
+    private void moveRight(){
+        Point goTo = new Point(location.getX() + 1, location.getY());
+        moveTo(goTo);
+    }
+
+    private void moveLeft(){
+        Point goTo  = new Point(location.getX() - 1, location.getY());
+        moveTo(goTo);
+    }
+    private void moveUp(){
+        Point goTo  = new Point(location.getX(), location.getY() + 1);
+        moveTo(goTo);
+    }
+
+    private void moveDown(){
+        Point goTo  = new Point(location.getX(), location.getY() - 1);
+        moveTo(goTo);
+    }
 
     @Override
-    public void act(Board b){
-        Player player = b.getPlayer();
+    public void act(){
+        Player player = Board.getBoard().getPlayer();
         if(location.range(player.getLocation())< vision){
             //algorithm to go the best path to player / go to player way
         }
         else{
             int direction = (int) Math.random()*5;
-            Point toGo;
             if(direction == 0){
-                toGo = new Point(location.getX() + 1, location.getY());
-                if(visit(b.getTile(toGo))){
-                    // go right
-                    Tile toSwitch = Board.getBoard().getTile(toGo);
-                    switchLocation(toSwitch);
-                    Board.getBoard().switchTile(location, toGo);
-                }
+                moveRight();
             }
             if(direction == 1){
-                toGo  = new Point(location.getX(), location.getY() + 1);
-                if(visit(b.getTile(toGo))){
-                    // go up
-                    Tile toSwitch = Board.getBoard().getTile(toGo);
-                    switchLocation(toSwitch);
-                    Board.getBoard().switchTile(location, toGo);
-                }
+                moveUp();
             }
             if(direction == 2){
-                toGo  = new Point(location.getX() - 1, location.getY());
-                if(visit(b.getTile(toGo))){
-                    // go left
-                    Tile toSwitch = Board.getBoard().getTile(toGo);
-                    switchLocation(toSwitch);
-                    Board.getBoard().switchTile(location, toGo);
-                }
+                moveLeft();
             }
             if(direction == 3){
-                toGo  = new Point(location.getX(), location.getY() - 1);
-                if(visit(b.getTile(toGo))){
-                    // go down
-                    Tile toSwitch = Board.getBoard().getTile(toGo);
-                    switchLocation(toSwitch);
-                    Board.getBoard().switchTile(location, toGo);
-                }
+                moveDown();
             }
         }
 
@@ -79,4 +79,6 @@ public class Monster extends Enemy implements Visitor {
     public boolean visit(Visited v) {
         return v.accept(this);
     }
+
+
 }
