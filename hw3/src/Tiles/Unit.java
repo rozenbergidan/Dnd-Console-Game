@@ -23,8 +23,12 @@ public abstract class Unit  extends Tile implements Visited {
 
     public boolean attackMe(int attackDamage){// TODO: add die scenario, and send player/ player detiels
         int defence = (int)(Math.random()*(defencePoint + 1));
-        return health.healthDecrease(attackDamage- defence); //return true if this died
+        boolean isDead = health.healthDecrease(attackDamage- defence); //return true if this died
+        if(isDead) died();
+        return isDead;
     }
+
+    public abstract void died();
 
     public boolean attack(Unit unit){
         return unit.attackMe((int)(Math.random()*(attackPoint + 1))); // return true if unit died

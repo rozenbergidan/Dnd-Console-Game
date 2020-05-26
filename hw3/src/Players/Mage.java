@@ -22,6 +22,7 @@ public class Mage extends Player{
         mana.currentMana=Math.min(mana.currentMana+mana.manaPool/4,mana.manaPool);
         mana.manaPool=mana.manaPool+25*level;
         specialAbility.spellPower=specialAbility.spellPower+10*level;
+        String output = getName() + " reached level " + level +  ": +" + (level * 15) + " Health, +"+ (level * 6) + " Attack, + " + (level * 2) + " Defense +" + (level * 25) + " maximum mana, +" + (level * 10) + " spell power";
 
     }
 

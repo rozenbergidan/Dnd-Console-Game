@@ -187,8 +187,12 @@ public class Board implements Observable {
     }
     //////////////////////////////////////////
 
-    public void removeMeFromEnemyList(Enemy enemy){
+    public void unitDied(Enemy enemy){
         enemiesList.remove(enemy);
+        Point enemyLoction = enemy.getLocation();
+        tiles[enemyLoction.getX()][enemyLoction.getY()] = new Empty(enemyLoction);
+        player.killedEnemy(enemy.getExpValue());
+        String output = enemy.getName() + " died." + player.getName() + "Jon Snow gained" + enemy.getExpValue() + "experience";
     }
 
     public String toString(){

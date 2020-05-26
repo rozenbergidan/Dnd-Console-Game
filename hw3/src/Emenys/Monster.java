@@ -15,10 +15,10 @@ public class Monster extends Enemy implements Visitor {
     }
 
     private void moveTo(Point goTo){
-        if(visit(Board.getBoard().getTile(goTo))){
-            Tile toSwitch = Board.getBoard().getTile(goTo);
-            switchLocation(toSwitch);
-            Board.getBoard().switchTile(location, goTo);
+        Tile toVisit = Board.getBoard().getTile(goTo);
+        if(visit(toVisit)){
+            switchLocation(toVisit);
+            Board.getBoard().switchTile(location, toVisit.getLocation());
         }
     }
     public void moveRight(){ ///////////// change back to private
@@ -78,6 +78,7 @@ public class Monster extends Enemy implements Visitor {
     public boolean visit(Visited v) {
         return v.accept(this);
     }
+
 
 
 }

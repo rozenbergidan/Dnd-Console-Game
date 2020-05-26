@@ -31,10 +31,10 @@ public abstract class Player extends Unit implements Observer, Visitor{
     public abstract void castSpacialAbillity();
 
     private void moveTo(Point goTo){
+        //Tile toVisit = Board.getBoard().getTile(goTo);
         if(visit(Board.getBoard().getTile(goTo))){
-            Tile toSwitch = Board.getBoard().getTile(goTo);
-            switchLocation(toSwitch);
-            Board.getBoard().switchTile(location, toSwitch.getLocation());
+            switchLocation(Board.getBoard().getTile(goTo));
+            Board.getBoard().switchTile(location, Board.getBoard().getTile(goTo).getLocation());
         }
     }
     private void moveRight(){
@@ -68,6 +68,17 @@ public abstract class Player extends Unit implements Observer, Visitor{
     public void setLocation(int i, int j) {
         location.setX(i);
         location.setY(j);
+    }
+
+    public void killedEnemy(int monsterExp){
+        exp = exp + monsterExp;
+        if (exp >= level * 50){
+            levelUP();
+        }
+    }
+
+    public void died(){
+        this.character = 'X';
     }
 
     @Override
