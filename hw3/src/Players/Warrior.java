@@ -34,7 +34,7 @@ public class Warrior extends Player {
             Enemy attackedEnemy=inRangeEnemies.get((int)Math.random()*inRangeEnemies.size());
 
             health.healthIncrease(10*defencePoint);
-            attackedEnemy.health.healthDecrease((int)(health.getHealthPool()*0.1));
+            attackedEnemy.health.healthDecrease((int)(health.getHealthPool()*0.1));// if dead need to do something
             specialAbility.remainingCooldown=specialAbility.coolDown;
         }
     }
@@ -44,6 +44,9 @@ public class Warrior extends Player {
         if (specialAbility.coolDown > 0) specialAbility.coolDown--;
     }
 
+    public void print(){
+
+    }
 
 
     private class SpecialAbility{
