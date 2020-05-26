@@ -4,8 +4,6 @@ import Emenys.*;
 import ObserverPattern.*;
 import Players.*;
 import Tiles.*;
-
-import java.sql.SQLOutput;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,8 +13,6 @@ public class Board implements Observable {
     public Tile[][] tiles;////////////////////////////we have to change back to private
     String[] levels;
     int level;
-
-
     Player player;
     List<Enemy> enemiesList;
     List<Observer> tickObserver;
@@ -169,7 +165,7 @@ public class Board implements Observable {
 
     public boolean gameTick() {
         return false;
-    }
+    }// return true if game over
 
     @Override
     public void addObserver(Observer O) {
@@ -189,17 +185,17 @@ public class Board implements Observable {
         for(int i=0;i<tiles.length;i++){
             int j=0;
             for(;j<tiles[0].length;j++){
-                arr[tiles[i][j].getLocation().getX()][tiles[i][j].getLocation().getY()]=tiles[i][j].getCharacter();
-                //map=map+""+tiles[i][j].getCharacter();
+                //arr[tiles[i][j].getLocation().getX()][tiles[i][j].getLocation().getY()]=tiles[i][j].getCharacter();
+                map=map+""+tiles[i][j].getCharacter();
             }
-            arr[i][j]='\n';
-            //map=map+""+'\n';
+            //arr[i][j]='\n';
+            map=map+""+'\n';
         }
-        for(int i=0;i<arr.length;i++){
-            for(int j=0;j<arr[0].length;j++){
-                map=map+""+arr[i][j];
-            }
-        }
+//        for(int i=0;i<arr.length;i++){
+//            for(int j=0;j<arr[0].length;j++){
+//                map=map+""+arr[i][j];
+//            }
+//        }
         return map;
     }
 
