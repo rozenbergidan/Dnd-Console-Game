@@ -12,6 +12,15 @@ public abstract class Enemy extends Unit {
         this.expValue = expValue;
     }
 
+    public int getExpValue(){
+        return expValue;
+    }
+
+    @Override
+    public void died() {
+        Board.getBoard().unitDied(this);
+    }
+
     public abstract void act();
 
     public String toString() {

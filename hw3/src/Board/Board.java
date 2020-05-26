@@ -4,8 +4,6 @@ import Emenys.*;
 import ObserverPattern.*;
 import Players.*;
 import Tiles.*;
-
-import java.sql.SQLOutput;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,8 +13,6 @@ public class Board implements Observable {
     public Tile[][] tiles;////////////////////////////we have to change back to private
     String[] levels;
     int level;
-
-
     Player player;
     List<Enemy> enemiesList;
     List<Observer> tickObserver;
@@ -175,7 +171,7 @@ public class Board implements Observable {
         }
         callObservers();
         return false;
-    }
+    }// return true if game over
 
     //////////////////////////Observer Pattern
     @Override
@@ -191,8 +187,12 @@ public class Board implements Observable {
     }
     //////////////////////////////////////////
 
-    public void removeMeFromEnemyList(Enemy enemy){
+    public void unitDied(Enemy enemy){
         enemiesList.remove(enemy);
+        Point enemyLoction = enemy.getLocation();
+        tiles[enemyLoction.getX()][enemyLoction.getY()] = new Empty(enemyLoction);
+        player.killedEnemy(enemy.getExpValue());
+        String output = enemy.getName() + " died." + player.getName() + "Jon Snow gained" + enemy.getExpValue() + "experience";
     }
 
     public String toString(){
@@ -201,17 +201,17 @@ public class Board implements Observable {
         for(int i=0;i<tiles.length;i++){
             int j=0;
             for(;j<tiles[0].length;j++){
-                arr[tiles[i][j].getLocation().getX()][tiles[i][j].getLocation().getY()]=tiles[i][j].getCharacter();
-                //map=map+""+tiles[i][j].getCharacter();
+                //arr[tiles[i][j].getLocation().getX()][tiles[i][j].getLocation().getY()]=tiles[i][j].getCharacter();
+                map=map+""+tiles[i][j].getCharacter();
             }
-            arr[i][j]='\n';
-            //map=map+""+'\n';
+            //arr[i][j]='\n';
+            map=map+""+'\n';
         }
-        for(int i=0;i<arr.length;i++){
-            for(int j=0;j<arr[0].length;j++){
-                map=map+""+arr[i][j];
-            }
-        }
+//        for(int i=0;i<arr.length;i++){
+//            for(int j=0;j<arr[0].length;j++){
+//                map=map+""+arr[i][j];
+//            }
+//        }
         return map;
     }
 

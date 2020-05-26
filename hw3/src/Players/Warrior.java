@@ -17,11 +17,14 @@ public class Warrior extends Player {
         specialAbility = new SpecialAbility(cooldown);
     }
 
+    @Override
     public void levelUP(){
         super.levelUP();
         health.setHealthPool(health.getHealthPool()+5*level);
         attackPoint=attackPoint+2*level;
         defencePoint=defencePoint+level;
+
+        String output = getName() + " reached level " + level +  ": +" + (level * 15) + " Health, +"+ (level * 6) + " Attack, +"+ (level * 2) + "Defense";
     }
 
     @Override
@@ -49,6 +52,7 @@ public class Warrior extends Player {
     public String toString(){
         return super.toString()+"\t\t"+specialAbility.toString();
     }
+
     private class SpecialAbility{
         private final String NAME = "Avenger’s Shield";
         private final String DESCRIPTION = "randomly hits one enemy withing range < 3 for an amount\n" +

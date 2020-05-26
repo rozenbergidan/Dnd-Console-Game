@@ -21,6 +21,7 @@ public class Rogue extends Player{
         super.levelUP();
         energy.currentEnergy=100;
         attackPoint=attackPoint+3*level;
+        String output = getName() + " reached level " + level +  ": +" + (level * 10) + " Health, +"+ (level * 7) + " Attack, +"+ (level * 1) + "Defense";
     }
 
     @Override

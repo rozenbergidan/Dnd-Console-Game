@@ -11,14 +11,13 @@ public class GameController {
         Board.getBoard().selectCharacter(i);
         Board.getBoard().buildBoard();
         boolean gameOver = false;
-        int j = 0;
-        while (!gameOver & j < 20){
+        Scanner scan = new Scanner(System.in);
+        while (!gameOver){
             System.out.println("pick a move: ");
-
-            char playerAct = 's';// = ...get the char to the player
+            char playerAct = scan.next().charAt(0);// = ...get the char to the playerd
             gameOver = Board.getBoard().gameTick(playerAct);// send with char
             System.out.println(Board.getBoard().toString());
-            j ++;
+
         }
     }
 }

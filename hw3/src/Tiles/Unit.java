@@ -21,6 +21,7 @@ public abstract class Unit  extends Tile implements Visited {
     }
 
 
+
     public boolean attackMe(int attackDamage,Unit unit){// return true is died TODO: add die scenario, and send player/ player detiels
         String output;
         int defence = (int)(Math.random()*(defencePoint + 1));
@@ -28,8 +29,12 @@ public abstract class Unit  extends Tile implements Visited {
         int dmgDealt=attackDamage- defence;
         output=output+unit.getName()+" dealt "+dmgDealt+"damage to "+getName()+"\n";
         //TODO print to Screen
-        return health.healthDecrease(dmgDealt);
+        boolean isDead = health.healthDecrease(attackDamage- defence); //return true if this died
+        if(isDead) died();
+        return isDead;
     }
+
+    public abstract void died();
 
     public boolean attack(Unit unit){
         String output=getName()+" engaged in combat with +"+unit.name+".\n";
@@ -39,6 +44,7 @@ public abstract class Unit  extends Tile implements Visited {
         output=output+getName()+" rolled "+ attack+" attack points.\n";
         //TODO print to screen
         return unit.attackMe(attack,this);
+
     }
 
     public String getName() {
