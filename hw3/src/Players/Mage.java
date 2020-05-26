@@ -28,19 +28,20 @@ public class Mage extends Player{
     @Override
     public void castSpacialAbillity() {
         if(mana.currentMana<specialAbility.manaCost){ //print error message
-
+            String output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+mana.toString()+".\n";//Melisandre tried to cast Blizzard, but there was not enough mana: 9/30.
         }
         else{
             mana.currentMana=mana.currentMana-specialAbility.manaCost;
             int hits=specialAbility.hitsCount;
             List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeMage(this,specialAbility.range);
+            String output=getName()+" cast "+specialAbility.name+".\n";
             for(Enemy e: inRangeEnemies){
                 if(hits==0){ // do nothing
 
                 }
                 else{
                     hits--;
-                    e.attackMe(specialAbility.spellPower);
+                    e.attackMe(specialAbility.spellPower,this);
                 }
             }
         }
@@ -66,7 +67,9 @@ public class Mage extends Player{
         return false;
     }
 
-
+    public String toString(){
+        return super.toString()+"\t\t"+mana.toString()+"\t\t"+"SpellPower: "+specialAbility.spellPower;
+    }
     private class Mana{// nested class
         private int manaPool;
         private int currentMana;
@@ -74,6 +77,12 @@ public class Mage extends Player{
         public Mana(int manaPool){
             this.manaPool=manaPool;
             this.currentMana=manaPool/4;
+        }
+
+        public String toString(){
+            String output="";
+            output="Mana: "+currentMana+"/"+manaPool;
+            return output;
         }
     }
 
@@ -97,6 +106,6 @@ public class Mage extends Player{
             this.hitsCount=hitsCount;
             this.range=range;
         }
-
     }
+
 }

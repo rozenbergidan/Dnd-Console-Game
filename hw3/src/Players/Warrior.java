@@ -27,15 +27,17 @@ public class Warrior extends Player {
     @Override
     public void castSpacialAbillity() {
         if(specialAbility.remainingCooldown>0){//print error message
-
+            String output=getName()+" tried to cast "+specialAbility.name+", but there is a cooldown: "+specialAbility.remainingCooldown+".\n";
+            //TODO print to Screen
         }
         else{
             List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range);
             Enemy attackedEnemy=inRangeEnemies.get((int)Math.random()*inRangeEnemies.size());
-
             health.healthIncrease(10*defencePoint);
-            attackedEnemy.health.healthDecrease((int)(health.getHealthPool()*0.1));// if dead need to do something
+            String output=getName()+" used "+specialAbility.name+", healing for "+10*defencePoint+".\n";
+            attackedEnemy.attackMe((int)(health.getHealthPool()*0.1),this);
             specialAbility.remainingCooldown=specialAbility.coolDown;
+            //TODO print to Screen
         }
     }
 
@@ -44,11 +46,9 @@ public class Warrior extends Player {
         if (specialAbility.coolDown > 0) specialAbility.coolDown--;
     }
 
-    public void print(){
-
+    public String toString(){
+        return super.toString()+"\t\t"+specialAbility.toString();
     }
-
-
     private class SpecialAbility{
         private final String NAME = "Avenger’s Shield";
         private final String DESCRIPTION = "randomly hits one enemy withing range < 3 for an amount\n" +
@@ -94,6 +94,12 @@ public class Warrior extends Player {
 
         public boolean isAvailable() {
             return available;
+        }
+
+        public String toString(){
+            String output="";
+            output="CoolDown: "+remainingCooldown+"/"+coolDown;
+            return output;
         }
     }
 }

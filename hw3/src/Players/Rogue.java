@@ -33,7 +33,7 @@ public class Rogue extends Player{
             List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeRogue(this,specialAbility.range);
             for(Enemy e: inRangeEnemies){
                 //TODO continue this
-                e.attackMe(attackPoint);
+                e.attackMe(attackPoint,this);
             }
         }
     }
@@ -58,6 +58,10 @@ public class Rogue extends Player{
         return false;
     }
 
+    public String toString(){
+        return super.toString()+"\t\t"+energy.toString();
+    }
+
     private class Energy{
         private final int MAX_ENERGY=100;
 
@@ -67,6 +71,12 @@ public class Rogue extends Player{
         public Energy(){
             this.totalEnergy=MAX_ENERGY;
             this.currentEnergy=MAX_ENERGY;
+        }
+
+        public String toString(){
+            String output="";
+            output="Energy: "+currentEnergy+"/"+totalEnergy;
+            return output;
         }
     }
     private class SpecialAbility{

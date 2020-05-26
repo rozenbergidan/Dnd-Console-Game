@@ -84,4 +84,10 @@ public abstract class Player extends Unit implements Observer, Visitor{
     public boolean accept(Monster m) {
         return m.attack(this);
     }
+
+    public String toString(){
+        String output="";
+        output=getName() + "\t\t" + health.toString() + "\t\t" + "Attack: " + attackPoint + "\t\t" + "Defence: " + defencePoint+"\t\t"+"Level: "+ level+"\t\t"+"Experience: "+ exp+"\\"+50*level;
+        return output;
+    }
 }

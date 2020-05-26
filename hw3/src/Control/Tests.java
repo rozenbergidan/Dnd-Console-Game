@@ -88,16 +88,5 @@ public class Tests {
         GC.Start(levels, 1);
 
 
-
-
-        System.out.println(Board.getBoard().toString());
-//        System.out.println(Arrays.deepToString(Board.getBoard().tiles));
-//        Board.getBoard().buildBoard();
-//        System.out.println(Arrays.deepToString(Board.getBoard().tiles));
-//        Board.getBoard().buildBoard();
-//        System.out.println(Arrays.deepToString(Board.getBoard().tiles));
-//        Board.getBoard().buildBoard();
-//        System.out.println(Arrays.deepToString(Board.getBoard().tiles));
-
     }
 }
