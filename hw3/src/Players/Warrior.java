@@ -1,8 +1,12 @@
 package Players;
 
 import Board.*;
+import Emenys.Enemy;
 import Emenys.Monster;
+import Tiles.Unit;
 import VisitorPattern.Visited;
+
+import java.util.List;
 
 public class Warrior extends Player {
 
@@ -22,7 +26,17 @@ public class Warrior extends Player {
 
     @Override
     public void castSpacialAbillity() {
+        if(specialAbility.remainingCooldown>0){//print error message
 
+        }
+        else{
+            List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range);
+            Enemy attackedEnemy=inRangeEnemies.get((int)Math.random()*inRangeEnemies.size());
+
+            health.healthIncrease(10*defencePoint);
+            attackedEnemy.health.healthDecrease((int)(health.getHealthPool()*0.1));
+            specialAbility.remainingCooldown=specialAbility.coolDown;
+        }
     }
 
     @Override
@@ -37,14 +51,14 @@ public class Warrior extends Player {
         private final String DESCRIPTION = "randomly hits one enemy withing range < 3 for an amount\n" +
                 "equals to 10% of the warrior’s max health and heals the warrior for amount equals to (10\u0002defense)\n" +
                 "(but will not exceed the total amount of health pool).";
-        private final int MAX_RANGE = 3;
+        private final double MAX_RANGE = 3;
 
         private String name;
         private String description;
         private int coolDown;
         private int remainingCooldown;
         private boolean available;
-        private int range;
+        private double range;
 
         public SpecialAbility(int cd) {
             this.name = NAME;
@@ -63,7 +77,7 @@ public class Warrior extends Player {
             return description;
         }
 
-        public int getRange() {
+        public double getRange() {
             return range;
         }
 

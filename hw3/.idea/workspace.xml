@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ScreenWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Board/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Board/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Emenys/Monster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Emenys/Trap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Emenys/Trap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Warrior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Warrior.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Emenys/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Rogue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tiles/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,17 +17,29 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1cR2TF9Mh3fM8FpCqajyVTD1YNG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <configuration name="Tests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -56,7 +59,24 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="" />
+      <created>1590477091309</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590477091309</updated>
+      <workItem from="1590477097148" duration="2685000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="0" key="SettingsEditor" timestamp="1590477115785">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590477115785" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

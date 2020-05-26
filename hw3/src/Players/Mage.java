@@ -1,8 +1,11 @@
 package Players;
 
 import Board.*;
+import Emenys.Enemy;
 import Emenys.Monster;
 import VisitorPattern.Visited;
+
+import java.util.List;
 
 public class Mage extends Player{
     private Mana mana;
@@ -24,7 +27,23 @@ public class Mage extends Player{
 
     @Override
     public void castSpacialAbillity() {
+        if(mana.currentMana<specialAbility.manaCost){ //print error message
 
+        }
+        else{
+            mana.currentMana=mana.currentMana-specialAbility.manaCost;
+            int hits=specialAbility.hitsCount;
+            List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeMage(this,specialAbility.range);
+            for(Enemy e: inRangeEnemies){
+                if(hits==0){ // do nothing
+
+                }
+                else{
+                    hits--;
+                    e.attackMe(specialAbility.spellPower);
+                }
+            }
+        }
     }
 
     @Override
@@ -65,7 +84,7 @@ public class Mage extends Player{
 
         private String name;
         private String desc;
-        private int range;
+        private double range;
         private int manaCost;
         private int spellPower;
         private int hitsCount;

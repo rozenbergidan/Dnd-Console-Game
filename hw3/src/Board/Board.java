@@ -203,4 +203,38 @@ public class Board implements Observable {
         return map;
     }
 
+    //for warrior
+    //return all enemies in range < 3
+    public List<Enemy> enemiesInRangeWarrior(Player player, double range){
+        List<Enemy> ls=new LinkedList<>();
+        for (Enemy e:enemiesList) {
+            if((int)player.getLocation().range(e.getLocation())<range){
+                ls.add(e);
+            }
+        }
+        return ls;
+    }
+
+    //for Mage
+    //return all enemis who is randomly hited by mage spell range
+    public List<Enemy> enemiesInRangeMage(Player player, double range){
+        List<Enemy> ls=new LinkedList<>();
+        for (Enemy e:enemiesList) {
+            if((int)player.getLocation().range(e.getLocation())<=range){
+                if(Math.random()*100>=50) //randomness elemnt
+                    ls.add(e);
+            }
+        }
+        return ls;
+    }
+
+    public List<Enemy> enemiesInRangeRogue(Player player, double range){
+        List<Enemy> ls=new LinkedList<>();
+        for (Enemy e:enemiesList) {
+            if((int)player.getLocation().range(e.getLocation())<=range){
+                ls.add(e);
+            }
+        }
+        return ls;
+    }
 }
