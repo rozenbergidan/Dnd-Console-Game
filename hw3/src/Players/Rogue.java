@@ -1,8 +1,11 @@
 package Players;
 
 import Board.*;
+import Emenys.Enemy;
 import Emenys.Monster;
 import VisitorPattern.Visited;
+
+import java.util.List;
 
 public class Rogue extends Player{
     private Energy energy;
@@ -22,7 +25,17 @@ public class Rogue extends Player{
 
     @Override
     public void castSpacialAbillity() {
-
+        if(energy.currentEnergy<specialAbility.energyCost){
+            //print error message
+        }
+        else{
+            energy.currentEnergy=energy.currentEnergy-specialAbility.energyCost;
+            List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeRogue(this,specialAbility.range);
+            for(Enemy e: inRangeEnemies){
+                //TODO continue this
+                e.attackMe(attackPoint);
+            }
+        }
     }
 
     @Override
@@ -65,7 +78,7 @@ public class Rogue extends Player{
         private String name;
         private String desc;
         private int energyCost;
-        private int range;
+        private double range;
 
         public SpecialAbility(int energyCost){
             this.name=NAME;
