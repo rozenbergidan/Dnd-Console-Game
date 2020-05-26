@@ -1,7 +1,7 @@
-import Board.Board;
+package Control;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import Board.Board;
+import Control.GameController;
 
 public class Tests {
     public static void main(String[]args){
@@ -80,67 +80,12 @@ public class Tests {
                 "########.........########\n" +
                 "########.ww.K.ww.########\n" +
                 "#########################"};
-        Board.getBoard().initBoard(levels);
-        Board.getBoard().selectCharacter(1);
-        Board.getBoard().buildBoard();
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-        Board.getBoard().getPlayer().act('d');
-        System.out.println(Board.getBoard().toString());
-
+//        Board.getBoard().initBoard(levels);
+//        Board.getBoard().selectCharacter(1);
+//        Board.getBoard().buildBoard();
+//        System.out.println(Board.getBoard().toString());
+        GameController GC = new GameController();
+        GC.Start(levels, 1);
 
 
 

@@ -56,7 +56,7 @@ public class Board implements Observable {
         }
     } //will be called once in game controller
 
-    public void buildBoard() {
+    public boolean buildBoard() { // TODO: return true if game over
         enemiesList = new LinkedList<>();
         tickObserver=new LinkedList<>();
         level++;
@@ -142,6 +142,7 @@ public class Board implements Observable {
             j++;
             board = board.substring(1);
         }
+        return false;// return true if game over
     } //will be called for each level in game controller
 
     public static Board getBoard() {
@@ -163,10 +164,16 @@ public class Board implements Observable {
         tiles[p2.getX()][p2.getY()] = temp;
     }
 
-    public boolean gameTick() {
+    public boolean gameTick(char playerAct) { // return true if game over
+        player.act(playerAct);
+        for (Enemy enemy: enemiesList) {
+            enemy.act();
+        }
+        callObservers();
         return false;
     }// return true if game over
 
+    //////////////////////////Observer Pattern
     @Override
     public void addObserver(Observer O) {
         tickObserver.add(O);
@@ -177,6 +184,11 @@ public class Board implements Observable {
         for (Observer o :tickObserver) {
             o.onTickAct(this);
         }
+    }
+    //////////////////////////////////////////
+
+    public void removeMeFromEnemyList(Enemy enemy){
+        enemiesList.remove(enemy);
     }
 
     public String toString(){
@@ -199,4 +211,38 @@ public class Board implements Observable {
         return map;
     }
 
+    //for warrior
+    //return all enemies in range < 3
+    public List<Enemy> enemiesInRangeWarrior(Player player, double range){
+        List<Enemy> ls=new LinkedList<>();
+        for (Enemy e:enemiesList) {
+            if((int)player.getLocation().range(e.getLocation())<range){
+                ls.add(e);
+            }
+        }
+        return ls;
+    }
+
+    //for Mage
+    //return all enemis who is randomly hited by mage spell range
+    public List<Enemy> enemiesInRangeMage(Player player, double range){
+        List<Enemy> ls=new LinkedList<>();
+        for (Enemy e:enemiesList) {
+            if((int)player.getLocation().range(e.getLocation())<=range){
+                if(Math.random()*100>=50) //randomness elemnt
+                    ls.add(e);
+            }
+        }
+        return ls;
+    }
+
+    public List<Enemy> enemiesInRangeRogue(Player player, double range){
+        List<Enemy> ls=new LinkedList<>();
+        for (Enemy e:enemiesList) {
+            if((int)player.getLocation().range(e.getLocation())<=range){
+                ls.add(e);
+            }
+        }
+        return ls;
+    }
 }

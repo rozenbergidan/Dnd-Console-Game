@@ -7,7 +7,7 @@ import VisitorPattern.*;
 public abstract class Unit  extends Tile implements Visited {
     // FILDES
     private String name;
-    protected Health health;
+    public Health health; //changed to public for warrior specialAbility
     protected int attackPoint;
     protected int defencePoint;
 
@@ -56,6 +56,12 @@ public abstract class Unit  extends Tile implements Visited {
                 if (healthAmount <= 0) return true;
             }
             return false;
+        }
+
+        public void healthIncrease(int x){
+            healthAmount=healthAmount+x;
+            if(healthAmount>healthPool)
+                healthAmount=healthPool;
         }
         public int getHealthPool(){return healthPool;}
         public void setHealthPool(int newHealthPool){this.healthPool=newHealthPool;}

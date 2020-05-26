@@ -42,11 +42,11 @@ public class Monster extends Enemy implements Visitor {
     @Override
     public void act(){
         Player player = Board.getBoard().getPlayer();
-        if(location.range(player.getLocation())< vision){
+        //if(location.range(player.getLocation())< vision){
             //algorithm to go the best path to player / go to player way
-        }
-        else{
-            int direction = (int) Math.random()*5;
+        //}
+        //else{
+            int direction = (int) (Math.random()*5);
             if(direction == 0){
                 moveRight();
             }
@@ -59,7 +59,7 @@ public class Monster extends Enemy implements Visitor {
             if(direction == 3){
                 moveDown();
             }
-        }
+        //}
 
     }
 
