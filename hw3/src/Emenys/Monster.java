@@ -79,5 +79,8 @@ public class Monster extends Enemy implements Visitor {
         return v.accept(this);
     }
 
-
+    @Override
+    public String toString(){
+        return super.toString()+"\t\tVision Range: "+vision;
+    }
 }

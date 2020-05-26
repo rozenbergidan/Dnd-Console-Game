@@ -2,21 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Control/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Control/ScreenWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/GameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tests.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Emenys/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Emenys/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Emenys/Trap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Trap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Rogue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScreenWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tiles/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,18 +48,6 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Tests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Control.Tests" />
@@ -84,6 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590477091309</updated>
       <workItem from="1590477097148" duration="2685000" />
+      <workItem from="1590516080091" duration="4942000" />
     </task>
     <servers />
   </component>
@@ -100,25 +90,28 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="0" key="SettingsEditor" timestamp="1590477115785">
+    <state width="1225" height="484" key="GridCell.Tab.0.bottom" timestamp="1590518393685">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590477115785" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Board/Board.java</url>
-          <line>170</line>
-          <properties class="Board.Board" method="gameTick">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1225" height="484" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590518393685" />
+    <state width="1225" height="484" key="GridCell.Tab.0.center" timestamp="1590518393685">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="484" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590518393685" />
+    <state width="1225" height="484" key="GridCell.Tab.0.left" timestamp="1590518393684">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="484" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590518393684" />
+    <state width="1225" height="484" key="GridCell.Tab.0.right" timestamp="1590518393685">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="484" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590518393685" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1590516157342">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590516157342" />
   </component>
 </project>

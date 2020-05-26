@@ -21,13 +21,24 @@ public abstract class Unit  extends Tile implements Visited {
     }
 
 
-    public boolean attackMe(int attackDamage){// return true is died TODO: add die scenario, and send player/ player detiels
+    public boolean attackMe(int attackDamage,Unit unit){// return true is died TODO: add die scenario, and send player/ player detiels
+        String output;
         int defence = (int)(Math.random()*(defencePoint + 1));
-        return health.healthDecrease(attackDamage- defence);
+        output=getName()+" rolled "+defence+" defense points.\n";
+        int dmgDealt=attackDamage- defence;
+        output=output+unit.getName()+" dealt "+dmgDealt+"damage to "+getName()+"\n";
+        //TODO print to Screen
+        return health.healthDecrease(dmgDealt);
     }
 
     public boolean attack(Unit unit){
-        return unit.attackMe((int)(Math.random()*(attackPoint + 1)));
+        String output=getName()+" engaged in combat with +"+unit.name+".\n";
+        output=output+toString()+"\n";
+        output=output+unit.toString()+"\n";
+        int attack=(int)(Math.random()*(attackPoint + 1));
+        output=output+getName()+" rolled "+ attack+" attack points.\n";
+        //TODO print to screen
+        return unit.attackMe(attack,this);
     }
 
     public String getName() {
@@ -65,5 +76,11 @@ public abstract class Unit  extends Tile implements Visited {
         }
         public int getHealthPool(){return healthPool;}
         public void setHealthPool(int newHealthPool){this.healthPool=newHealthPool;}
+        @Override
+        public String toString(){
+            String output="";
+            output="Health: "+healthAmount+"/"+healthPool;
+            return output;
+        }
     }
 }

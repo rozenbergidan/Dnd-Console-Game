@@ -37,7 +37,6 @@ public class Trap extends Enemy implements Observer {
     public void act() {
 
     }
-
     @Override
     public boolean accept(Player p) {
         return false;
@@ -48,11 +47,9 @@ public class Trap extends Enemy implements Observer {
         return false;
     }
 
-
     @Override
     public char getCharacter(){
         if (visible) return character;
         else return '.';
     }
-
 }
