@@ -20,8 +20,6 @@ public abstract class Unit  extends Tile implements Visited {
         this.health = new Health(health);
     }
 
-
-
     public boolean attackMe(int attackDamage,Unit unit){// return true is died TODO: add die scenario, and send player/ player detiels
         String output;
         int defence = (int)(Math.random()*(defencePoint + 1));
@@ -50,7 +48,6 @@ public abstract class Unit  extends Tile implements Visited {
     public String getName() {
         return name;
     }
-
 
     protected class  Health{// nested class
         private int healthPool;

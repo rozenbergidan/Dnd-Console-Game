@@ -16,6 +16,7 @@ public class Board implements Observable {
     Player player;
     List<Enemy> enemiesList;
     List<Observer> tickObserver;
+    boolean gameOver;
 
     private Board() { // for singleton use
         enemiesList = new LinkedList<>();
@@ -170,7 +171,7 @@ public class Board implements Observable {
             enemy.act();
         }
         callObservers();
-        return false;
+        return gameOver;
     }// return true if game over
 
     //////////////////////////Observer Pattern
@@ -192,7 +193,12 @@ public class Board implements Observable {
         Point enemyLoction = enemy.getLocation();
         tiles[enemyLoction.getX()][enemyLoction.getY()] = new Empty(enemyLoction);
         player.killedEnemy(enemy.getExpValue());
+        if(enemiesList.isEmpty()) buildBoard();
         String output = enemy.getName() + " died." + player.getName() + "Jon Snow gained" + enemy.getExpValue() + "experience";
+    }
+
+    public void playerDied(){
+        gameOver = true;
     }
 
     public String toString(){

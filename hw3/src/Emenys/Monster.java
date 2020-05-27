@@ -21,7 +21,7 @@ public class Monster extends Enemy implements Visitor {
             Board.getBoard().switchTile(location, toVisit.getLocation());
         }
     }
-    public void moveRight(){ ///////////// change back to private
+    private void moveRight(){
         Point goTo = new Point(location.getX(), location.getY() + 1);
         moveTo(goTo);
     }
@@ -64,7 +64,7 @@ public class Monster extends Enemy implements Visitor {
     }
 
     @Override
-    public boolean accept(Player p) {// if dead change all neccesery in board
+    public boolean accept(Player p) {
         return p.attack(this);
 
     }

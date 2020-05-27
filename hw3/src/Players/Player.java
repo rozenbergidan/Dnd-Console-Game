@@ -57,6 +57,7 @@ public abstract class Player extends Unit implements Observer, Visitor{
     }
 
     public void act(char action) {// get the action char from the gameController
+        System.out.println(this);
         if (action == 'e') castSpacialAbillity();
         if (action == 'w') moveUp();
         if (action == 'd') moveRight();
@@ -79,6 +80,7 @@ public abstract class Player extends Unit implements Observer, Visitor{
 
     public void died(){
         this.character = 'X';
+        Board.getBoard().playerDied();
     }
 
     @Override
