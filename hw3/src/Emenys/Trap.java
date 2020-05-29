@@ -39,7 +39,7 @@ public class Trap extends Enemy implements Observer {
     }
     @Override
     public boolean accept(Player p) {
-        return false;
+        return p.attack(this);
     }
 
     @Override
