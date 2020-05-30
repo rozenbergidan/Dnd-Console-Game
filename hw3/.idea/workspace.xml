@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Emenys/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Emenys/Trap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Trap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Control/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Control/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Rogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tiles/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,12 +84,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Board/Board.java</url>
-          <line>59</line>
-          <properties class="Board.Board" method="buildBoard">
+          <url>file://$PROJECT_DIR$/src/Players/Player.java</url>
+          <line>58</line>
+          <properties class="Players.Player" method="act">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

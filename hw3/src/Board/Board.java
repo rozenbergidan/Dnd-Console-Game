@@ -10,7 +10,7 @@ import java.util.List;
 public class Board implements Observable {
 
     private static Board instance = null;
-    public Tile[][] tiles;////////////////////////////we have to change back to private
+    private Tile[][] tiles;////////////////////////////we have to change back to private
     String[] levels;
     int level;
     Player player;

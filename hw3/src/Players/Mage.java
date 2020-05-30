@@ -53,20 +53,6 @@ public class Mage extends Player{
         mana.currentMana=(Math.min(mana.manaPool,mana.currentMana+level));
     }
 
-    @Override
-    public boolean accept(Player p) {
-        return false;
-    }
-
-    @Override
-    public boolean accept(Monster m) {
-        return false;
-    }
-
-    @Override
-    public boolean visit(Visited V) {
-        return false;
-    }
 
     public String toString(){
         return super.toString()+"\t\t"+mana.toString()+"\t\t"+"SpellPower: "+specialAbility.spellPower;

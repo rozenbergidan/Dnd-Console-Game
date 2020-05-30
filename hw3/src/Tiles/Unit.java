@@ -20,7 +20,7 @@ public abstract class Unit  extends Tile implements Visited {
         this.health = new Health(health);
     }
 
-    public boolean attackMe(int attackDamage,Unit unit){// return true is died TODO: add die scenario, and send player/ player detiels
+    public boolean attackMe(int attackDamage,Unit unit){// return true if the attacker should move to the defender location
         String output;
         int defence = (int)(Math.random()*(defencePoint + 1));
         output=getName()+" rolled "+defence+" defense points.\n";
@@ -28,7 +28,9 @@ public abstract class Unit  extends Tile implements Visited {
         output=output+unit.getName()+" dealt "+dmgDealt+"damage to "+getName()+"\n";
         //TODO print to Screen
         boolean isDead = health.healthDecrease(attackDamage- defence); //return true if this died
-        if(isDead) died();
+        if(isDead) died();//can throw  "Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 42"
+                          // becuse the board changed and the player moved only after.
+                          // TODO: if game level up return false, so the move will not happen after the board changed
         return isDead;
     }
 

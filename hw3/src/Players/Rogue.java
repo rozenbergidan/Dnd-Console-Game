@@ -44,20 +44,6 @@ public class Rogue extends Player{
         energy.currentEnergy=Math.min(energy.currentEnergy+10,100);
     }
 
-    @Override
-    public boolean accept(Player p) {
-        return false;
-    }
-
-    @Override
-    public boolean accept(Monster m) {
-        return false;
-    }
-
-    @Override
-    public boolean visit(Visited V) {
-        return false;
-    }
 
     public String toString(){
         return super.toString()+"\t\t"+energy.toString();
