@@ -28,7 +28,7 @@ public class Board implements Observable {
         this.levels = levels;
     }
 
-    public int[] getBoardSize(){
+    public int[] getBoardSize(){//TODO: throw exeption if the board not initialized
         int[]arr=new int[2];
         arr[0]=levels[level].split("\n").length;
         arr[1]=levels[level].indexOf('\n');
@@ -57,7 +57,7 @@ public class Board implements Observable {
         }
     } //will be called once in game controller
 
-    public boolean buildBoard() { // TODO: return true if game over
+    public boolean buildBoard() { // TODO: return true if game over.     //TODO: check if posible to change to private
         enemiesList = new LinkedList<>();
         tickObserver=new LinkedList<>();
         level++;
@@ -171,8 +171,8 @@ public class Board implements Observable {
             enemy.act();
         }
         callObservers();
-        return gameOver;
-    }// return true if game over
+        return gameOver; // return true if game over
+    }
 
     //////////////////////////Observer Pattern
     @Override

@@ -86,7 +86,7 @@ public class Tests {
 //        Board.getBoard().buildBoard();
 //        System.out.println(Board.getBoard().toString());
         GameController GC = new GameController();
-        GC.Start(levels, 2);
+        GC.Start(levels, 1);
 
 
     }
