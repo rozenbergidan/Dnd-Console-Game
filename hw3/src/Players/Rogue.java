@@ -26,12 +26,14 @@ public class Rogue extends Player{
 
     @Override
     public void castSpacialAbillity() {
+        String output="";
         if(energy.currentEnergy<specialAbility.energyCost){
-            //print error message
+            output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+energy.toString()+".\n";
         }
         else{
             energy.currentEnergy=energy.currentEnergy-specialAbility.energyCost;
             List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeRogue(this,specialAbility.range);
+            output=getName()+" cast "+specialAbility.name+".\n";
             for(Enemy e: inRangeEnemies){
                 //TODO continue this
                 e.attackMe(attackPoint,this);

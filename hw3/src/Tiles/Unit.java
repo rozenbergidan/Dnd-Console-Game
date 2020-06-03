@@ -1,6 +1,7 @@
 package Tiles;
 
 import Board.*;
+import Control.ScreenWriter;
 import ObserverPattern.*;
 import VisitorPattern.*;
 
@@ -25,12 +26,10 @@ public abstract class Unit  extends Tile implements Visited {
         int defence = (int)(Math.random()*(defencePoint + 1));
         output=getName()+" rolled "+defence+" defense points.\n";
         int dmgDealt=attackDamage- defence;
-        output=output+unit.getName()+" dealt "+dmgDealt+"damage to "+getName()+"\n";
+        output=output+unit.getName()+" dealt "+dmgDealt+" damage to "+getName()+"\n";
         //TODO print to Screen
         boolean isDead = health.healthDecrease(attackDamage- defence); //return true if this died
-        if(isDead) died();//can throw  "Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 42"
-                          // becuse the board changed and the player moved only after.
-                          // TODO: if game level up return false, so the move will not happen after the board changed
+        if(isDead) died();
         return isDead;
     }
 
