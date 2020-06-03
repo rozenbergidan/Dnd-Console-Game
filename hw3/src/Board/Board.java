@@ -35,6 +35,10 @@ public class Board implements Observable {
         return arr;
     }
 
+    public int getLevel(){
+        return level;
+    }
+
     public void selectCharacter(int index) {
         if (player == null) {
             if (index == 1) {
@@ -68,6 +72,7 @@ public class Board implements Observable {
         Enemy tl;
         Trap tp;
         String board = levels[level];
+        gameOver = false;
 
         while (!board.equals("")) {
             tile = board.charAt(0);
@@ -77,6 +82,7 @@ public class Board implements Observable {
             } else if (tile == '@') {
                 player.setLocation(i, j);
                 tiles[i][j] = player;
+                addObserver(player);
             } else if (tile == '.') {
                 tiles[i][j] = new Empty(new Point(i, j));
             } else if (tile == '#') {
@@ -137,7 +143,7 @@ public class Board implements Observable {
                 enemiesList.add(tp);
                 addObserver((Trap)tp);
             } else {
-                System.out.println("NOT SUPPOSED TO HAPPEN");
+                System.out.println("NOT SUPPOSED TO HAPPEN"); //throw exeption???
                 System.out.println(tile);
             }
             j++;

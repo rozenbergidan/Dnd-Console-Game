@@ -75,7 +75,7 @@ public class Monster extends Enemy implements Visitor {
 
     @Override
     public boolean accept(Player p) {
-        return p.attack(this);
+        return p.attack(this); // return true if the munster died.
 
     }
 

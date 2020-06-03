@@ -46,7 +46,7 @@ public class Warrior extends Player {
 
     @Override
     public void onTickAct(Board board) {
-        if (specialAbility.coolDown > 0) specialAbility.coolDown--;
+        if (specialAbility.remainingCooldown > 0) specialAbility.remainingCooldown--;
     }
 
     public String toString(){
@@ -70,7 +70,7 @@ public class Warrior extends Player {
         public SpecialAbility(int cd) {
             this.name = NAME;
             this.description = DESCRIPTION;
-            this.coolDown = coolDown;
+            this.coolDown = cd;
             remainingCooldown = 0;
             available = true;
             range = MAX_RANGE;

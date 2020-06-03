@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Control/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Control/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$Energy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$Energy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$SpecialAbility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Emenys/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emenys/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Warrior.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

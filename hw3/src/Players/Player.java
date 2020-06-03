@@ -32,7 +32,8 @@ public abstract class Player extends Unit implements Observer, Visitor{
 
     private void moveTo(Point goTo){
         //Tile toVisit = Board.getBoard().getTile(goTo);
-        if(visit(Board.getBoard().getTile(goTo))){
+        int correntLvl = Board.getBoard().getLevel();
+        if(visit(Board.getBoard().getTile(goTo)) && correntLvl == Board.getBoard().getLevel()){
             switchLocation(Board.getBoard().getTile(goTo));
             Board.getBoard().switchTile(location, Board.getBoard().getTile(goTo).getLocation());
         }
