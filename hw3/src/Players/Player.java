@@ -58,7 +58,6 @@ public abstract class Player extends Unit implements Observer, Visitor{
     }
 
     public void act(char action) {// get the action char from the gameController
-        System.out.println(this);
         if (action == 'e') castSpacialAbillity();
         if (action == 'w') moveUp();
         if (action == 'd') moveRight();
@@ -74,7 +73,7 @@ public abstract class Player extends Unit implements Observer, Visitor{
 
     public void killedEnemy(int monsterExp){
         exp = exp + monsterExp;
-        if (exp >= level * 50){
+        while(exp >= level * 50){
             levelUP();
         }
     }
@@ -96,7 +95,8 @@ public abstract class Player extends Unit implements Observer, Visitor{
 
     @Override
     public boolean accept(Monster m) {
-        return m.attack(this);
+        m.attack(this);
+        return false;
     }
 
     public String toString(){

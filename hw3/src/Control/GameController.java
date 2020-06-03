@@ -13,10 +13,12 @@ public class GameController {
         boolean gameOver = false;
         Scanner scan = new Scanner(System.in);
         while (!gameOver){
-            System.out.println("pick a move: ");
+            ScreenWriter.getScreanWriter().print(Board.getBoard().getPlayer().toString());
             char playerAct = scan.next().charAt(0);// = ...get the char to the playerd
             gameOver = Board.getBoard().gameTick(playerAct);// send with char
-            System.out.println(Board.getBoard().toString());
+            ScreenWriter.getScreanWriter().print(Board.getBoard().toString());
+
+
 
         }
     }

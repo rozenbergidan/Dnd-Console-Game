@@ -1,6 +1,7 @@
 package Players;
 
 import Board.*;
+import Control.ScreenWriter;
 import Emenys.Enemy;
 import Emenys.Monster;
 import Tiles.Unit;
@@ -23,26 +24,27 @@ public class Warrior extends Player {
         health.setHealthPool(health.getHealthPool()+5*level);
         attackPoint=attackPoint+2*level;
         defencePoint=defencePoint+level;
-
-        String output = getName() + " reached level " + level +  ": +" + (level * 15) + " Health, +"+ (level * 6) + " Attack, +"+ (level * 2) + "Defense";
+        String output = getName() + " reached level " + level +  ": +" + (level * 15) + " Health, +"+ (level * 6) + " Attack, +"+ (level * 2) + " Defense ";
+        ScreenWriter.getScreanWriter().print(output);
     }
 
     @Override
     public void castSpacialAbillity() {
+        String output="";
         if(specialAbility.remainingCooldown>0){//print error message
-            String output=getName()+" tried to cast "+specialAbility.name+", but there is a cooldown: "+specialAbility.remainingCooldown+".\n";
-            //TODO print to Screen
+            output=getName()+" tried to cast "+specialAbility.name+", but there is a cooldown: "+specialAbility.remainingCooldown+".\n";
+            ScreenWriter.getScreanWriter().print(output);
         }
         else{
             List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range);
             if(inRangeEnemies.size()>0) {
                 Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size()); /////////////////////////// TODO: this line throws exeption if no enemy is in the range
                 health.healthIncrease(10 * defencePoint);
-                String output = getName() + " used " + specialAbility.name + ", healing for " + 10 * defencePoint + ".\n";
+                output = getName() + " used " + specialAbility.name + ", healing for " + 10 * defencePoint + ".\n";
+                ScreenWriter.getScreanWriter().print(output);
                 attackedEnemy.attackMe((int) (health.getHealthPool() * 0.1), this);
                 specialAbility.remainingCooldown = specialAbility.coolDown;
             }
-            //TODO print to Screen
         }
     }
 
