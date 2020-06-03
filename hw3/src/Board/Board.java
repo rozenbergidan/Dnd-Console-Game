@@ -10,7 +10,7 @@ import java.util.List;
 public class Board implements Observable {
 
     private static Board instance = null;
-    private Tile[][] tiles;////////////////////////////we have to change back to private
+    private Tile[][] tiles;
     String[] levels;
     int level;
     Player player;
@@ -194,7 +194,7 @@ public class Board implements Observable {
         tiles[enemyLoction.getX()][enemyLoction.getY()] = new Empty(enemyLoction);
         player.killedEnemy(enemy.getExpValue());
         if(enemiesList.isEmpty()) buildBoard();
-        String output = enemy.getName() + " died." + player.getName() + "Jon Snow gained" + enemy.getExpValue() + "experience";
+        String output = enemy.getName() + " died." + player.getName() + " gained" + enemy.getExpValue() + "experience";
     }
 
     public void playerDied(){

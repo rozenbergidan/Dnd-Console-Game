@@ -70,7 +70,7 @@ public class Warrior extends Player {
         public SpecialAbility(int cd) {
             this.name = NAME;
             this.description = DESCRIPTION;
-            this.coolDown = coolDown;
+            this.coolDown = cd;
             remainingCooldown = 0;
             available = true;
             range = MAX_RANGE;
