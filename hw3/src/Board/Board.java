@@ -1,5 +1,6 @@
 package Board;
 
+import Control.ScreenWriter;
 import Emenys.*;
 import ObserverPattern.*;
 import Players.*;
@@ -40,6 +41,13 @@ public class Board implements Observable {
     }
 
     public void selectCharacter(int index) {
+        String output="Select player:\n1. Jon Snow             Health: 300/300         Attack: 30              Defense: 4              Level: 1                Experience: 0/50                Cooldown: 0/3\n" +
+                "2. The Hound            Health: 400/400         Attack: 20              Defense: 6              Level: 1                Experience: 0/50                Cooldown: 0/5\n" +
+                "3. Melisandre           Health: 100/100         Attack: 5               Defense: 1              Level: 1                Experience: 0/50                Mana: 75/300            Spell Power: 15\n" +
+                "4. Thoros of Myr                Health: 250/250         Attack: 25              Defense: 4              Level: 1                Experience: 0/50                Mana: 37/150            Spell Power: 20\n" +
+                "5. Arya Stark           Health: 150/150         Attack: 40              Defense: 2              Level: 1                Experience: 0/50                Energy: 100/100\n" +
+                "6. Bronn                Health: 250/250         Attack: 35              Defense: 3              Level: 1                Experience: 0/50                Energy: 100/100\n" +
+                "7. Ygritte              Health: 220/220         Attack: 30              Defense: 2              Level: 1                Experience: 0/50                Arrows: 10              Range: 6 \n";
         if (player == null) {
             if (index == 1) {
                 this.player = new Warrior("Jon Snow", 30, 4, 3, 300, new Point(0, 0));
@@ -57,7 +65,8 @@ public class Board implements Observable {
                 System.out.println("NOT SUPPOSED TO HAPPEN");
             }
             addObserver(player);
-            System.out.println("You have selected: " + player.getName());
+            output= output+ "You have selected: " + player.getName()+".\n";
+            ScreenWriter.getScreanWriter().print(output);
         }
     } //will be called once in game controller
 
@@ -174,7 +183,7 @@ public class Board implements Observable {
     public boolean gameTick(char playerAct) { // return true if game over
         player.act(playerAct);
         for (Enemy enemy: enemiesList) {
-            enemy.act();
+            if(!gameOver) enemy.act();
         }
         callObservers();
         return gameOver; // return true if game over
@@ -195,35 +204,31 @@ public class Board implements Observable {
     //////////////////////////////////////////
 
     public void unitDied(Enemy enemy){
+        String output = enemy.getName() + " died. " + player.getName() + " gained " + enemy.getExpValue() + " experience";
+        ScreenWriter.getScreanWriter().print(output);
+
         enemiesList.remove(enemy);
         Point enemyLoction = enemy.getLocation();
         tiles[enemyLoction.getX()][enemyLoction.getY()] = new Empty(enemyLoction);
         player.killedEnemy(enemy.getExpValue());
         if(enemiesList.isEmpty()) buildBoard();
-        String output = enemy.getName() + " died." + player.getName() + " gained" + enemy.getExpValue() + "experience";
+
     }
 
     public void playerDied(){
         gameOver = true;
+        ScreenWriter.getScreanWriter().print("You lost.");
     }
 
     public String toString(){
-        char[][]arr=new char[tiles.length][tiles[0].length+1];
         String map="";
         for(int i=0;i<tiles.length;i++){
             int j=0;
             for(;j<tiles[0].length;j++){
-                //arr[tiles[i][j].getLocation().getX()][tiles[i][j].getLocation().getY()]=tiles[i][j].getCharacter();
                 map=map+""+tiles[i][j].getCharacter();
             }
-            //arr[i][j]='\n';
             map=map+""+'\n';
         }
-//        for(int i=0;i<arr.length;i++){
-//            for(int j=0;j<arr[0].length;j++){
-//                map=map+""+arr[i][j];
-//            }
-//        }
         return map;
     }
 
@@ -240,7 +245,7 @@ public class Board implements Observable {
     }
 
     //for Mage
-    //return all enemis who is randomly hited by mage spell range
+    //return all enemies who is randomly hited by mage spell range
     public List<Enemy> enemiesInRangeMage(Player player, double range){
         List<Enemy> ls=new LinkedList<>();
         for (Enemy e:enemiesList) {

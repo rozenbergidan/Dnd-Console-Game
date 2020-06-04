@@ -1,6 +1,7 @@
 package Tiles;
 
 import Board.*;
+import Control.ScreenWriter;
 import ObserverPattern.*;
 import VisitorPattern.*;
 
@@ -24,25 +25,25 @@ public abstract class Unit  extends Tile implements Visited {
         String output;
         int defence = (int)(Math.random()*(defencePoint + 1));
         output=getName()+" rolled "+defence+" defense points.\n";
-        int dmgDealt=attackDamage- defence;
-        output=output+unit.getName()+" dealt "+dmgDealt+"damage to "+getName()+"\n";
-        //TODO print to Screen
-        boolean isDead = health.healthDecrease(attackDamage- defence); //return true if this died
-        if(isDead) died();//can throw  "Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 42"
-                          // becuse the board changed and the player moved only after.
-                          // TODO: if game level up return false, so the move will not happen after the board changed
+        int dmgDealt=Math.max(0,attackDamage- defence);
+        output=output+unit.getName()+" dealt "+dmgDealt+" damage to "+getName()+"\n";
+        ScreenWriter.getScreanWriter().print(output);
+        boolean isDead = health.healthDecrease(dmgDealt); //return true if this died
+        if(isDead) {
+            died();
+        }
         return isDead;
     }
 
     public abstract void died();
 
     public boolean attack(Unit unit){
-        String output=getName()+" engaged in combat with +"+unit.name+".\n";
+        String output=getName()+" engaged in combat with "+unit.name+".\n";
         output=output+toString()+"\n";
         output=output+unit.toString()+"\n";
         int attack=(int)(Math.random()*(attackPoint + 1));
         output=output+getName()+" rolled "+ attack+" attack points.\n";
-        //TODO print to screen
+        ScreenWriter.getScreanWriter().print(output);
         return unit.attackMe(attack,this);
 
     }

@@ -1,6 +1,7 @@
 package Players;
 
 import Board.*;
+import Control.ScreenWriter;
 import Emenys.Enemy;
 import Emenys.Monster;
 import VisitorPattern.Visited;
@@ -21,19 +22,23 @@ public class Rogue extends Player{
         super.levelUP();
         energy.currentEnergy=100;
         attackPoint=attackPoint+3*level;
-        String output = getName() + " reached level " + level +  ": +" + (level * 10) + " Health, +"+ (level * 7) + " Attack, +"+ (level * 1) + "Defense";
+        String output = getName() + " reached level " + level +  ": +" + (level * 10) + " Health, +"+ (level * 7) + " Attack, +"+ (level * 1) + " Defense ";
+        ScreenWriter.getScreanWriter().print(output);
     }
 
     @Override
     public void castSpacialAbillity() {
+        String output="";
         if(energy.currentEnergy<specialAbility.energyCost){
-            //print error message
+            output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+energy.toString()+".\n";
+            ScreenWriter.getScreanWriter().print(output);
         }
         else{
             energy.currentEnergy=energy.currentEnergy-specialAbility.energyCost;
             List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeRogue(this,specialAbility.range);
+            output=getName()+" cast "+specialAbility.name+".\n";
+            ScreenWriter.getScreanWriter().print(output);
             for(Enemy e: inRangeEnemies){
-                //TODO continue this
                 e.attackMe(attackPoint,this);
             }
         }

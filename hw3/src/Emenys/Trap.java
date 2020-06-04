@@ -35,7 +35,7 @@ public class Trap extends Enemy implements Observer {
 
     @Override
     public void act() {
-
+        /////////////////// need to add attack to traps
     }
     @Override
     public boolean accept(Player p) {

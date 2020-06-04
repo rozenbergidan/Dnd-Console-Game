@@ -1,6 +1,7 @@
 package Players;
 
 import Board.*;
+import Control.ScreenWriter;
 import Emenys.Enemy;
 import Emenys.Monster;
 import VisitorPattern.Visited;
@@ -22,20 +23,23 @@ public class Mage extends Player{
         mana.currentMana=Math.min(mana.currentMana+mana.manaPool/4,mana.manaPool);
         mana.manaPool=mana.manaPool+25*level;
         specialAbility.spellPower=specialAbility.spellPower+10*level;
-        String output = getName() + " reached level " + level +  ": +" + (level * 15) + " Health, +"+ (level * 6) + " Attack, + " + (level * 2) + " Defense +" + (level * 25) + " maximum mana, +" + (level * 10) + " spell power";
-
+        String output = getName() + " reached level " + level +  ": +" + (level * 15) + " Health, +"+ (level * 6) + " Attack, + " + (level * 2) + " Defense +" + (level * 25) + " maximum mana, +" + (level * 10) + " spell power ";
+        ScreenWriter.getScreanWriter().print(output);
     }
 
     @Override
     public void castSpacialAbillity() {
+        String output="";
         if(mana.currentMana<specialAbility.manaCost){ //print error message
-            String output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+mana.toString()+".\n";//Melisandre tried to cast Blizzard, but there was not enough mana: 9/30.
+            output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+mana.toString()+".\n";//Melisandre tried to cast Blizzard, but there was not enough mana: 9/30.
+            ScreenWriter.getScreanWriter().print(output);
         }
         else{
             mana.currentMana=mana.currentMana-specialAbility.manaCost;
             int hits=specialAbility.hitsCount;
             List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeMage(this,specialAbility.range);
-            String output=getName()+" cast "+specialAbility.name+".\n";
+            output=getName()+" cast "+specialAbility.name+".\n";
+            ScreenWriter.getScreanWriter().print(output);
             for(Enemy e: inRangeEnemies){
                 if(hits==0){ // do nothing
 
@@ -46,6 +50,7 @@ public class Mage extends Player{
                 }
             }
         }
+
     }
 
     @Override
