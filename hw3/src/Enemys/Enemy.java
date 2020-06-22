@@ -1,4 +1,4 @@
-package Emenys;
+package Enemys;
 
 import Board.*;
 import Tiles.Unit;

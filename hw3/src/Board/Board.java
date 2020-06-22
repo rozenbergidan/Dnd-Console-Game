@@ -1,8 +1,8 @@
 package Board;
 
 import Control.ScreenWriter;
-import Emenys.*;
-import ObserverPattern.*;
+import Enemys.*;
+import Interfaces.ObserverPattern.*;
 import Players.*;
 import Tiles.*;
 import java.util.LinkedList;
@@ -135,15 +135,15 @@ public class Board implements Observable {
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'M') {
-                tl = new Monster(new Point(i, j), 'M', "The Mountain", 60, 25, 1000, 6, 500);
+                tl = new Boss(new Point(i, j), 'M', "The Mountain", 60, 25, 1000, 6, 500,"Skull Cracking","Crack the skull of your infirior",10);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'C') {
-                tl = new Monster(new Point(i, j), 'C', "Queen Cersei", 10, 10, 100, 1, 1000);
+                tl = new Boss(new Point(i, j), 'C', "Queen Cersei", 10, 10, 100, 1, 1000,"WildFire","Drop down on your enemy rain of wildfire, burning them alive",25);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'K') {
-                tl = new Monster(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000);
+                tl = new Boss(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000,"Ice Arrow","Shoot on your enemy an ice arrow",40);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'B') {

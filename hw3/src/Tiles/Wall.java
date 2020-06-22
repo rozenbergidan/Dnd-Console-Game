@@ -1,9 +1,8 @@
 package Tiles;
 
 import Board.Point;
-import Emenys.Monster;
+import Enemys.Monster;
 import Players.Player;
-import Tiles.Tile;
 
 public class Wall extends Tile {
     public final char ON_MAP='#';

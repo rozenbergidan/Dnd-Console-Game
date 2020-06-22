@@ -1,9 +1,8 @@
-package Emenys;
+package Enemys;
 
 import Board.*;
-import ObserverPattern.Observer;
+import Interfaces.ObserverPattern.Observer;
 import Players.Player;
-import VisitorPattern.Visited;
 
 public class Trap extends Enemy implements Observer {
     private int visibilityTime;

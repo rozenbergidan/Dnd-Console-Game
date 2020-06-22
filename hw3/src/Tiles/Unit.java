@@ -2,8 +2,7 @@ package Tiles;
 
 import Board.*;
 import Control.ScreenWriter;
-import ObserverPattern.*;
-import VisitorPattern.*;
+import Interfaces.VisitorPattern.*;
 
 public abstract class Unit  extends Tile implements Visited {
     // FILDES

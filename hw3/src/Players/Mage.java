@@ -2,9 +2,7 @@ package Players;
 
 import Board.*;
 import Control.ScreenWriter;
-import Emenys.Enemy;
-import Emenys.Monster;
-import VisitorPattern.Visited;
+import Enemys.Enemy;
 
 import java.util.List;
 
@@ -28,7 +26,7 @@ public class Mage extends Player{
     }
 
     @Override
-    public void castSpacialAbillity() {
+    public void castSpacialAbility() {
         String output="";
         if(mana.currentMana<specialAbility.manaCost){ //print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+mana.toString()+".\n";//Melisandre tried to cast Blizzard, but there was not enough mana: 9/30.

@@ -2,7 +2,7 @@ package Tiles;
 
 
 import Board.*;
-import VisitorPattern.*;
+import Interfaces.VisitorPattern.*;
 
 public abstract class Tile implements Visited {
     protected Point location;

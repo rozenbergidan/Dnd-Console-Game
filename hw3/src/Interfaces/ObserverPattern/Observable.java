@@ -1,6 +1,4 @@
-package ObserverPattern;
-
-import ObserverPattern.Observer;
+package Interfaces.ObserverPattern;
 
 public interface Observable {
 

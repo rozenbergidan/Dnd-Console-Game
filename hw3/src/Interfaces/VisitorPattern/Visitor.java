@@ -1,4 +1,4 @@
-package VisitorPattern;
+package Interfaces.VisitorPattern;
 
 public interface Visitor {
 
