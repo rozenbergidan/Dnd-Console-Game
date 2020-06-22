@@ -1,7 +1,7 @@
 package Control;
 
-import Board.Board;
-import Control.GameController;
+//import Board.Board;
+//import Control.GameController;
 
 public class Tests {
     public static void main(String[]args){
@@ -14,7 +14,7 @@ public class Tests {
                 "#........#......##..........##........#.........#\n" +
                 "#........#......##s........k##........#.........#\n" +
                 "#........#s.................##.......k#.........#\n" +
-                "#@....................w......Q.................q#\n" +
+                "#@.K.........................Q.................q#\n" +
                 "#........#s.................##.......k#.........#\n" +
                 "#........#......##s........k##........#.........#\n" +
                 "#........#......##..........##........#.........#\n" +
@@ -81,10 +81,6 @@ public class Tests {
                 "########.........########\n" +
                 "########.ww.K.ww.########\n" +
                 "#########################"};
-//        Board.getBoard().initBoard(levels);
-//        Board.getBoard().selectCharacter(1);
-//        Board.getBoard().buildBoard();
-//        System.out.println(Board.getBoard().toString());
         GameController GC = new GameController();
         GC.Start(levels, 1);
 
