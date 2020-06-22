@@ -2,6 +2,7 @@ package Enemys;
 
 import Board.Board;
 import Board.Point;
+import Control.ScreenWriter;
 import Interfaces.HeroicUnit;
 import Players.Player;
 
@@ -16,7 +17,7 @@ public class Boss extends Monster implements HeroicUnit {
     @Override
     public void act() {
         Player player = Board.getBoard().getPlayer();
-        if (location.range(player.getLocation()) < vision) {
+        if (this.location.range(player.getLocation()) <= vision) {
             if (specialAbility.combatIicks == specialAbility.abilityFrequency) {//combat ticks == ability frequency then
                 specialAbility.combatIicks = 0;
                 castSpacialAbility();
@@ -29,6 +30,8 @@ public class Boss extends Monster implements HeroicUnit {
 
     @Override
     public void castSpacialAbility() {
+        String output=getName()+" used "+ specialAbility.name;
+        ScreenWriter.getScreenWriter().print(output);
         this.attack(Board.getBoard().getPlayer());
     }
 

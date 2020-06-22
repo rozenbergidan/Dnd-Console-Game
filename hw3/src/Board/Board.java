@@ -145,7 +145,7 @@ public class Board implements Observable {
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'K') {
-                tl = new Boss(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000,"Ice Arrow","Shoot on your enemy an ice arrow",40);
+                tl = new Boss(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000,"Ice Arrow","Shoot on your enemy an ice arrow",2);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'B') {
