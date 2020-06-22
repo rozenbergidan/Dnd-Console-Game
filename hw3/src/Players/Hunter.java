@@ -13,6 +13,7 @@ public class Hunter extends Player{
     public Hunter(String name, int attack, int defence, int health, int range, Point point) {
         super(name, attack, defence, health, point);
         specialAbility=new SpecialAbility(range);
+        this.arrows=10;
     }
 
     public void levelUP(){
