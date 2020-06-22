@@ -48,12 +48,12 @@ public class Board implements Observable {
                 "5. Arya Stark           Health: 150/150         Attack: 40              Defense: 2              Level: 1                Experience: 0/50                Energy: 100/100\n" +
                 "6. Bronn                Health: 250/250         Attack: 35              Defense: 3              Level: 1                Experience: 0/50                Energy: 100/100\n" +
                 "7. Ygritte              Health: 220/220         Attack: 30              Defense: 2              Level: 1                Experience: 0/50                Arrows: 10              Range: 6 \n";
-        ScreenWriter.getScreanWriter().print(output);
+        ScreenWriter.getScreenWriter().print(output);
         Scanner scan = new Scanner(System.in);
         int index = scan.nextInt();
         while(index<1 || index>8){
             output="input is not valid";
-            ScreenWriter.getScreanWriter().print(output);
+            ScreenWriter.getScreenWriter().print(output);
             index=scan.nextInt();
         }
         selectCharacter(index);
@@ -78,7 +78,7 @@ public class Board implements Observable {
             }
             addObserver(player);
             output= output+ "You have selected: " + player.getName()+".\n";
-            ScreenWriter.getScreanWriter().print(output);
+            ScreenWriter.getScreenWriter().print(output);
         }
     } //will be called once in game controller
 
@@ -217,7 +217,7 @@ public class Board implements Observable {
 
     public void unitDied(Enemy enemy){
         String output = enemy.getName() + " died. " + player.getName() + " gained " + enemy.getExpValue() + " experience";
-        ScreenWriter.getScreanWriter().print(output);
+        ScreenWriter.getScreenWriter().print(output);
 
         enemiesList.remove(enemy);
         Point enemyLoction = enemy.getLocation();
@@ -229,7 +229,7 @@ public class Board implements Observable {
 
     public void playerDied(){
         gameOver = true;
-        ScreenWriter.getScreanWriter().print("You lost.");
+        ScreenWriter.getScreenWriter().print("You lost.");
     }
 
     public String toString(){

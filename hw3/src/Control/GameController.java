@@ -13,8 +13,8 @@ public class GameController {
         boolean gameOver = false;
         Scanner scan = new Scanner(System.in);
         while (!gameOver){
-            ScreenWriter.getScreanWriter().print(Board.getBoard().getPlayer().toString());
-            ScreenWriter.getScreanWriter().print(Board.getBoard().toString());
+            ScreenWriter.getScreenWriter().print(Board.getBoard().getPlayer().toString());
+            ScreenWriter.getScreenWriter().print(Board.getBoard().toString());
             char playerAct = scan.next().charAt(0);// = ...get the char to the playerd
             gameOver = Board.getBoard().gameTick(playerAct);// send with char
             //ScreenWriter.getScreanWriter().print(Board.getBoard().getPlayer().toString());

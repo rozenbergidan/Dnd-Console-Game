@@ -21,7 +21,7 @@ public class Rogue extends Player{
         energy.currentEnergy=100;
         attackPoint=attackPoint+3*level;
         String output = getName() + " reached level " + level +  ": +" + (level * 10) + " Health, +"+ (level * 7) + " Attack, +"+ (level * 1) + " Defense ";
-        ScreenWriter.getScreanWriter().print(output);
+        ScreenWriter.getScreenWriter().print(output);
     }
 
     @Override
@@ -29,13 +29,13 @@ public class Rogue extends Player{
         String output="";
         if(energy.currentEnergy<specialAbility.energyCost){
             output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+energy.toString()+".\n";
-            ScreenWriter.getScreanWriter().print(output);
+            ScreenWriter.getScreenWriter().print(output);
         }
         else{
             energy.currentEnergy=energy.currentEnergy-specialAbility.energyCost;
             List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeRogue(this,specialAbility.range);
             output=getName()+" cast "+specialAbility.name+".\n";
-            ScreenWriter.getScreanWriter().print(output);
+            ScreenWriter.getScreenWriter().print(output);
             for(Enemy e: inRangeEnemies){
                 e.attackMe(attackPoint,this);
             }
