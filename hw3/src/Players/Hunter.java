@@ -70,7 +70,7 @@ public class Hunter extends Player{
 
 
     public String toString(){
-        return super.toString() + specialAbility.toString();
+        return super.toString() + "\t\t" + specialAbility.toString();
     }
 
 
@@ -94,7 +94,7 @@ public class Hunter extends Player{
 
         @Override
         public String toString() {
-            return "Arrows: "+ arrows +"Range: " + (int)range;
+            return "Arrows: "+ arrows +"\t\t Range: " + (int)range;
         }
     }
 
