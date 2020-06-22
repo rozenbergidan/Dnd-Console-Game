@@ -7,6 +7,7 @@ import Players.*;
 import Tiles.*;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Board implements Observable {
 
@@ -29,7 +30,7 @@ public class Board implements Observable {
         this.levels = levels;
     }
 
-    public int[] getBoardSize(){//TODO: throw exeption if the board not initialized
+    public int[] getBoardSize(){//TODO: throw exception if the board not initialized
         int[]arr=new int[2];
         arr[0]=levels[level].split("\n").length;
         arr[1]=levels[level].indexOf('\n');
@@ -39,8 +40,7 @@ public class Board implements Observable {
     public int getLevel(){
         return level;
     }
-
-    public void selectCharacter(int index) {
+    public void selectCharacter(){
         String output="Select player:\n1. Jon Snow             Health: 300/300         Attack: 30              Defense: 4              Level: 1                Experience: 0/50                Cooldown: 0/3\n" +
                 "2. The Hound            Health: 400/400         Attack: 20              Defense: 6              Level: 1                Experience: 0/50                Cooldown: 0/5\n" +
                 "3. Melisandre           Health: 100/100         Attack: 5               Defense: 1              Level: 1                Experience: 0/50                Mana: 75/300            Spell Power: 15\n" +
@@ -48,7 +48,19 @@ public class Board implements Observable {
                 "5. Arya Stark           Health: 150/150         Attack: 40              Defense: 2              Level: 1                Experience: 0/50                Energy: 100/100\n" +
                 "6. Bronn                Health: 250/250         Attack: 35              Defense: 3              Level: 1                Experience: 0/50                Energy: 100/100\n" +
                 "7. Ygritte              Health: 220/220         Attack: 30              Defense: 2              Level: 1                Experience: 0/50                Arrows: 10              Range: 6 \n";
+        ScreenWriter.getScreanWriter().print(output);
+        Scanner scan = new Scanner(System.in);
+        int index = scan.nextInt();
+        while(index<1 || index>7){
+            output="input is not valid";
+            ScreenWriter.getScreanWriter().print(output);
+            index=scan.nextInt();
+        }
+        selectCharacter(index);
+    }
+    private void selectCharacter(int index) {
         if (player == null) {
+            String output="";
             if (index == 1) {
                 this.player = new Warrior("Jon Snow", 30, 4, 3, 300, new Point(0, 0));
             } else if (index == 2) {
@@ -61,8 +73,6 @@ public class Board implements Observable {
                 this.player = new Rogue("Arya Stark", 40, 2, 150, 20, new Point(0, 0));
             } else if (index == 6) {
                 this.player = new Rogue("Bronn", 35, 3, 250, 50, new Point(0, 0));
-            } else {
-                System.out.println("NOT SUPPOSED TO HAPPEN");
             }
             addObserver(player);
             output= output+ "You have selected: " + player.getName()+".\n";
@@ -105,7 +115,7 @@ public class Board implements Observable {
                 tiles[i][j]=tl;
                 enemiesList.add(tl);
             } else if (tile == 'q') {
-                tl = new Monster(new Point(i, j), 'q', "Queen’s Guard", 20, 15, 400, 5, 100);
+                tl = new Monster(new Point(i, j), 'q', "Queen\'s Guard", 20, 15, 400, 5, 100);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'z') {
@@ -133,7 +143,7 @@ public class Board implements Observable {
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'K') {
-                tl = new Monster(new Point(i, j), 'K', "Night’s King", 300, 150, 5000, 8, 5000);//the " ' " looks like ? in the outout
+                tl = new Monster(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'B') {
@@ -142,7 +152,7 @@ public class Board implements Observable {
                 enemiesList.add(tp);
                 addObserver(tp);
             } else if (tile == 'Q') {
-                tp = new Trap(new Point(i, j), 'Q', "Queen’s Trap", 20, 10, 250, 3, 7, 100);
+                tp = new Trap(new Point(i, j), 'Q', "Queen\'s Trap", 20, 10, 250, 3, 7, 100);
                 tiles[i][j] = tp;
                 enemiesList.add(tp);
                 addObserver((Trap)tp);
