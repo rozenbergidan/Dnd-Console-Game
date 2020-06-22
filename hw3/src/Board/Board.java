@@ -51,7 +51,7 @@ public class Board implements Observable {
         ScreenWriter.getScreanWriter().print(output);
         Scanner scan = new Scanner(System.in);
         int index = scan.nextInt();
-        while(index<1 || index>7){
+        while(index<1 || index>8){
             output="input is not valid";
             ScreenWriter.getScreanWriter().print(output);
             index=scan.nextInt();
@@ -73,6 +73,8 @@ public class Board implements Observable {
                 this.player = new Rogue("Arya Stark", 40, 2, 150, 20, new Point(0, 0));
             } else if (index == 6) {
                 this.player = new Rogue("Bronn", 35, 3, 250, 50, new Point(0, 0));
+            } else if (index == 7) {
+                this.player = new Hunter("Ygritte", 30, 2, 220, 6, new Point(0, 0));
             }
             addObserver(player);
             output= output+ "You have selected: " + player.getName()+".\n";
