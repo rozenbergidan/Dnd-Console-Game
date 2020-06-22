@@ -133,7 +133,7 @@ public class Board implements Observable {
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'K') {
-                tl = new Monster(new Point(i, j), 'K', "Night’s King", 300, 150, 5000, 8, 5000);
+                tl = new Monster(new Point(i, j), 'K', "Night’s King", 300, 150, 5000, 8, 5000);//the " ' " looks like ? in the outout
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'B') {
