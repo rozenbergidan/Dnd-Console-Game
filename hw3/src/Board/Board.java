@@ -29,7 +29,7 @@ public class Board implements Observable {
         this.levels = levels;
     }
 
-    public int[] getBoardSize(){//TODO: throw exeption if the board not initialized
+    public int[] getBoardSize(){//TODO: throw exception if the board not initialized
         int[]arr=new int[2];
         arr[0]=levels[level].split("\n").length;
         arr[1]=levels[level].indexOf('\n');
@@ -105,7 +105,7 @@ public class Board implements Observable {
                 tiles[i][j]=tl;
                 enemiesList.add(tl);
             } else if (tile == 'q') {
-                tl = new Monster(new Point(i, j), 'q', "Queen’s Guard", 20, 15, 400, 5, 100);
+                tl = new Monster(new Point(i, j), 'q', "Queen\'s Guard", 20, 15, 400, 5, 100);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'z') {
@@ -133,7 +133,7 @@ public class Board implements Observable {
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'K') {
-                tl = new Monster(new Point(i, j), 'K', "Night’s King", 300, 150, 5000, 8, 5000);
+                tl = new Monster(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'B') {
@@ -142,7 +142,7 @@ public class Board implements Observable {
                 enemiesList.add(tp);
                 addObserver(tp);
             } else if (tile == 'Q') {
-                tp = new Trap(new Point(i, j), 'Q', "Queen’s Trap", 20, 10, 250, 3, 7, 100);
+                tp = new Trap(new Point(i, j), 'Q', "Queen\'s Trap", 20, 10, 250, 3, 7, 100);
                 tiles[i][j] = tp;
                 enemiesList.add(tp);
                 addObserver((Trap)tp);
