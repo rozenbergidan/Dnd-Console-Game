@@ -38,7 +38,7 @@ public class Warrior extends Player {
         else{
             List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range);
             if(inRangeEnemies.size()>0) {
-                Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size()); /////////////////////////// TODO: this line throws exeption if no enemy is in the range
+                Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size());
                 health.healthIncrease(10 * defencePoint);
                 output = getName() + " used " + specialAbility.name + ", healing for " + 10 * defencePoint + ".\n";
                 ScreenWriter.getScreanWriter().print(output);
