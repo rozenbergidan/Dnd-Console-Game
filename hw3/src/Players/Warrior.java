@@ -23,7 +23,7 @@ public class Warrior extends Player {
         attackPoint=attackPoint+2*level;
         defencePoint=defencePoint+level;
         String output = getName() + " reached level " + level +  ": +" + (level * 15) + " Health, +"+ (level * 6) + " Attack, +"+ (level * 2) + " Defense ";
-        ScreenWriter.getScreanWriter().print(output);
+        ScreenWriter.getScreenWriter().print(output);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Warrior extends Player {
         String output="";
         if(specialAbility.remainingCooldown>0){//print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there is a cooldown: "+specialAbility.remainingCooldown+".\n";
-            ScreenWriter.getScreanWriter().print(output);
+            ScreenWriter.getScreenWriter().print(output);
         }
         else{
             List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range));
@@ -39,7 +39,7 @@ public class Warrior extends Player {
                 Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size());
                 health.healthIncrease(10 * defencePoint);
                 output = getName() + " used " + specialAbility.name + ", healing for " + 10 * defencePoint + ".\n";
-                ScreenWriter.getScreanWriter().print(output);
+                ScreenWriter.getScreenWriter().print(output);
                 attackedEnemy.attackMe((int) (health.getHealthPool() * 0.1), this);
                 specialAbility.remainingCooldown = specialAbility.coolDown;
             }

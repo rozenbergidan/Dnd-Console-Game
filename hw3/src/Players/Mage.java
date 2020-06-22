@@ -23,7 +23,7 @@ public class Mage extends Player{
         mana.manaPool=mana.manaPool+25*level;
         specialAbility.spellPower=specialAbility.spellPower+10*level;
         String output = getName() + " reached level " + level +  ": +" + (level * 15) + " Health, +"+ (level * 6) + " Attack, + " + (level * 2) + " Defense +" + (level * 25) + " maximum mana, +" + (level * 10) + " spell power ";
-        ScreenWriter.getScreanWriter().print(output);
+        ScreenWriter.getScreenWriter().print(output);
     }
 
     @Override
@@ -31,14 +31,14 @@ public class Mage extends Player{
         String output="";
         if(mana.currentMana<specialAbility.manaCost){ //print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+mana.toString()+".\n";//Melisandre tried to cast Blizzard, but there was not enough mana: 9/30.
-            ScreenWriter.getScreanWriter().print(output);
+            ScreenWriter.getScreenWriter().print(output);
         }
         else{
             mana.currentMana=mana.currentMana-specialAbility.manaCost;
             int hits=specialAbility.hitsCount;
             List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeMage(this,specialAbility.range));
             output=getName()+" cast "+specialAbility.name+".\n";
-            ScreenWriter.getScreanWriter().print(output);
+            ScreenWriter.getScreenWriter().print(output);
             for(Enemy e: inRangeEnemies){
                 if(hits==0){ // do nothing
 

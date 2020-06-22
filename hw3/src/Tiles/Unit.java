@@ -26,7 +26,7 @@ public abstract class Unit  extends Tile implements Visited {
         output=getName()+" rolled "+defence+" defense points.\n";
         int dmgDealt=Math.max(0,attackDamage- defence);
         output=output+unit.getName()+" dealt "+dmgDealt+" damage to "+getName()+"\n";
-        ScreenWriter.getScreanWriter().print(output);
+        ScreenWriter.getScreenWriter().print(output);
         boolean isDead = health.healthDecrease(dmgDealt); //return true if this died
         if(isDead) {
             died();
@@ -42,7 +42,7 @@ public abstract class Unit  extends Tile implements Visited {
         output=output+unit.toString()+"\n";
         int attack=(int)(Math.random()*(attackPoint + 1));
         output=output+getName()+" rolled "+ attack+" attack points.\n";
-        ScreenWriter.getScreanWriter().print(output);
+        ScreenWriter.getScreenWriter().print(output);
         return unit.attackMe(attack,this);
 
     }

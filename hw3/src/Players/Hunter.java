@@ -3,8 +3,6 @@ package Players;
 import Board.*;
 import Control.ScreenWriter;
 import Enemys.Enemy;
-import Enemys.Monster;
-import Interfaces.VisitorPattern.Visited;
 
 import java.util.List;
 
@@ -23,7 +21,7 @@ public class Hunter extends Player{
         attackPoint = attackPoint + 2*level;
         defencePoint = defencePoint + level;
         String output = getName() + " reached level " + level +  ": +" + (level * 10) + " Health, +"+ (level * 6) + " Attack, +"+ (level * 2) + " Defense ";
-        ScreenWriter.getScreanWriter().print(output);
+        ScreenWriter.getScreenWriter().print(output);
     }
 
     @Override
@@ -31,7 +29,7 @@ public class Hunter extends Player{
         String output="";
         if(arrows ==0){//print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there are no arrows left.\n";
-            ScreenWriter.getScreanWriter().print(output);
+            ScreenWriter.getScreenWriter().print(output);
         }
         else{
             List<Enemy> inRangeEnemies =Board.getBoard().enemiesInRange(this,specialAbility.range);
@@ -41,18 +39,17 @@ public class Hunter extends Player{
                 else {
                     if (this.location.range(enemy.getLocation()) < this.location.range(toAttack.getLocation()))
                         toAttack = enemy;
-
                 }
             }
                 if (toAttack != null) {
                     output = getName() + " fired an arrow at " + toAttack.getName();
-                    ScreenWriter.getScreanWriter().print(output);
+                    ScreenWriter.getScreenWriter().print(output);
                     toAttack.attackMe(attackPoint, this);
                     arrows = arrows - 1;
                 }
                 else{
                     output = getName()+" tried to shoot an arrow but there were no enemies in range.";
-                    ScreenWriter.getScreanWriter().print(output);
+                    ScreenWriter.getScreenWriter().print(output);
                 }
         }
     }

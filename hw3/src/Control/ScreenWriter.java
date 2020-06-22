@@ -6,7 +6,7 @@ public class ScreenWriter {
 
     private ScreenWriter (){}
 
-    public static ScreenWriter getScreanWriter(){
+    public static ScreenWriter getScreenWriter(){
         if(instance==null) instance=new ScreenWriter();
         return instance;
     }
