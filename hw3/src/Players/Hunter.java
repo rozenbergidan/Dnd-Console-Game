@@ -2,9 +2,9 @@ package Players;
 
 import Board.*;
 import Control.ScreenWriter;
-import Emenys.Enemy;
-import Emenys.Monster;
-import VisitorPattern.Visited;
+import Enemys.Enemy;
+import Enemys.Monster;
+import Interfaces.VisitorPattern.Visited;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class Hunter extends Player{
     }
 
     @Override
-    public void castSpacialAbillity() {
+    public void castSpacialAbility() {
         String output="";
         if(arrows ==0){//print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there are no arrows left.\n";
@@ -57,6 +57,11 @@ public class Hunter extends Player{
         }
     }
 
+
+    @Override
+    public List<Enemy> sort(List<Enemy> list) {
+        return null;
+    }
 
     @Override
     public void onTickAct(Board board) {

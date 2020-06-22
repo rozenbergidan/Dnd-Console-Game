@@ -1,4 +1,4 @@
-package ObserverPattern;
+package Interfaces.ObserverPattern;
 
 import Board.*;
 

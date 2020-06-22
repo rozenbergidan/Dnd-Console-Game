@@ -2,11 +2,9 @@ package Players;
 
 import Board.*;
 import Control.ScreenWriter;
-import Emenys.Enemy;
-import Emenys.Monster;
-import Tiles.Unit;
-import VisitorPattern.Visited;
+import Enemys.Enemy;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Warrior extends Player {
@@ -29,14 +27,14 @@ public class Warrior extends Player {
     }
 
     @Override
-    public void castSpacialAbillity() {
+    public void castSpacialAbility() {
         String output="";
         if(specialAbility.remainingCooldown>0){//print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there is a cooldown: "+specialAbility.remainingCooldown+".\n";
             ScreenWriter.getScreanWriter().print(output);
         }
         else{
-            List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range);
+            List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range));
             if(inRangeEnemies.size()>0) {
                 Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size());
                 health.healthIncrease(10 * defencePoint);
@@ -47,6 +45,17 @@ public class Warrior extends Player {
             }
         }
     }
+
+    @Override
+    public List<Enemy> sort(List<Enemy> list) {
+        List<Enemy> lst=new LinkedList<>();
+        for(Enemy e:list){
+            if(this.location.range(e.getLocation())<specialAbility.range)
+                lst.add(e);
+        }
+        return lst;
+    }
+
 
     @Override
     public void onTickAct(Board board) {

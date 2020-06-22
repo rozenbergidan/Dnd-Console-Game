@@ -2,9 +2,7 @@ package Players;
 
 import Board.*;
 import Control.ScreenWriter;
-import Emenys.Enemy;
-import Emenys.Monster;
-import VisitorPattern.Visited;
+import Enemys.Enemy;
 
 import java.util.List;
 
@@ -27,7 +25,7 @@ public class Rogue extends Player{
     }
 
     @Override
-    public void castSpacialAbillity() {
+    public void castSpacialAbility() {
         String output="";
         if(energy.currentEnergy<specialAbility.energyCost){
             output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+energy.toString()+".\n";
@@ -42,6 +40,11 @@ public class Rogue extends Player{
                 e.attackMe(attackPoint,this);
             }
         }
+    }
+
+    @Override
+    public List<Enemy> sort(List<Enemy> list) {
+        return null; //do nothing
     }
 
     @Override

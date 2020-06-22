@@ -1,13 +1,13 @@
-package Emenys;
+package Enemys;
 
 import Board.*;
 import Players.Player;
 import Tiles.Tile;
-import VisitorPattern.*;
+import Interfaces.VisitorPattern.*;
 
 public class Monster extends Enemy implements Visitor {
 
-    private int vision;
+    protected int vision;
 
     public Monster(Point point, char character, String name, int attack, int defence, int health, int vision,int expValue) {
         super(expValue,point, character, name, attack, defence, health);

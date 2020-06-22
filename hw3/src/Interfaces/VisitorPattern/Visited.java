@@ -1,6 +1,6 @@
-package VisitorPattern;
+package Interfaces.VisitorPattern;
 
-import Emenys.Monster;
+import Enemys.Monster;
 import Players.Player;
 
 public interface Visited {

@@ -1,13 +1,18 @@
 package Players;
 
 import Board.*;
-import Emenys.Monster;
-import ObserverPattern.Observer;
+import Enemys.Enemy;
+import Enemys.Monster;
+import Interfaces.HeroicUnit;
+import Interfaces.ObserverPattern.Observer;
 import Tiles.*;
-import VisitorPattern.Visited;
-import VisitorPattern.Visitor;
+import Interfaces.VisitorPattern.Visited;
+import Interfaces.VisitorPattern.Visitor;
 
-public abstract class Player extends Unit implements Observer, Visitor{
+import java.util.LinkedList;
+import java.util.List;
+
+public abstract class Player extends Unit implements Observer, Visitor, HeroicUnit {
     //    public final char ON_MAP='@';
     private final int START_LEVEL=1;
     private final int START_EXP=0;
@@ -28,7 +33,7 @@ public abstract class Player extends Unit implements Observer, Visitor{
         defencePoint = defencePoint + level;
     }
 
-    public abstract void castSpacialAbillity();
+    public abstract void castSpacialAbility();
 
     private void moveTo(Point goTo){
         //Tile toVisit = Board.getBoard().getTile(goTo);
@@ -58,7 +63,7 @@ public abstract class Player extends Unit implements Observer, Visitor{
     }
 
     public void act(char action) {// get the action char from the gameController
-        if (action == 'e') castSpacialAbillity();
+        if (action == 'e') castSpacialAbility();
         if (action == 'w') moveUp();
         if (action == 'd') moveRight();
         if (action == 's') moveDown();
@@ -82,6 +87,8 @@ public abstract class Player extends Unit implements Observer, Visitor{
         this.character = 'X';
         Board.getBoard().playerDied();
     }
+
+    public abstract List<Enemy> sort(List<Enemy> list);
 
     @Override
     public boolean visit(Visited V){

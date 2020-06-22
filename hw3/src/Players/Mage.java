@@ -2,10 +2,9 @@ package Players;
 
 import Board.*;
 import Control.ScreenWriter;
-import Emenys.Enemy;
-import Emenys.Monster;
-import VisitorPattern.Visited;
+import Enemys.Enemy;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Mage extends Player{
@@ -28,7 +27,7 @@ public class Mage extends Player{
     }
 
     @Override
-    public void castSpacialAbillity() {
+    public void castSpacialAbility() {
         String output="";
         if(mana.currentMana<specialAbility.manaCost){ //print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+mana.toString()+".\n";//Melisandre tried to cast Blizzard, but there was not enough mana: 9/30.
@@ -37,7 +36,7 @@ public class Mage extends Player{
         else{
             mana.currentMana=mana.currentMana-specialAbility.manaCost;
             int hits=specialAbility.hitsCount;
-            List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeMage(this,specialAbility.range);
+            List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeMage(this,specialAbility.range));
             output=getName()+" cast "+specialAbility.name+".\n";
             ScreenWriter.getScreanWriter().print(output);
             for(Enemy e: inRangeEnemies){
@@ -51,6 +50,18 @@ public class Mage extends Player{
             }
         }
 
+    }
+
+    @Override
+    public List<Enemy> sort(List<Enemy> list) {
+        List<Enemy> ls=new LinkedList<>();
+        for (Enemy e:list) {
+            if(this.location.range(e.getLocation())<=specialAbility.range){
+                if(Math.random()*100>=50) //randomness elemnt
+                    ls.add(e);
+            }
+        }
+        return ls;
     }
 
     @Override
