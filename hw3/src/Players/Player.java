@@ -1,12 +1,16 @@
 package Players;
 
 import Board.*;
+import Enemys.Enemy;
 import Enemys.Monster;
 import Interfaces.HeroicUnit;
 import Interfaces.ObserverPattern.Observer;
 import Tiles.*;
 import Interfaces.VisitorPattern.Visited;
 import Interfaces.VisitorPattern.Visitor;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public abstract class Player extends Unit implements Observer, Visitor, HeroicUnit {
     //    public final char ON_MAP='@';
@@ -83,6 +87,8 @@ public abstract class Player extends Unit implements Observer, Visitor, HeroicUn
         this.character = 'X';
         Board.getBoard().playerDied();
     }
+
+    public abstract List<Enemy> sort(List<Enemy> list);
 
     @Override
     public boolean visit(Visited V){

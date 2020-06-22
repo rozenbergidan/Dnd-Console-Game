@@ -43,6 +43,11 @@ public class Rogue extends Player{
     }
 
     @Override
+    public List<Enemy> sort(List<Enemy> list) {
+        return null; //do nothing
+    }
+
+    @Override
     public void onTickAct(Board board) {
         energy.currentEnergy=Math.min(energy.currentEnergy+10,100);
     }

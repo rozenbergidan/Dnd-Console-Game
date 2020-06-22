@@ -4,6 +4,7 @@ import Board.*;
 import Control.ScreenWriter;
 import Enemys.Enemy;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Warrior extends Player {
@@ -33,9 +34,9 @@ public class Warrior extends Player {
             ScreenWriter.getScreanWriter().print(output);
         }
         else{
-            List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range);
+            List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range));
             if(inRangeEnemies.size()>0) {
-                Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size()); /////////////////////////// TODO: this line throws exeption if no enemy is in the range
+                Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size());
                 health.healthIncrease(10 * defencePoint);
                 output = getName() + " used " + specialAbility.name + ", healing for " + 10 * defencePoint + ".\n";
                 ScreenWriter.getScreanWriter().print(output);
@@ -44,6 +45,17 @@ public class Warrior extends Player {
             }
         }
     }
+
+    @Override
+    public List<Enemy> sort(List<Enemy> list) {
+        List<Enemy> lst=new LinkedList<>();
+        for(Enemy e:list){
+            if(this.location.range(e.getLocation())<specialAbility.range)
+                lst.add(e);
+        }
+        return lst;
+    }
+
 
     @Override
     public void onTickAct(Board board) {

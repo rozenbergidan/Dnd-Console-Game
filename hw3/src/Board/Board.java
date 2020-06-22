@@ -242,6 +242,17 @@ public class Board implements Observable {
         return map;
     }
 
+
+    public List<Enemy> enemiesInRange(Player player, double range){
+        List<Enemy> ls=new LinkedList<>();
+        for (Enemy e:enemiesList) {
+            if((int)player.getLocation().range(e.getLocation())<=range){
+                ls.add(e);
+            }
+        }
+        return ls;
+    }
+
     //for warrior
     //return all enemies in range < 3
     public List<Enemy> enemiesInRangeWarrior(Player player, double range){
