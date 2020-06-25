@@ -5,6 +5,7 @@ import Enemys.*;
 import Interfaces.ObserverPattern.*;
 import Players.*;
 import Tiles.*;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,12 +14,12 @@ public class Board implements Observable {
 
     private static Board instance = null;
     private Tile[][] tiles;
-    String[] levels;
-    int level;
-    Player player;
-    List<Enemy> enemiesList;
-    List<Observer> tickObserver;
-    boolean gameOver;
+    private String[] levels;
+    private int level;
+    private Player player;
+    private List<Enemy> enemiesList;
+    private List<Observer> tickObserver;
+    private boolean gameOver;
 
     private Board() { // for singleton use
         enemiesList = new LinkedList<>();
@@ -27,21 +28,32 @@ public class Board implements Observable {
     }
 
     public void initBoard(String[] levels) { //will be called once in game controller
-        this.levels = levels;
+//        int index=0;
+//        this.levels=new String[levels.size()];
+//        for (List<String> lst: levels) {
+//            String str="";
+//            for (String r: lst) {
+//                str+=r+"\n";
+//            }
+//            this.levels[index]=str;
+//            index++;
+//        }
+        this.levels=levels;
     }
 
-    public int[] getBoardSize(){//TODO: throw exception if the board not initialized
-        int[]arr=new int[2];
-        arr[0]=levels[level].split("\n").length;
-        arr[1]=levels[level].indexOf('\n');
+    public int[] getBoardSize() {//TODO: throw exception if the board not initialized
+        int[] arr = new int[2];
+        arr[0] = levels[level].split("\n").length;
+        arr[1] = levels[level].indexOf('\n');
         return arr;
     }
 
-    public int getLevel(){
+    public int getLevel() {
         return level;
     }
-    public void selectCharacter(){
-        String output="Select player:\n1. Jon Snow             Health: 300/300         Attack: 30              Defense: 4              Level: 1                Experience: 0/50                Cooldown: 0/3\n" +
+
+    public void selectCharacter() {
+        String output = "Select player:\n1. Jon Snow             Health: 300/300         Attack: 30              Defense: 4              Level: 1                Experience: 0/50                Cooldown: 0/3\n" +
                 "2. The Hound            Health: 400/400         Attack: 20              Defense: 6              Level: 1                Experience: 0/50                Cooldown: 0/5\n" +
                 "3. Melisandre           Health: 100/100         Attack: 5               Defense: 1              Level: 1                Experience: 0/50                Mana: 75/300            Spell Power: 15\n" +
                 "4. Thoros of Myr                Health: 250/250         Attack: 25              Defense: 4              Level: 1                Experience: 0/50                Mana: 37/150            Spell Power: 20\n" +
@@ -51,16 +63,17 @@ public class Board implements Observable {
         ScreenWriter.getScreenWriter().print(output);
         Scanner scan = new Scanner(System.in);
         int index = scan.nextInt();
-        while(index<1 || index>8){
-            output="input is not valid";
+        while (index < 1 || index > 8) {
+            output = "input is not valid";
             ScreenWriter.getScreenWriter().print(output);
-            index=scan.nextInt();
+            index = scan.nextInt();
         }
         selectCharacter(index);
     }
+
     private void selectCharacter(int index) {
         if (player == null) {
-            String output="";
+            String output = "";
             if (index == 1) {
                 this.player = new Warrior("Jon Snow", 30, 4, 3, 300, new Point(0, 0));
             } else if (index == 2) {
@@ -77,16 +90,16 @@ public class Board implements Observable {
                 this.player = new Hunter("Ygritte", 30, 2, 220, 6, new Point(0, 0));
             }
             addObserver(player);
-            output= output+ "You have selected: " + player.getName()+".\n";
+            output = output + "You have selected: " + player.getName() + ".\n";
             ScreenWriter.getScreenWriter().print(output);
         }
     } //will be called once in game controller
 
     public boolean buildBoard() { // TODO: return true if game over.     //TODO: check if posible to change to private
         enemiesList = new LinkedList<>();
-        tickObserver=new LinkedList<>();
+        tickObserver = new LinkedList<>();
         level++;
-        tiles=new Tile[getBoardSize()[0]][getBoardSize()[1]];
+        tiles = new Tile[getBoardSize()[0]][getBoardSize()[1]];
         int i = 0;
         int j = 0;
         char tile;
@@ -114,7 +127,7 @@ public class Board implements Observable {
                 enemiesList.add(tl);
             } else if (tile == 'k') {
                 tl = new Monster(new Point(i, j), 'k', "Lannister Knight", 14, 8, 200, 4, 50);
-                tiles[i][j]=tl;
+                tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'q') {
                 tl = new Monster(new Point(i, j), 'q', "Queen\'s Guard", 20, 15, 400, 5, 100);
@@ -137,15 +150,15 @@ public class Board implements Observable {
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'M') {
-                tl = new Boss(new Point(i, j), 'M', "The Mountain", 60, 25, 1000, 6, 500,"Skull Cracking","Crack the skull of your infirior",10);
+                tl = new Boss(new Point(i, j), 'M', "The Mountain", 60, 25, 1000, 6, 500, "Skull Cracking", "Crack the skull of your infirior", 10);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'C') {
-                tl = new Boss(new Point(i, j), 'C', "Queen Cersei", 10, 10, 100, 1, 1000,"WildFire","Drop down on your enemy rain of wildfire, burning them alive",25);
+                tl = new Boss(new Point(i, j), 'C', "Queen Cersei", 10, 10, 100, 1, 1000, "WildFire", "Drop down on your enemy rain of wildfire, burning them alive", 25);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'K') {
-                tl = new Boss(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000,"Ice Arrow","Shoot on your enemy an ice arrow",2);
+                tl = new Boss(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000, "Ice Arrow", "Shoot on your enemy an ice arrow", 2);
                 tiles[i][j] = tl;
                 enemiesList.add(tl);
             } else if (tile == 'B') {
@@ -157,12 +170,12 @@ public class Board implements Observable {
                 tp = new Trap(new Point(i, j), 'Q', "Queen\'s Trap", 20, 10, 250, 3, 7, 100);
                 tiles[i][j] = tp;
                 enemiesList.add(tp);
-                addObserver((Trap)tp);
+                addObserver(tp);
             } else if (tile == 'D') {
                 tp = new Trap(new Point(i, j), 'D', "Death Trap", 100, 20, 500, 1, 10, 250);
                 tiles[i][j] = tp;
                 enemiesList.add(tp);
-                addObserver((Trap)tp);
+                addObserver(tp);
             } else {
                 System.out.println("NOT SUPPOSED TO HAPPEN"); //throw exeption???
                 System.out.println(tile);
@@ -174,7 +187,7 @@ public class Board implements Observable {
     } //will be called for each level in game controller
 
     public static Board getBoard() {
-        if(instance==null) instance=new Board();
+        if (instance == null) instance = new Board();
         return instance;
     }
 
@@ -194,8 +207,8 @@ public class Board implements Observable {
 
     public boolean gameTick(char playerAct) { // return true if game over
         player.act(playerAct);
-        for (Enemy enemy: enemiesList) {
-            if(!gameOver) enemy.act();
+        for (Enemy enemy : enemiesList) {
+            if (!gameOver) enemy.act();
         }
         callObservers();
         return gameOver; // return true if game over
@@ -209,13 +222,13 @@ public class Board implements Observable {
 
     @Override
     public void callObservers() {
-        for (Observer o :tickObserver) {
+        for (Observer o : tickObserver) {
             o.onTickAct(this);
         }
     }
     //////////////////////////////////////////
 
-    public void unitDied(Enemy enemy){
+    public void unitDied(Enemy enemy) {
         String output = enemy.getName() + " died. " + player.getName() + " gained " + enemy.getExpValue() + " experience";
         ScreenWriter.getScreenWriter().print(output);
 
@@ -223,32 +236,32 @@ public class Board implements Observable {
         Point enemyLoction = enemy.getLocation();
         tiles[enemyLoction.getX()][enemyLoction.getY()] = new Empty(enemyLoction);
         player.killedEnemy(enemy.getExpValue());
-        if(enemiesList.isEmpty()) buildBoard();
+        if (enemiesList.isEmpty()) buildBoard();
 
     }
 
-    public void playerDied(){
+    public void playerDied() {
         gameOver = true;
         ScreenWriter.getScreenWriter().print("You lost.");
     }
 
-    public String toString(){
-        String map="";
-        for(int i=0;i<tiles.length;i++){
-            int j=0;
-            for(;j<tiles[0].length;j++){
-                map=map+""+tiles[i][j].getCharacter();
+    public String toString() {
+        String map = "";
+        for (int i = 0; i < tiles.length; i++) {
+            int j = 0;
+            for (; j < tiles[0].length; j++) {
+                map = map + "" + tiles[i][j].getCharacter();
             }
-            map=map+""+'\n';
+            map = map + "" + '\n';
         }
         return map;
     }
 
 
-    public List<Enemy> enemiesInRange(Player player, double range){
-        List<Enemy> ls=new LinkedList<>();
-        for (Enemy e:enemiesList) {
-            if((int)player.getLocation().range(e.getLocation())<=range){
+    public List<Enemy> enemiesInRange(Player player, double range) {
+        List<Enemy> ls = new LinkedList<>();
+        for (Enemy e : enemiesList) {
+            if ((int) player.getLocation().range(e.getLocation()) <= range) {
                 ls.add(e);
             }
         }
@@ -257,10 +270,10 @@ public class Board implements Observable {
 
     //for warrior
     //return all enemies in range < 3
-    public List<Enemy> enemiesInRangeWarrior(Player player, double range){
-        List<Enemy> ls=new LinkedList<>();
-        for (Enemy e:enemiesList) {
-            if((int)player.getLocation().range(e.getLocation())<range){
+    public List<Enemy> enemiesInRangeWarrior(Player player, double range) {
+        List<Enemy> ls = new LinkedList<>();
+        for (Enemy e : enemiesList) {
+            if ((int) player.getLocation().range(e.getLocation()) < range) {
                 ls.add(e);
             }
         }
@@ -269,21 +282,21 @@ public class Board implements Observable {
 
     //for Mage
     //return all enemies who is randomly hited by mage spell range
-    public List<Enemy> enemiesInRangeMage(Player player, double range){
-        List<Enemy> ls=new LinkedList<>();
-        for (Enemy e:enemiesList) {
-            if((int)player.getLocation().range(e.getLocation())<=range){
-                if(Math.random()*100>=50) //randomness elemnt
+    public List<Enemy> enemiesInRangeMage(Player player, double range) {
+        List<Enemy> ls = new LinkedList<>();
+        for (Enemy e : enemiesList) {
+            if ((int) player.getLocation().range(e.getLocation()) <= range) {
+                if (Math.random() * 100 >= 50) //randomness elemnt
                     ls.add(e);
             }
         }
         return ls;
     }
 
-    public List<Enemy> enemiesInRangeRogue(Player player, double range){
-        List<Enemy> ls=new LinkedList<>();
-        for (Enemy e:enemiesList) {
-            if((int)player.getLocation().range(e.getLocation())<=range){
+    public List<Enemy> enemiesInRangeRogue(Player player, double range) {
+        List<Enemy> ls = new LinkedList<>();
+        for (Enemy e : enemiesList) {
+            if ((int) player.getLocation().range(e.getLocation()) <= range) {
                 ls.add(e);
             }
         }
