@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class GameController {
     public GameController(){}
-    public void Start(String[]levels,int i){
+    public void Start(String[]levels){
         Board.getBoard().initBoard(levels);
         Board.getBoard().selectCharacter();
         Board.getBoard().buildBoard();
@@ -19,6 +19,5 @@ public class GameController {
             gameOver = Board.getBoard().gameTick(playerAct);// send with char
             //ScreenWriter.getScreanWriter().print(Board.getBoard().getPlayer().toString());
         }
-
     }
 }

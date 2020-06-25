@@ -13,12 +13,12 @@ public class Board implements Observable {
 
     private static Board instance = null;
     private Tile[][] tiles;
-    String[] levels;
-    int level;
-    Player player;
-    List<Enemy> enemiesList;
-    List<Observer> tickObserver;
-    boolean gameOver;
+    private String[] levels;
+    private int level;
+    private Player player;
+    private List<Enemy> enemiesList;
+    private List<Observer> tickObserver;
+    private boolean gameOver;
 
     private Board() { // for singleton use
         enemiesList = new LinkedList<>();
@@ -157,12 +157,12 @@ public class Board implements Observable {
                 tp = new Trap(new Point(i, j), 'Q', "Queen\'s Trap", 20, 10, 250, 3, 7, 100);
                 tiles[i][j] = tp;
                 enemiesList.add(tp);
-                addObserver((Trap)tp);
+                addObserver(tp);
             } else if (tile == 'D') {
                 tp = new Trap(new Point(i, j), 'D', "Death Trap", 100, 20, 500, 1, 10, 250);
                 tiles[i][j] = tp;
                 enemiesList.add(tp);
-                addObserver((Trap)tp);
+                addObserver(tp);
             } else {
                 System.out.println("NOT SUPPOSED TO HAPPEN"); //throw exeption???
                 System.out.println(tile);
