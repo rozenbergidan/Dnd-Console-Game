@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Control/ScreenWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ScreenWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/VisitorPatternTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/WarriorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hw3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Control/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Control/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Control/ScreenWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Control/ScreenWriter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Control/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Control/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Mage$Mana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Mage$Mana.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Mage$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Mage$SpecialAbility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Mage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Mage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$Energy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$Energy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue$SpecialAbility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Warrior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Warrior.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,10 +29,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1cTk8RQw90AKx0we4MdmIoO8cNr" />
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -26,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.VisitorPatternTests">
     <configuration name="Tests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Control.Tests" />
       <module name="hw3" />
@@ -40,8 +75,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VisitorPatternTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hw3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.VisitorPatternTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VisitorPatternTests.testPlayerGoToEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hw3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.VisitorPatternTests" />
+      <option name="METHOD_NAME" value="testPlayerGoToEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VisitorPatternTests" />
+        <item itemvalue="JUnit.VisitorPatternTests.testPlayerGoToEmpty" />
         <item itemvalue="Application.Tests" />
       </list>
     </recent_temporary>
@@ -71,5 +139,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Players/Warrior.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
