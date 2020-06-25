@@ -2,11 +2,12 @@ package Control;
 
 import Board.*;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class GameController {
     public GameController(){}
-    public void Start(String[]levels){
+    public void Start(List<List<String>> levels){
         Board.getBoard().initBoard(levels);
         Board.getBoard().selectCharacter();
         Board.getBoard().buildBoard();

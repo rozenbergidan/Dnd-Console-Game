@@ -25,6 +25,6 @@ public class Main {
                 System.exit(-1);
             }
         }
-        gc.Start(LevelFilesContent.toArray(new String[0]));
+        gc.Start(LevelFilesContent);
     }
 }

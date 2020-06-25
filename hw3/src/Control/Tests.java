@@ -82,7 +82,7 @@ public class Tests {
                 "########.ww.K.ww.########\n" +
                 "#########################"};
         GameController GC = new GameController();
-        GC.Start(levels);
+        //GC.Start(levels);
 
 
     }
