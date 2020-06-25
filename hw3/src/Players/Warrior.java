@@ -10,10 +10,12 @@ import java.util.List;
 public class Warrior extends Player {
 
     private SpecialAbility specialAbility;
+    private boolean castedOnCurrentTick;
 
     public Warrior(String name, int attack, int defence, int cooldown, int health, Point point) {
         super(name, attack, defence, health, point);
         specialAbility = new SpecialAbility(cooldown);
+        castedOnCurrentTick = false;
     }
 
     @Override
@@ -34,6 +36,7 @@ public class Warrior extends Player {
             ScreenWriter.getScreenWriter().print(output);
         }
         else{
+            castedOnCurrentTick = true;
             List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range));
             if(inRangeEnemies.size()>0) {
                 Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size());
@@ -59,7 +62,8 @@ public class Warrior extends Player {
 
     @Override
     public void onTickAct(Board board) {
-        if (specialAbility.remainingCooldown > 0) specialAbility.remainingCooldown--;
+        if (specialAbility.remainingCooldown > 0 & !castedOnCurrentTick) specialAbility.remainingCooldown--;
+        castedOnCurrentTick = false;
     }
 
     public String toString(){
