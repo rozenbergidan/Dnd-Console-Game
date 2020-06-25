@@ -27,17 +27,18 @@ public class Board implements Observable {
         level = -1;
     }
 
-    public void initBoard(List<List<String>> levels) { //will be called once in game controller
-        int index=0;
-        this.levels=new String[levels.size()];
-        for (List<String> lst: levels) {
-            String str="";
-            for (String r: lst) {
-                str+=r+"\n";
-            }
-            this.levels[index]=str;
-            index++;
-        }
+    public void initBoard(String[] levels) { //will be called once in game controller
+//        int index=0;
+//        this.levels=new String[levels.size()];
+//        for (List<String> lst: levels) {
+//            String str="";
+//            for (String r: lst) {
+//                str+=r+"\n";
+//            }
+//            this.levels[index]=str;
+//            index++;
+//        }
+        this.levels=levels;
     }
 
     public int[] getBoardSize() {//TODO: throw exception if the board not initialized

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class GameController {
     public GameController(){}
-    public void Start(List<List<String>> levels){
+    public void Start(String[] levels){
         Board.getBoard().initBoard(levels);
         Board.getBoard().selectCharacter();
         Board.getBoard().buildBoard();

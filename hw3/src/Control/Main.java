@@ -25,6 +25,16 @@ public class Main {
                 System.exit(-1);
             }
         }
-        gc.Start(LevelFilesContent);
+        String[] levels=new String[LevelFilesContent.size()];
+        int index=0;
+        for (List<String> lst: LevelFilesContent) {
+            String str="";
+            for (String r: lst) {
+                str+=r+"\n";
+            }
+            levels[index]=str;
+            index++;
+        }
+        gc.Start(levels);
     }
 }
