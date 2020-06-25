@@ -21,13 +21,9 @@ public class VisitorPatternTests {
         strongPlayer = new Warrior("strongPlayer", 1000, 1000, 1, 1000, new Point(1, 1));
         weakPlayer = new Warrior("weakPlayer", 0, 0, 1, 1, new Point(1, 1));
 
-        strongMonster = new Monster(new Point(2, 2), 'a', "strongEnemy", 1000, 1000, 1000, 10, 10);
+        strongMonster = new TestMonster(new Point(2, 2), 'a', "strongEnemy", 1000, 1000, 1000, 10, 10);
 
-
-        weakMonster = new Monster(new Point(3, 3), 'a', "weakEnemy", 0, 0, 1, 10, 10);
-
-
-
+        weakMonster = new TestMonster(new Point(3, 3), 'a', "weakEnemy", 0, 0, 1, 10, 10);
 
         empty = new Empty(new Point(4,4));
 
@@ -41,11 +37,18 @@ public class VisitorPatternTests {
 
     @Test
     public void testPlayerGoToWall(){
-        Assert.assertFalse( weakPlayer.visit(wall));
+        Assert.assertFalse( strongPlayer.visit(wall));
     }
 
+    @Test
+    public void testMonsterGoToEmpty(){
+        Assert.assertTrue( strongMonster.visit(empty));
+    }
 
-
+    @Test
+    public void testMonsterGoToWall(){
+        Assert.assertFalse( strongMonster.visit(wall));
+    }
 
     @Test
     public void testPlayerGoToMonsterNotKill(){
@@ -54,15 +57,24 @@ public class VisitorPatternTests {
 
     @Test
     public void testPlayerGoToMonsterKill(){
-        System.out.println("test 2");
        Assert.assertTrue( strongPlayer.visit(weakMonster));
     }
-
 
     @Test
     public void testMonsterGoToMonster(){
         Assert.assertFalse( weakMonster.visit(strongMonster));
     }
+
+    @Test
+    public void testMonsterGoToPlayerKill(){
+        Assert.assertFalse( strongMonster.visit(weakPlayer));
+    }
+
+    @Test
+    public void testMonsterGoToPlayerNotKill(){
+        Assert.assertFalse( weakMonster.visit(strongPlayer));
+    }
+
 
 
 

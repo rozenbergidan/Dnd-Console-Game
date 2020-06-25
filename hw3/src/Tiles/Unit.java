@@ -7,7 +7,7 @@ import Interfaces.VisitorPattern.*;
 public abstract class Unit  extends Tile implements Visited {
     // FILDES
     private String name;
-    public Health health; //changed to public for warrior specialAbility
+    protected Health health; //changed to public for warrior specialAbility
     protected int attackPoint;
     protected int defencePoint;
 
