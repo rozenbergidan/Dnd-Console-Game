@@ -34,7 +34,7 @@ public class Trap extends Enemy implements Observer {
 
     @Override
     public void act() {
-        /////////////////// need to add attack to traps
+        if(location.range(Board.getBoard().getPlayer().getLocation()) < 2) attack(Board.getBoard().getPlayer());
     }
     @Override
     public boolean accept(Player p) {

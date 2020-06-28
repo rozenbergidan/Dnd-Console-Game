@@ -9,7 +9,6 @@ import Tiles.*;
 import Interfaces.VisitorPattern.Visited;
 import Interfaces.VisitorPattern.Visitor;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public abstract class Player extends Unit implements Observer, Visitor, HeroicUnit {
@@ -83,12 +82,12 @@ public abstract class Player extends Unit implements Observer, Visitor, HeroicUn
         }
     }
 
-    public void died(){
+    protected void died(){
         this.character = 'X';
         Board.getBoard().playerDied();
     }
 
-    public abstract List<Enemy> sort(List<Enemy> list);
+    public abstract List<Enemy> filter(List<Enemy> list);
 
     @Override
     public boolean visit(Visited V){

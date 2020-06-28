@@ -36,7 +36,8 @@ public class Mage extends Player{
         else{
             mana.currentMana=mana.currentMana-specialAbility.manaCost;
             int hits=specialAbility.hitsCount;
-            List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeMage(this,specialAbility.range));
+            //List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeMage(this,specialAbility.range));
+            List<Enemy> inRangeEnemies= filter(Board.getBoard().enemiesInRange(this,specialAbility.range));
             output=getName()+" cast "+specialAbility.name+".\n";
             ScreenWriter.getScreenWriter().print(output);
             for(Enemy e: inRangeEnemies){
@@ -53,7 +54,7 @@ public class Mage extends Player{
     }
 
     @Override
-    public List<Enemy> sort(List<Enemy> list) {
+    public List<Enemy> filter(List<Enemy> list) {
         List<Enemy> ls=new LinkedList<>();
         for (Enemy e:list) {
             if(this.location.range(e.getLocation())<=specialAbility.range){

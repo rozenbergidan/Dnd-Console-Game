@@ -37,7 +37,8 @@ public class Warrior extends Player {
         }
         else{
             castedOnCurrentTick = true;
-            List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range));
+            //List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range));
+            List<Enemy> inRangeEnemies= filter(Board.getBoard().enemiesInRange(this,specialAbility.range));
             if(inRangeEnemies.size()>0) {
                 Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size());
                 health.healthIncrease(10 * defencePoint);
@@ -46,11 +47,15 @@ public class Warrior extends Player {
                 attackedEnemy.attackMe((int) (health.getHealthPool() * 0.1), this);
                 specialAbility.remainingCooldown = specialAbility.coolDown;
             }
+            else{
+                output=getName()+" tried to cast "+specialAbility.name+", but there was no munster in range.\n";
+                ScreenWriter.getScreenWriter().print(output);
+            }
         }
     }
 
     @Override
-    public List<Enemy> sort(List<Enemy> list) {
+    public List<Enemy> filter(List<Enemy> list) {
         List<Enemy> lst=new LinkedList<>();
         for(Enemy e:list){
             if(this.location.range(e.getLocation())<specialAbility.range)

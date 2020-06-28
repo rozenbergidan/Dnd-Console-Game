@@ -57,7 +57,7 @@ public class Hunter extends Player{
 
 
     @Override
-    public List<Enemy> sort(List<Enemy> list) {
+    public List<Enemy> filter(List<Enemy> list) {
         return null;
     }
 

@@ -33,7 +33,8 @@ public class Rogue extends Player{
         }
         else{
             energy.currentEnergy=energy.currentEnergy-specialAbility.energyCost;
-            List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeRogue(this,specialAbility.range);
+            List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRange(this,specialAbility.range);
+            //List<Enemy> inRangeEnemies=Board.getBoard().enemiesInRangeRogue(this,specialAbility.range);
             output=getName()+" cast "+specialAbility.name+".\n";
             ScreenWriter.getScreenWriter().print(output);
             for(Enemy e: inRangeEnemies){
@@ -43,7 +44,7 @@ public class Rogue extends Player{
     }
 
     @Override
-    public List<Enemy> sort(List<Enemy> list) {
+    public List<Enemy> filter(List<Enemy> list) {
         return null; //do nothing
     }
 

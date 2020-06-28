@@ -25,26 +25,20 @@ public class Board implements Observable {
         enemiesList = new LinkedList<>();
         tickObserver = new LinkedList<>();
         level = -1;
+        gameOver = false;
     }
 
     public void initBoard(String[] levels) { //will be called once in game controller
-//        int index=0;
-//        this.levels=new String[levels.size()];
-//        for (List<String> lst: levels) {
-//            String str="";
-//            for (String r: lst) {
-//                str+=r+"\n";
-//            }
-//            this.levels[index]=str;
-//            index++;
-//        }
         this.levels=levels;
+        selectCharacter();
+        buildBoard();
     }
 
-    public int[] getBoardSize() {//TODO: throw exception if the board not initialized
+    private int[] getBoardSize() {
+        if(levels == null) throw new IllegalArgumentException("board did not initializes");
         int[] arr = new int[2];
-        arr[0] = levels[level].split("\n").length;
-        arr[1] = levels[level].indexOf('\n');
+        arr[0] = levels[level].split("\n").length; //rows
+        arr[1] = levels[level].indexOf('\n'); // columns
         return arr;
     }
 
@@ -52,7 +46,7 @@ public class Board implements Observable {
         return level;
     }
 
-    public void selectCharacter() {
+    private void selectCharacter() {
         String output = "Select player:\n1. Jon Snow             Health: 300/300         Attack: 30              Defense: 4              Level: 1                Experience: 0/50                Cooldown: 0/3\n" +
                 "2. The Hound            Health: 400/400         Attack: 20              Defense: 6              Level: 1                Experience: 0/50                Cooldown: 0/5\n" +
                 "3. Melisandre           Health: 100/100         Attack: 5               Defense: 1              Level: 1                Experience: 0/50                Mana: 75/300            Spell Power: 15\n" +
@@ -93,97 +87,102 @@ public class Board implements Observable {
             output = output + "You have selected: " + player.getName() + ".\n";
             ScreenWriter.getScreenWriter().print(output);
         }
-    } //will be called once in game controller
+    }
 
-    public boolean buildBoard() { // TODO: return true if game over.     //TODO: check if posible to change to private
+    private boolean buildBoard() {
+
         enemiesList = new LinkedList<>();
         tickObserver = new LinkedList<>();
         level++;
-        tiles = new Tile[getBoardSize()[0]][getBoardSize()[1]];
-        int i = 0;
-        int j = 0;
-        char tile;
-        Enemy tl;
-        Trap tp;
-        String board = levels[level];
-        gameOver = false;
-
-        while (!board.equals("")) {
-            tile = board.charAt(0);
-            if (tile == '\n') {
-                i++;
-                j = -1;
-            } else if (tile == '@') {
-                player.setLocation(i, j);
-                tiles[i][j] = player;
-                addObserver(player);
-            } else if (tile == '.') {
-                tiles[i][j] = new Empty(new Point(i, j));
-            } else if (tile == '#') {
-                tiles[i][j] = new Wall(new Point(i, j));
-            } else if (tile == 's') {
-                tl = new Monster(new Point(i, j), 's', "Lannister Solider", 8, 3, 80, 3, 25);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'k') {
-                tl = new Monster(new Point(i, j), 'k', "Lannister Knight", 14, 8, 200, 4, 50);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'q') {
-                tl = new Monster(new Point(i, j), 'q', "Queen\'s Guard", 20, 15, 400, 5, 100);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'z') {
-                tl = new Monster(new Point(i, j), 'z', "Wright", 30, 15, 600, 3, 100);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'b') {
-                tl = new Monster(new Point(i, j), 'b', "Bear-Wright", 75, 30, 1000, 4, 250);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'g') {
-                tl = new Monster(new Point(i, j), 'g', "Giant-Wright", 100, 40, 1500, 5, 500);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'w') {
-                tl = new Monster(new Point(i, j), 'w', "White Walker", 150, 50, 2000, 6, 1000);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'M') {
-                tl = new Boss(new Point(i, j), 'M', "The Mountain", 60, 25, 1000, 6, 500, "Skull Cracking", "Crack the skull of your infirior", 10);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'C') {
-                tl = new Boss(new Point(i, j), 'C', "Queen Cersei", 10, 10, 100, 1, 1000, "WildFire", "Drop down on your enemy rain of wildfire, burning them alive", 25);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'K') {
-                tl = new Boss(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000, "Ice Arrow", "Shoot on your enemy an ice arrow", 2);
-                tiles[i][j] = tl;
-                enemiesList.add(tl);
-            } else if (tile == 'B') {
-                tp = new Trap(new Point(i, j), 'B', "Bonus Trap", 1, 1, 1, 1, 5, 250);
-                tiles[i][j] = tp;
-                enemiesList.add(tp);
-                addObserver(tp);
-            } else if (tile == 'Q') {
-                tp = new Trap(new Point(i, j), 'Q', "Queen\'s Trap", 20, 10, 250, 3, 7, 100);
-                tiles[i][j] = tp;
-                enemiesList.add(tp);
-                addObserver(tp);
-            } else if (tile == 'D') {
-                tp = new Trap(new Point(i, j), 'D', "Death Trap", 100, 20, 500, 1, 10, 250);
-                tiles[i][j] = tp;
-                enemiesList.add(tp);
-                addObserver(tp);
-            } else {
-                System.out.println("NOT SUPPOSED TO HAPPEN"); //throw exeption???
-                System.out.println(tile);
+        if (level < levels.length){
+            tiles = new Tile[getBoardSize()[0]][getBoardSize()[1]];
+            int i = 0;
+            int j = 0;
+            char tile;
+            Enemy tl;
+            Trap tp;
+            String board = levels[level];
+            while (!board.equals("")) {
+                tile = board.charAt(0);
+                if (tile == '\n') {
+                    i++;
+                    j = -1;
+                } else if (tile == '@') {
+                    player.setLocation(i, j);
+                    tiles[i][j] = player;
+                    addObserver(player);
+                } else if (tile == '.') {
+                    tiles[i][j] = new Empty(new Point(i, j));
+                } else if (tile == '#') {
+                    tiles[i][j] = new Wall(new Point(i, j));
+                } else if (tile == 's') {
+                    tl = new Monster(new Point(i, j), 's', "Lannister Solider", 8, 3, 80, 3, 25);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'k') {
+                    tl = new Monster(new Point(i, j), 'k', "Lannister Knight", 14, 8, 200, 4, 50);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'q') {
+                    tl = new Monster(new Point(i, j), 'q', "Queen\'s Guard", 20, 15, 400, 5, 100);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'z') {
+                    tl = new Monster(new Point(i, j), 'z', "Wright", 30, 15, 600, 3, 100);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'b') {
+                    tl = new Monster(new Point(i, j), 'b', "Bear-Wright", 75, 30, 1000, 4, 250);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'g') {
+                    tl = new Monster(new Point(i, j), 'g', "Giant-Wright", 100, 40, 1500, 5, 500);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'w') {
+                    tl = new Monster(new Point(i, j), 'w', "White Walker", 150, 50, 2000, 6, 1000);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'M') {
+                    tl = new Boss(new Point(i, j), 'M', "The Mountain", 60, 25, 1000, 6, 500, "Skull Cracking", "Crack the skull of your infirior", 10);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'C') {
+                    tl = new Boss(new Point(i, j), 'C', "Queen Cersei", 10, 10, 100, 1, 1000, "WildFire", "Drop down on your enemy rain of wildfire, burning them alive", 25);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'K') {
+                    tl = new Boss(new Point(i, j), 'K', "Night\'s King", 300, 150, 5000, 8, 5000, "Ice Arrow", "Shoot on your enemy an ice arrow", 2);
+                    tiles[i][j] = tl;
+                    enemiesList.add(tl);
+                } else if (tile == 'B') {
+                    tp = new Trap(new Point(i, j), 'B', "Bonus Trap", 1, 1, 1, 1, 5, 250);
+                    tiles[i][j] = tp;
+                    enemiesList.add(tp);
+                    addObserver(tp);
+                } else if (tile == 'Q') {
+                    tp = new Trap(new Point(i, j), 'Q', "Queen\'s Trap", 20, 10, 250, 3, 7, 100);
+                    tiles[i][j] = tp;
+                    enemiesList.add(tp);
+                    addObserver(tp);
+                } else if (tile == 'D') {
+                    tp = new Trap(new Point(i, j), 'D', "Death Trap", 100, 20, 500, 1, 10, 250);
+                    tiles[i][j] = tp;
+                    enemiesList.add(tp);
+                    addObserver(tp);
+                } else {
+                    ScreenWriter.getScreenWriter().print("Invalid character");
+                    ScreenWriter.getScreenWriter().print(tile + "");
+                }
+                j++;
+                board = board.substring(1);
             }
-            j++;
-            board = board.substring(1);
         }
-        return false;// return true if game over
+        else {
+            gameOver = true;
+            ScreenWriter.getScreenWriter().print("You won!");
+        }
+        return gameOver;// return true if game over
     } //will be called for each level in game controller
 
     public static Board getBoard() {
@@ -257,43 +256,7 @@ public class Board implements Observable {
         return map;
     }
 
-
     public List<Enemy> enemiesInRange(Player player, double range) {
-        List<Enemy> ls = new LinkedList<>();
-        for (Enemy e : enemiesList) {
-            if ((int) player.getLocation().range(e.getLocation()) <= range) {
-                ls.add(e);
-            }
-        }
-        return ls;
-    }
-
-    //for warrior
-    //return all enemies in range < 3
-    public List<Enemy> enemiesInRangeWarrior(Player player, double range) {
-        List<Enemy> ls = new LinkedList<>();
-        for (Enemy e : enemiesList) {
-            if ((int) player.getLocation().range(e.getLocation()) < range) {
-                ls.add(e);
-            }
-        }
-        return ls;
-    }
-
-    //for Mage
-    //return all enemies who is randomly hited by mage spell range
-    public List<Enemy> enemiesInRangeMage(Player player, double range) {
-        List<Enemy> ls = new LinkedList<>();
-        for (Enemy e : enemiesList) {
-            if ((int) player.getLocation().range(e.getLocation()) <= range) {
-                if (Math.random() * 100 >= 50) //randomness elemnt
-                    ls.add(e);
-            }
-        }
-        return ls;
-    }
-
-    public List<Enemy> enemiesInRangeRogue(Player player, double range) {
         List<Enemy> ls = new LinkedList<>();
         for (Enemy e : enemiesList) {
             if ((int) player.getLocation().range(e.getLocation()) <= range) {

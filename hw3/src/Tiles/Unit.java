@@ -34,7 +34,7 @@ public abstract class Unit  extends Tile implements Visited {
         return isDead;
     }
 
-    public abstract void died();
+    protected abstract void died();
 
     public boolean attack(Unit unit){
         String output=getName()+" engaged in combat with "+unit.name+".\n";

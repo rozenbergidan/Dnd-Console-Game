@@ -17,7 +17,7 @@ public abstract class Enemy extends Unit {
     }
 
     @Override
-    public void died() {
+    protected void died() {
         Board.getBoard().unitDied(this);
     }
 

@@ -36,9 +36,6 @@ public class Boss extends Monster implements HeroicUnit {
     }
 
     private class SpecialAbility {
-//        private final String NAME="Dracarys";
-//        private final String DESCRIPTION="Throwing fire missiles at the enemy position";
-
         private final int START_COMBAT_TICK=0;
         private String name;
         private String desc;
