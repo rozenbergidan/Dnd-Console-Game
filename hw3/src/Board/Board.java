@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Board implements Observable {
-
+    //====================FIELDS==================
     private static Board instance = null;
     private Tile[][] tiles;
     private String[] levels;
@@ -21,11 +21,17 @@ public class Board implements Observable {
     private List<Observer> tickObserver;
     private boolean gameOver;
 
+    //=================CONSTRUCTOR=================
     private Board() { // for singleton use
         enemiesList = new LinkedList<>();
         tickObserver = new LinkedList<>();
         level = -1;
         gameOver = false;
+    }
+    //================PUBLIC_METHODS===============
+    public static Board getBoard() {
+        if (instance == null) instance = new Board();
+        return instance;
     }
 
     public void initBoard(String[] levels) { //will be called once in game controller
@@ -34,16 +40,78 @@ public class Board implements Observable {
         buildBoard();
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Tile getTile(Point p) {
+        return tiles[p.getX()][p.getY()];
+    }
+
+    public void switchTile(Point p1, Point p2) {
+        Tile temp = tiles[p1.getX()][p1.getY()];
+        tiles[p1.getX()][p1.getY()] = tiles[p2.getX()][p2.getY()];
+        tiles[p2.getX()][p2.getY()] = temp;
+    }
+
+    public boolean gameTick(char playerAct) { // return true if game over
+        player.act(playerAct);
+        for (Enemy enemy : enemiesList) {
+            if (!gameOver) enemy.act();
+        }
+        callObservers();
+        return gameOver; // return true if game over
+    }
+
+    public void unitDied(Enemy enemy) {
+        String output = enemy.getName() + " died. " + player.getName() + " gained " + enemy.getExpValue() + " experience";
+        ScreenWriter.getScreenWriter().print(output);
+
+        enemiesList.remove(enemy);
+        Point enemyLoction = enemy.getLocation();
+        tiles[enemyLoction.getX()][enemyLoction.getY()] = new Empty(enemyLoction);
+        player.killedEnemy(enemy.getExpValue());
+        if (enemiesList.isEmpty()) buildBoard();
+
+    }
+
+    public void playerDied() {
+        gameOver = true;
+        ScreenWriter.getScreenWriter().print("You lost.");
+    }
+
+    public List<Enemy> enemiesInRange(Player player, double range) {
+        List<Enemy> ls = new LinkedList<>();
+        for (Enemy e : enemiesList) {
+            if ((int) player.getLocation().range(e.getLocation()) <= range) {
+                ls.add(e);
+            }
+        }
+        return ls;
+    }
+
+    public String toString() {
+        String map = "";
+        for (int i = 0; i < tiles.length; i++) {
+            int j = 0;
+            for (; j < tiles[0].length; j++) {
+                map = map + "" + tiles[i][j].getCharacter();
+            }
+            map = map + "" + '\n';
+        }
+        return map;
+    }
+    //================PRIVATE_METHODS==============
     private int[] getBoardSize() {
         if(levels == null) throw new IllegalArgumentException("board did not initializes");
         int[] arr = new int[2];
         arr[0] = levels[level].split("\n").length; //rows
         arr[1] = levels[level].indexOf('\n'); // columns
         return arr;
-    }
-
-    public int getLevel() {
-        return level;
     }
 
     private void selectCharacter() {
@@ -184,36 +252,7 @@ public class Board implements Observable {
         }
         return gameOver;// return true if game over
     } //will be called for each level in game controller
-
-    public static Board getBoard() {
-        if (instance == null) instance = new Board();
-        return instance;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public Tile getTile(Point p) {
-        return tiles[p.getX()][p.getY()];
-    }
-
-    public void switchTile(Point p1, Point p2) {
-        Tile temp = tiles[p1.getX()][p1.getY()];
-        tiles[p1.getX()][p1.getY()] = tiles[p2.getX()][p2.getY()];
-        tiles[p2.getX()][p2.getY()] = temp;
-    }
-
-    public boolean gameTick(char playerAct) { // return true if game over
-        player.act(playerAct);
-        for (Enemy enemy : enemiesList) {
-            if (!gameOver) enemy.act();
-        }
-        callObservers();
-        return gameOver; // return true if game over
-    }
-
-    //////////////////////////Observer Pattern
+    //==================INTERFACES===============
     @Override
     public void addObserver(Observer O) {
         tickObserver.add(O);
@@ -225,44 +264,11 @@ public class Board implements Observable {
             o.onTickAct(this);
         }
     }
-    //////////////////////////////////////////
 
-    public void unitDied(Enemy enemy) {
-        String output = enemy.getName() + " died. " + player.getName() + " gained " + enemy.getExpValue() + " experience";
-        ScreenWriter.getScreenWriter().print(output);
 
-        enemiesList.remove(enemy);
-        Point enemyLoction = enemy.getLocation();
-        tiles[enemyLoction.getX()][enemyLoction.getY()] = new Empty(enemyLoction);
-        player.killedEnemy(enemy.getExpValue());
-        if (enemiesList.isEmpty()) buildBoard();
 
-    }
 
-    public void playerDied() {
-        gameOver = true;
-        ScreenWriter.getScreenWriter().print("You lost.");
-    }
 
-    public String toString() {
-        String map = "";
-        for (int i = 0; i < tiles.length; i++) {
-            int j = 0;
-            for (; j < tiles[0].length; j++) {
-                map = map + "" + tiles[i][j].getCharacter();
-            }
-            map = map + "" + '\n';
-        }
-        return map;
-    }
 
-    public List<Enemy> enemiesInRange(Player player, double range) {
-        List<Enemy> ls = new LinkedList<>();
-        for (Enemy e : enemiesList) {
-            if ((int) player.getLocation().range(e.getLocation()) <= range) {
-                ls.add(e);
-            }
-        }
-        return ls;
-    }
+
 }

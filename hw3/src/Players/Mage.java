@@ -8,15 +8,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Mage extends Player{
+    //====================FIELDS==================
     private Mana mana;
     private SpecialAbility specialAbility;
-
-    public Mage(String name, int attack, int defence, int health,int mana, int manaCost,int spellPower, int hitsCount, int range, Point point) {
+    //=================CONSTRUCTOR=================
+    public Mage(String name, int attack, int defence, int health,
+                int mana, int manaCost,int spellPower, int hitsCount, int range, Point point) {
         super(name, attack, defence, health, point);
         this.mana = new Mana(mana);
         specialAbility=new SpecialAbility(manaCost,spellPower,hitsCount,range);
     }
-
+    //================PUBLIC_METHODS===============
+    @Override
     public void levelUP(){
         super.levelUP();
         mana.currentMana=Math.min(mana.currentMana+mana.manaPool/4,mana.manaPool);
@@ -26,6 +29,26 @@ public class Mage extends Player{
         ScreenWriter.getScreenWriter().print(output);
     }
 
+    public String toString(){
+        return super.toString()+"\t\t"+mana.toString()+"\t\t"+"SpellPower: "+specialAbility.spellPower;
+    }
+    @Override
+    public List<Enemy> filter(List<Enemy> list) {
+        List<Enemy> ls=new LinkedList<>();
+        for (Enemy e:list) {
+            if(this.location.range(e.getLocation())<=specialAbility.range){
+                if(Math.random()*100>=50) //randomness elemnt
+                    ls.add(e);
+            }
+        }
+        return ls;
+    }
+
+    //==================INTERFACES===============
+    @Override
+    public void onTickAct(Board board) {
+        mana.currentMana=(Math.min(mana.manaPool,mana.currentMana+level));
+    }
     @Override
     public void castSpacialAbility() {
         String output="";
@@ -53,27 +76,7 @@ public class Mage extends Player{
 
     }
 
-    @Override
-    public List<Enemy> filter(List<Enemy> list) {
-        List<Enemy> ls=new LinkedList<>();
-        for (Enemy e:list) {
-            if(this.location.range(e.getLocation())<=specialAbility.range){
-                if(Math.random()*100>=50) //randomness elemnt
-                    ls.add(e);
-            }
-        }
-        return ls;
-    }
-
-    @Override
-    public void onTickAct(Board board) {
-        mana.currentMana=(Math.min(mana.manaPool,mana.currentMana+level));
-    }
-
-
-    public String toString(){
-        return super.toString()+"\t\t"+mana.toString()+"\t\t"+"SpellPower: "+specialAbility.spellPower;
-    }
+    //================NESTED_CLASSES===============
     private class Mana{// nested class
         private int manaPool;
         private int currentMana;

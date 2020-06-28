@@ -12,53 +12,24 @@ import Interfaces.VisitorPattern.Visitor;
 import java.util.List;
 
 public abstract class Player extends Unit implements Observer, Visitor, HeroicUnit {
-    //    public final char ON_MAP='@';
+    //====================FIELDS==================
     private final int START_LEVEL=1;
     private final int START_EXP=0;
     protected int level;
     protected int exp;
-
+    //=================CONSTRUCTOR=================
     public Player(String name, int attack, int defence,int health,Point point){
         super(point,'@',name, attack, defence, health);
         level=START_LEVEL;
         exp=START_EXP;
     }
-
+    //================PUBLIC_METHODS===============
     public void levelUP() {
         exp = exp - (50 * level);
         level++;
         health.levelUP(level);
         attackPoint = attackPoint + 4 * level;
         defencePoint = defencePoint + level;
-    }
-
-    public abstract void castSpacialAbility();
-
-    private void moveTo(Point goTo){
-        //Tile toVisit = Board.getBoard().getTile(goTo);
-        int correntLvl = Board.getBoard().getLevel();
-        if(visit(Board.getBoard().getTile(goTo)) && correntLvl == Board.getBoard().getLevel()){
-            switchLocation(Board.getBoard().getTile(goTo));
-            Board.getBoard().switchTile(location, Board.getBoard().getTile(goTo).getLocation());
-        }
-    }
-    private void moveRight(){
-        Point goTo = new Point(location.getX(), location.getY() + 1);
-        moveTo(goTo);
-    }
-
-    private void moveLeft(){
-        Point goTo  = new Point(location.getX() , location.getY()- 1);
-        moveTo(goTo);
-    }
-    private void moveUp(){
-        Point goTo  = new Point(location.getX() - 1, location.getY() );
-        moveTo(goTo);
-    }
-
-    private void moveDown(){
-        Point goTo  = new Point(location.getX() + 1, location.getY() );
-        moveTo(goTo);
     }
 
     public void act(char action) {// get the action char from the gameController
@@ -87,8 +58,41 @@ public abstract class Player extends Unit implements Observer, Visitor, HeroicUn
         Board.getBoard().playerDied();
     }
 
+    public String toString(){
+        String output="";
+        output=getName() + "\t\t" + health.toString() + "\t\t" + "Attack: " + attackPoint + "\t\t" + "Defence: " + defencePoint+"\t\t"+"Level: "+ level+"\t\t"+"Experience: "+ exp+"\\"+50*level;
+        return output;
+    }
+
     public abstract List<Enemy> filter(List<Enemy> list);
 
+    //================PRIVATE_METHODS==============
+    private void moveTo(Point goTo){
+        //Tile toVisit = Board.getBoard().getTile(goTo);
+        int correntLvl = Board.getBoard().getLevel();
+        if(visit(Board.getBoard().getTile(goTo)) && correntLvl == Board.getBoard().getLevel()){
+            switchLocation(Board.getBoard().getTile(goTo));
+            Board.getBoard().switchTile(location, Board.getBoard().getTile(goTo).getLocation());
+        }
+    }
+    private void moveRight(){
+        Point goTo = new Point(location.getX(), location.getY() + 1);
+        moveTo(goTo);
+    }
+    private void moveLeft(){
+        Point goTo  = new Point(location.getX() , location.getY()- 1);
+        moveTo(goTo);
+    }
+    private void moveUp(){
+        Point goTo  = new Point(location.getX() - 1, location.getY() );
+        moveTo(goTo);
+    }
+    private void moveDown(){
+        Point goTo  = new Point(location.getX() + 1, location.getY() );
+        moveTo(goTo);
+    }
+
+    //==================INTERFACES===============
     @Override
     public boolean visit(Visited V){
         return V.accept(this);
@@ -105,9 +109,6 @@ public abstract class Player extends Unit implements Observer, Visitor, HeroicUn
         return false;
     }
 
-    public String toString(){
-        String output="";
-        output=getName() + "\t\t" + health.toString() + "\t\t" + "Attack: " + attackPoint + "\t\t" + "Defence: " + defencePoint+"\t\t"+"Level: "+ level+"\t\t"+"Experience: "+ exp+"\\"+50*level;
-        return output;
-    }
+    public abstract void castSpacialAbility();
+
 }

@@ -8,16 +8,16 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Warrior extends Player {
-
+    //====================FIELDS==================
     private SpecialAbility specialAbility;
     private boolean castedOnCurrentTick;
-
+    //=================CONSTRUCTOR=================
     public Warrior(String name, int attack, int defence, int cooldown, int health, Point point) {
         super(name, attack, defence, health, point);
         specialAbility = new SpecialAbility(cooldown);
         castedOnCurrentTick = false;
     }
-
+    //================PUBLIC_METHODS===============
     @Override
     public void levelUP(){
         super.levelUP();
@@ -28,6 +28,25 @@ public class Warrior extends Player {
         ScreenWriter.getScreenWriter().print(output);
     }
 
+    public String toString(){
+        return super.toString()+"\t\t"+specialAbility.toString();
+    }
+    @Override
+    public List<Enemy> filter(List<Enemy> list) {
+        List<Enemy> lst=new LinkedList<>();
+        for(Enemy e:list){
+            if(this.location.range(e.getLocation())<specialAbility.range)
+                lst.add(e);
+        }
+        return lst;
+    }
+
+    //==================INTERFACES===============
+    @Override
+    public void onTickAct(Board board) {
+        if (specialAbility.remainingCooldown > 0 & !castedOnCurrentTick) specialAbility.remainingCooldown--;
+        castedOnCurrentTick = false;
+    }
     @Override
     public void castSpacialAbility() {
         String output="";
@@ -54,27 +73,7 @@ public class Warrior extends Player {
         }
     }
 
-    @Override
-    public List<Enemy> filter(List<Enemy> list) {
-        List<Enemy> lst=new LinkedList<>();
-        for(Enemy e:list){
-            if(this.location.range(e.getLocation())<specialAbility.range)
-                lst.add(e);
-        }
-        return lst;
-    }
-
-
-    @Override
-    public void onTickAct(Board board) {
-        if (specialAbility.remainingCooldown > 0 & !castedOnCurrentTick) specialAbility.remainingCooldown--;
-        castedOnCurrentTick = false;
-    }
-
-    public String toString(){
-        return super.toString()+"\t\t"+specialAbility.toString();
-    }
-
+    //================NESTED_CLASSES===============
     private class SpecialAbility{
         private final String NAME = "Avenger’s Shield";
         private final String DESCRIPTION = "randomly hits one enemy withing range < 3 for an amount\n" +

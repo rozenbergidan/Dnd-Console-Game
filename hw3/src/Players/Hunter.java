@@ -7,14 +7,16 @@ import Enemys.Enemy;
 import java.util.List;
 
 public class Hunter extends Player{
+    //====================FIELDS==================
     private int arrows;
     private SpecialAbility specialAbility;
-
+    //=================CONSTRUCTOR=================
     public Hunter(String name, int attack, int defence, int health, int range, Point point) {
         super(name, attack, defence, health, point);
         specialAbility=new SpecialAbility(range);
         this.arrows=10;
     }
+    //================PUBLIC_METHODS===============
 
     public void levelUP(){
         super.levelUP();
@@ -25,6 +27,23 @@ public class Hunter extends Player{
         ScreenWriter.getScreenWriter().print(output);
     }
 
+    public String toString(){
+        return super.toString() + "\t\t" + specialAbility.toString();
+    }
+    @Override
+    public List<Enemy> filter(List<Enemy> list) {
+        return null;
+    }
+    //==================INTERFACES===============
+    @Override
+    public void onTickAct(Board board) {
+
+        if (specialAbility.tickCount == 10) {
+            arrows = arrows + level;
+            specialAbility.tickCount = 0;
+        }
+        else specialAbility.tickCount++;
+    }
     @Override
     public void castSpacialAbility() {
         String output="";
@@ -42,41 +61,20 @@ public class Hunter extends Player{
                         toAttack = enemy;
                 }
             }
-                if (toAttack != null) {
-                    output = getName() + " fired an arrow at " + toAttack.getName();
-                    ScreenWriter.getScreenWriter().print(output);
-                    toAttack.attackMe(attackPoint, this);
-                    arrows = arrows - 1;
-                }
-                else{
-                    output = getName()+" tried to shoot an arrow but there were no enemies in range.";
-                    ScreenWriter.getScreenWriter().print(output);
-                }
+            if (toAttack != null) {
+                output = getName() + " fired an arrow at " + toAttack.getName();
+                ScreenWriter.getScreenWriter().print(output);
+                toAttack.attackMe(attackPoint, this);
+                arrows = arrows - 1;
+            }
+            else{
+                output = getName()+" tried to shoot an arrow but there were no enemies in range.";
+                ScreenWriter.getScreenWriter().print(output);
+            }
         }
     }
 
-
-    @Override
-    public List<Enemy> filter(List<Enemy> list) {
-        return null;
-    }
-
-    @Override
-    public void onTickAct(Board board) {
-
-        if (specialAbility.tickCount == 10) {
-            arrows = arrows + level;
-            specialAbility.tickCount = 0;
-        }
-        else specialAbility.tickCount++;
-    }
-
-
-    public String toString(){
-        return super.toString() + "\t\t" + specialAbility.toString();
-    }
-
-
+    //================NESTED_CLASSES===============
     private class SpecialAbility{ //nested class
         private final String NAME="Shoot";
        private final String DESCRIPTION="add hunter ability description here...";

@@ -5,12 +5,12 @@ import Control.ScreenWriter;
 import Interfaces.VisitorPattern.*;
 
 public abstract class Unit  extends Tile implements Visited {
-    // FILDES
+    //====================FIELDS==================
     private String name;
-    protected Health health; //changed to public for warrior specialAbility
+    protected Health health;
     protected int attackPoint;
     protected int defencePoint;
-
+    //=================CONSTRUCTOR=================
     public Unit(Point point,char character, String name, int attack, int defence, int health) {
         this.location = point;
         this.character = character;
@@ -19,7 +19,7 @@ public abstract class Unit  extends Tile implements Visited {
         this.defencePoint = defence;
         this.health = new Health(health);
     }
-
+    //================PUBLIC_METHODS===============
     public boolean attackMe(int attackDamage,Unit unit){// return true if the attacker should move to the defender location
         String output;
         int defence = (int)(Math.random()*(defencePoint + 1));
@@ -33,8 +33,6 @@ public abstract class Unit  extends Tile implements Visited {
         }
         return isDead;
     }
-
-    protected abstract void died();
 
     public boolean attack(Unit unit){
         String output=getName()+" engaged in combat with "+unit.name+".\n";
@@ -51,6 +49,8 @@ public abstract class Unit  extends Tile implements Visited {
         return name;
     }
 
+    protected abstract void died();
+    //================NESTED_CLASSES===============
     protected class  Health{// nested class
         private int healthPool;
         private int healthAmount;

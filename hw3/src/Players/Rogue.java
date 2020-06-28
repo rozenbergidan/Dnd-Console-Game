@@ -7,15 +7,17 @@ import Enemys.Enemy;
 import java.util.List;
 
 public class Rogue extends Player{
+    //====================FIELDS==================
     private Energy energy;
     private SpecialAbility specialAbility;
-
+    //=================CONSTRUCTOR=================
     public Rogue(String name, int attack, int defence, int health,int energyCost, Point point) {
         super(name, attack, defence, health, point);
         energy=new Energy();
         specialAbility=new SpecialAbility(energyCost);
     }
-
+    //================PUBLIC_METHODS===============
+    @Override
     public void levelUP(){
         super.levelUP();
         energy.currentEnergy=100;
@@ -24,6 +26,18 @@ public class Rogue extends Player{
         ScreenWriter.getScreenWriter().print(output);
     }
 
+    public String toString(){
+        return super.toString()+"\t\t"+energy.toString();
+    }
+    @Override
+    public List<Enemy> filter(List<Enemy> list) {
+        return null; //do nothing
+    }
+    //==================INTERFACES===============
+    @Override
+    public void onTickAct(Board board) {
+        energy.currentEnergy=Math.min(energy.currentEnergy+10,100);
+    }
     @Override
     public void castSpacialAbility() {
         String output="";
@@ -43,21 +57,7 @@ public class Rogue extends Player{
         }
     }
 
-    @Override
-    public List<Enemy> filter(List<Enemy> list) {
-        return null; //do nothing
-    }
-
-    @Override
-    public void onTickAct(Board board) {
-        energy.currentEnergy=Math.min(energy.currentEnergy+10,100);
-    }
-
-
-    public String toString(){
-        return super.toString()+"\t\t"+energy.toString();
-    }
-
+    //================NESTED_CLASSES===============
     private class Energy{
         private final int MAX_ENERGY=100;
 
@@ -75,6 +75,7 @@ public class Rogue extends Player{
             return output;
         }
     }
+
     private class SpecialAbility{
         private final String NAME="Fan of Knives";
         private final String DESCRIPTION="hits everyone around the rogue for an amount equals to the\n" +
