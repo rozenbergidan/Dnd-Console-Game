@@ -8,13 +8,14 @@ import java.util.List;
 
 public class Hunter extends Player{
     //====================FIELDS==================
+    private final int MIN_ARROWS=10;
     private int arrows;
     private SpecialAbility specialAbility;
     //=================CONSTRUCTOR=================
     public Hunter(String name, int attack, int defence, int health, int range, Point point) {
         super(name, attack, defence, health, point);
         specialAbility=new SpecialAbility(range);
-        this.arrows=10;
+        this.arrows=MIN_ARROWS;
     }
     //================PUBLIC_METHODS===============
 
@@ -45,7 +46,7 @@ public class Hunter extends Player{
         else specialAbility.tickCount++;
     }
     @Override
-    public void castSpacialAbility() {
+    public void castSpecialAbility() {
         String output="";
         if(arrows ==0){//print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there are no arrows left.\n";
@@ -77,8 +78,7 @@ public class Hunter extends Player{
     //================NESTED_CLASSES===============
     private class SpecialAbility{ //nested class
         private final String NAME="Shoot";
-       private final String DESCRIPTION="add hunter ability description here...";
-
+        private final String DESCRIPTION="add hunter ability description here...";
 
         private int tickCount;
         private String name;

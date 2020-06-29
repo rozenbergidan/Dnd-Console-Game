@@ -8,8 +8,8 @@ public class Trap extends Enemy implements Observer {
     //====================FIELDS==================
     private int visibilityTime;
     private int invisibilityTime;
-    int count;
-    boolean visible;
+    private int count;
+    private boolean visible;
     //=================CONSTRUCTOR=================
     public Trap(Point point, char character, String name, int attack, int defence,
                 int health, int visibilityTime, int invisibilityTime, int expValue ) {

@@ -48,7 +48,7 @@ public class Warrior extends Player {
         castedOnCurrentTick = false;
     }
     @Override
-    public void castSpacialAbility() {
+    public void castSpecialAbility() {
         String output="";
         if(specialAbility.remainingCooldown>0){//print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there is a cooldown: "+specialAbility.remainingCooldown+".\n";
@@ -56,7 +56,6 @@ public class Warrior extends Player {
         }
         else{
             castedOnCurrentTick = true;
-            //List<Enemy> inRangeEnemies=sort(Board.getBoard().enemiesInRangeWarrior(this,specialAbility.range));
             List<Enemy> inRangeEnemies= filter(Board.getBoard().enemiesInRange(this,specialAbility.range));
             if(inRangeEnemies.size()>0) {
                 Enemy attackedEnemy = inRangeEnemies.get((int) Math.random() * inRangeEnemies.size());
@@ -82,43 +81,17 @@ public class Warrior extends Player {
         private final double MAX_RANGE = 3;
 
         private String name;
-        private String description;
+        private String desc;
         private int coolDown;
         private int remainingCooldown;
-        private boolean available;
         private double range;
 
         public SpecialAbility(int cd) {
             this.name = NAME;
-            this.description = DESCRIPTION;
+            this.desc = DESCRIPTION;
             this.coolDown = cd;
             remainingCooldown = 0;
-            available = true;
             range = MAX_RANGE;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public double getRange() {
-            return range;
-        }
-
-        public int getCoolDown() {
-            return remainingCooldown;
-        }
-
-        public void setCoolDown() {
-            remainingCooldown = coolDown;
-        }
-
-        public boolean isAvailable() {
-            return available;
         }
 
         public String toString(){

@@ -39,7 +39,7 @@ public class Rogue extends Player{
         energy.currentEnergy=Math.min(energy.currentEnergy+10,100);
     }
     @Override
-    public void castSpacialAbility() {
+    public void castSpecialAbility() {
         String output="";
         if(energy.currentEnergy<specialAbility.energyCost){
             output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+energy.toString()+".\n";

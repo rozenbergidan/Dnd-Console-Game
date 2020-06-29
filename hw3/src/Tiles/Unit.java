@@ -79,7 +79,9 @@ public abstract class Unit  extends Tile implements Visited {
             if(healthAmount>healthPool)
                 healthAmount=healthPool;
         }
+
         public int getHealthPool(){return healthPool;}
+
         public void setHealthPool(int newHealthPool){this.healthPool=newHealthPool;}
         @Override
         public String toString(){

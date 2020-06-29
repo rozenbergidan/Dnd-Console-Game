@@ -33,7 +33,7 @@ public abstract class Player extends Unit implements Observer, Visitor, HeroicUn
     }
 
     public void act(char action) {// get the action char from the gameController
-        if (action == 'e') castSpacialAbility();
+        if (action == 'e') castSpecialAbility();
         if (action == 'w') moveUp();
         if (action == 'd') moveRight();
         if (action == 's') moveDown();
@@ -109,6 +109,6 @@ public abstract class Player extends Unit implements Observer, Visitor, HeroicUn
         return false;
     }
 
-    public abstract void castSpacialAbility();
+    public abstract void castSpecialAbility();
 
 }

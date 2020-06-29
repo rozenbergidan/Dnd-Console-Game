@@ -23,7 +23,7 @@ public class Boss extends Monster implements HeroicUnit {
         if (this.location.range(player.getLocation()) <= vision) {
             if (specialAbility.combatIicks == specialAbility.abilityFrequency) {//combat ticks == ability frequency then
                 specialAbility.combatIicks = 0;
-                castSpacialAbility();
+                castSpecialAbility();
             } else {
                 specialAbility.combatIicks++;
                 super.act();
@@ -33,7 +33,7 @@ public class Boss extends Monster implements HeroicUnit {
 
     //==================INTERFACES===============
     @Override
-    public void castSpacialAbility() {
+    public void castSpecialAbility() {
         String output=getName()+" used "+ specialAbility.name;
         ScreenWriter.getScreenWriter().print(output);
         this.attack(Board.getBoard().getPlayer());
@@ -47,8 +47,6 @@ public class Boss extends Monster implements HeroicUnit {
         private double range;
         private int abilityFrequency;
         private int combatIicks;
-
-
 
         public SpecialAbility(String name, String desc, double range, int abilityFrequency) {
             this.name = name;

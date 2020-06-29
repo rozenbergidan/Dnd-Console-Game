@@ -12,7 +12,7 @@ public class TestPlayer extends Player {
     }
 
     @Override
-    public void castSpacialAbility() {
+    public void castSpecialAbility() {
 
     }
 

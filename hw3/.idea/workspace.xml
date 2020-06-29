@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="hw3:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4933c3c9-ac5c-4ef6-ba09-bd8747be71bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Test/VisitorPatternTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/WarriorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hw3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Board/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Board/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Board/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Control/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Control/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Control/ScreenWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Control/ScreenWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw3/Control/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Control/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Control/Tests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Enemys/Boss$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Enemys/Boss$SpecialAbility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Enemys/Boss.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Enemys/Boss.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Enemys/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Enemys/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Enemys/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Enemys/Monster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Enemys/Trap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Enemys/Trap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Interfaces/HeroicUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Interfaces/HeroicUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/META-INF/hw3.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Hunter$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Hunter$SpecialAbility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Hunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Hunter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Mage$Mana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Mage$Mana.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Mage$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Mage$SpecialAbility.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Mage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Mage.class" afterDir="false" />
@@ -21,9 +32,24 @@
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Rogue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Warrior$SpecialAbility.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Players/Warrior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Players/Warrior.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Test/VisitorPatternTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Test/VisitorPatternTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Empty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Empty.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit$Health.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Unit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hw3/Tiles/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hw3/Tiles/Wall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemys/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemys/Boss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemys/Trap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemys/Trap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/HeroicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/HeroicUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Hunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Hunter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Rogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Players/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/TestPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/TestPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tiles/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tiles/Unit.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,28 +66,38 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1cTk8RQw90AKx0we4MdmIoO8cNr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="JUnit.VisitorPatternTests">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Control.Main" />
+      <module name="hw3" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\97254\Desktop\BGU\SemB\OOP\hw3\hw3\levels" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Control.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Control.Tests" />
       <module name="hw3" />
@@ -106,8 +142,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Tests" />
+      <item itemvalue="JUnit.VisitorPatternTests" />
+      <item itemvalue="JUnit.VisitorPatternTests.testPlayerGoToEmpty" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.VisitorPatternTests" />
         <item itemvalue="JUnit.VisitorPatternTests.testPlayerGoToEmpty" />
         <item itemvalue="Application.Tests" />
@@ -124,31 +167,95 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590559811237</updated>
+      <workItem from="1593325448512" duration="128000" />
+      <workItem from="1593325600507" duration="1099000" />
+      <workItem from="1593328627621" duration="2701000" />
+      <workItem from="1593331621119" duration="360000" />
+      <workItem from="1593413114500" duration="452000" />
+      <workItem from="1593413825109" duration="4242000" />
+      <workItem from="1593419468210" duration="1249000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Players/Warrior.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="92" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593331187593">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="92" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593331187593" />
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1593416506501">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593416506501" />
+    <state x="305" y="81" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593420716153">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="305" y="81" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420716153" />
+    <state x="309" y="0" key="#hw3.jar" timestamp="1593413388736">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="309" y="0" key="#hw3.jar/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593413388736" />
+    <state width="1225" height="407" key="GridCell.Tab.0.bottom" timestamp="1593420539641">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="407" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420539641" />
+    <state width="1225" height="407" key="GridCell.Tab.0.center" timestamp="1593420539640">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="407" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420539640" />
+    <state width="1225" height="407" key="GridCell.Tab.0.left" timestamp="1593420539640">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="407" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420539640" />
+    <state width="1225" height="407" key="GridCell.Tab.0.right" timestamp="1593420539640">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="407" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420539640" />
+    <state width="1225" height="365" key="GridCell.Tab.1.bottom" timestamp="1593420460494">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="365" key="GridCell.Tab.1.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420460494" />
+    <state width="1225" height="365" key="GridCell.Tab.1.center" timestamp="1593420460494">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="365" key="GridCell.Tab.1.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420460494" />
+    <state width="1225" height="365" key="GridCell.Tab.1.left" timestamp="1593420460494">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="365" key="GridCell.Tab.1.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420460494" />
+    <state width="1225" height="365" key="GridCell.Tab.1.right" timestamp="1593420460494">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1225" height="365" key="GridCell.Tab.1.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420460494" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1593420726420">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420726420" />
+    <state width="647" height="347" key="XDebugger.FullValuePopup" timestamp="1593420349300">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="647" height="347" key="XDebugger.FullValuePopup/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593420349300" />
+    <state x="288" y="211" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1593325798160">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="288" y="211" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593325798160" />
+    <state x="399" y="44" key="refactoring.ChangeSignatureDialog" timestamp="1593415017045">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="399" y="44" key="refactoring.ChangeSignatureDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1593415017045" />
   </component>
 </project>

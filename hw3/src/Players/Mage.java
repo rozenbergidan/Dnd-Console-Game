@@ -50,7 +50,7 @@ public class Mage extends Player{
         mana.currentMana=(Math.min(mana.manaPool,mana.currentMana+level));
     }
     @Override
-    public void castSpacialAbility() {
+    public void castSpecialAbility() {
         String output="";
         if(mana.currentMana<specialAbility.manaCost){ //print error message
             output=getName()+" tried to cast "+specialAbility.name+", but there was not enough "+mana.toString()+".\n";//Melisandre tried to cast Blizzard, but there was not enough mana: 9/30.
